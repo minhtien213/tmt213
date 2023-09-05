@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Story</title>
+    <link rel="icon" href="./assets/img/logo_tu.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/lovestory.css">
+    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+    <script src="./assets/js/authentication.js"></script>
+    <script>
+        checkAccess();
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo_menu">
+            <div class="logo">
+                <a href="./index.html"><img src="./assets/img/logo_ut.png" alt="Home"></a>
+            </div>
+            <div class="menu">
+                <ul id="listmenu" class="listmenu">
+                    <li class="listmenu_item"><a href="./timeline.html">Timelines</a></li>
+                    <li class="listmenu_item"><a href="./album.html">Albums</a></li>
+                    <li class="listmenu_item">
+                        <a onclick="togglelistMenu2()">More
+                        <i class="ti-arrow-circle-down"></i></a>
+                        <ul class="listmenu2" id="listmenu2">
+                            <li class="listmenu2_item2"><a href="#">Love Story</a></li>
+                            <li class="listmenu2_item2"><a href="./anniversarys.html">Anniversarys</a></li>
+                            <li class="listmenu2_item2"><a href="#" onclick="noteMenu_videos()">Notes</a></li>
+                            <li class="listmenu2_item2"><a href="./login.html" onclick="logout()">Log Out</a></li>
+                            <li class="listmenu2_item2">
+                                <div class="checkChangeColor-block">
+                                    <input type="checkbox" id="checkChangeColor"/>
+                                    Display :
+                                    <label class="btnlabel" for="checkChangeColor"></label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="menubtn">
+                    <a id="menuIcon" href="javascript:void(0);" onclick="openMenu()"><i class="ti-menu menuIcon"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="slogan" id="slogan">
+            <div class="slogan_content">
+                <h3> Tình yêu là gì? </h3></br>
+                <p class="slogan_love" style="text-align: left;">
+                    Tình yêu là khả năng chấp nhận và trân trọng người khác một cách tuyệt đối, bao gồm cả nhược điểm và ưu điểm của họ.
+                    Nó không chỉ tìm kiếm sự hoàn hảo, mà còn chứa đựng lòng biết ơn và sẵn lòng tha thứ.
+                </p> </br>
+                <p class="slogan_slg" style="color: rgb(237, 145, 217); font-size: 25px;"> Yêu nhau không phải là nhìn nhau mà là cùng nhìn về một hướng! </p>
+            </div>
+        </div>
+        <p style="text-align: center; color: aliceblue; font-size: 20px; padding: 15px 15px 5px;">
+            Thật ra, tất cả những cuộc gặp gỡ trên đời vốn đã được định sẵn lương duyên.</br>
+            Việc yêu hay không yêu ai không phải là điều cứ muốn là được.
+        </p>
+        <section id="story1">
+            <div class="storyEven">
+                <div class="storyEven_image">
+                    <img src="./assets/img/storyimg/str1.jpg" onclick="openModalImage(this)">
+                </div>
+                <div class="storyEven_content">
+                    <span> 
+                        Trong cuộc sống này, tình yêu là ánh sáng mà ta dùng để đi qua những thử thách.
+                        Nó là sức mạnh để vượt qua khó khăn, là niềm tin khi mọi thứ trở nên mờ mịt.
+                        Tình yêu là một hành trình dài, nơi chúng ta có thể tìm thấy sự an ủi và động lực.
+                        Hãy tặng cho người mình yêu những hạnh phúc nhỏ bé nhưng ý nghĩa để mỗi ngày trở thành một kỷ niệm đáng nhớ.
+                    </span>
+                    <a class="link_section" href="#story2"><i class="ti-angle-double-down"></i></a>
+                </div>
+            </div>
+        </section>
+        <section id="story2">
+            <div class="storyOdd">
+                <div class="storyOdd_content">
+                    <span>
+                        Trong tim tôi, tình yêu là một câu chuyện vĩnh cửu.
+                        Nó là một tình cảm mà không thể diễn tả bằng lời nói.
+                        Khi nhìn vào đôi mắt ngọt ngào, tôi cảm nhận được sự ấm áp và an lành.
+                        Tình yêu không phải là một cuộc đua, mà là một sự chia sẻ và sẵn lòng hy sinh.
+                        Hãy giữ lửa tình yêu sáng mãi trong trái tim, và cùng nhau đi qua cuộc sống này, bên nhau mãi mãi.
+                    </span>
+                    <a class="link_section" href="#story3"><i class="ti-angle-double-down"></i></a>
+                </div>
+                <div class="storyOdd_image">
+                    <img src="./assets/img/storyimg/str2.jpg" onclick="openModalImage(this)">
+                </div>
+            </div>
+        </section>
+        <section id="fiveImg">
+            <div class="fiveImg">
+                <div class="fiveImg_content">
+                    <img src="./assets/img/kimono/kimonoimg (11).jpg" onclick="openModalImage(this)" class="fiveImg_img">
+                    <p class="fiveImgDescription"></p>
+                </div>
+                <!-- <div class="fiveImg_content">
+                    <img src="./assets/img/LaDoNB/ladonb (8).jpg" onclick="openModalImage(this)" class="fiveImg_img">
+                    <p class="fiveImgDescription"></p>
+                </div> -->
+                <div class="fiveImg_content">
+                    <img src="./assets/img/kimono/kimonoimg (4).jpg" onclick="openModalImage(this)" class="fiveImg_img">
+                    <p class="fiveImgDescription"></p>
+                </div>
+                <!-- <div class="fiveImg_content">
+                    <img src="./assets/img/LaDoNB/ladonb (1).jpg" onclick="openModalImage(this)" class="fiveImg_img">
+                    <p class="fiveImgDescription"></p>
+                </div> -->
+                <div class="fiveImg_content">
+                    <img src="./assets/img/kimono/kimonoimg (7).jpg" onclick="openModalImage(this)" class="fiveImg_img">
+                    <p class="fiveImgDescription"></p>
+                </div>
+            </div>
+        </section>
+        <section id="story3">
+            <div class="storyEven">
+                <div class="storyEven_image">
+                    <img src="./assets/img/storyimg/str3.jpg" onclick="openModalImage(this)">
+                </div>
+                <div class="storyEven_content">
+                    <span> 
+                        Tình yêu không biên giới, không màu sắc, không giới hạn.
+                        Nó là một thứ huyền diệu khiến ta cảm thấy sống động và tồn tại.
+                        Tình yêu không chỉ là những lời yêu thương ngọt ngào, mà còn là sự hi sinh và sẵn lòng cho nhau. 
+                        Để tình yêu mãi mãi tồn tại, chúng ta cần chăm sóc, tôn trọng và đồng hành với nhau.
+                        Mỗi ngày, hãy dành thời gian để nói "Tôi yêu bạn" và cho đi những nụ cười và sự quan tâm chân thành.
+                    </span>
+                    <a class="link_section" href="#story4"><i class="ti-angle-double-down"></i></a>
+                </div>
+            </div>
+        </section>
+        <section id="story4">
+            <div class="storyOdd">
+                <div class="storyOdd_content">
+                    <span>
+                        Tình yêu là một bản hòa tấu đẹp, với các nốt nhạc của niềm vui, tiếng cười, nước mắt và đau khổ.
+                        Đôi khi, nó buồn, đôi khi, nó ngọt ngào.
+                        Nhưng tình yêu là sức mạnh để thay đổi cuộc sống và làm cho thế giới trở nên tốt đẹp hơn.
+                        Khi chúng ta yêu một ai đó, chúng ta trao đi một phần của chính mình và tạo ra những kỷ niệm đáng nhớ.
+                        Hãy quý trọng tình yêu và đánh giá mọi khoảnh khắc nhỏ bé trong cuộc sống hằng ngày.
+                    </span>
+                    <a class="link_section" href="#story5"><i class="ti-angle-double-down"></i></a>
+                </div>
+                <div class="storyOdd_image">
+                    <img src="./assets/img/storyimg/str4.jpg" onclick="openModalImage(this)">
+                </div>
+            </div>
+        </section>
+        <section id="threeImg">
+            <div class="threeImg">
+                <div class="threeImg_content">
+                    <img src="./assets/img/kimono/kimonoimg (14).jpg" onclick="openModalImage(this)" class="threeImgImg_img">
+                    <p class="threeImgImgDescription"></p>
+                </div>
+                <div class="threeImg_content">
+                    <img src="./assets/img/kimono/kimonoimg (13).jpg" onclick="openModalImage(this)" class="threeImgImg_img">
+                    <p class="threeImgImgDescription"></p>
+                </div>
+                <!-- <div class="threeImg_content">
+                    <img src="./assets/img/kimono/kimonoimg (1).jpg" onclick="openModalImage(this)" class="threeImgImg_img">
+                    <p class="threeImgImgDescription"></p>
+                </div> -->
+            </div>
+        </section>
+        <section id="story5">
+            <div class="storyEven">
+                <div class="storyEven_image">
+                    <img src="./assets/img/storyimg/str5.jpg" onclick="openModalImage(this)">
+                </div>
+                <div class="storyEven_content">
+                    <span> 
+                        Trong đời này, tình yêu là một hành trình kỳ diệu, nơi chúng ta có thể khám phá và trưởng thành.
+                        Nó không chỉ là sự gắn kết của hai trái tim, mà còn là một tình cảm sâu sắc, sự tôn trọng và sự lắng nghe.
+                        Tình yêu không phải là một mục tiêu, mà là một cuộc phiêu lưu vô tận.
+                        Hãy tìm kiếm những niềm vui nhỏ và tạo ra những kỷ niệm đáng nhớ, vì tình yêu là vị trí duy nhất nơi ta cảm thấy thật sự tự do và hạnh phúc.
+                    </span>
+                    <a class="link_section" href="#slogan"><i class="ti-angle-double-up"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <div id="modalImage">
+            <div class="modalImage_overlay"></div> 
+            <div class="modalImage_body" id="modalImage_body">
+                <img id="selected-image" class="selected-image" src="" alt="Selected Image">
+                <div class="control">
+                    <!-- <i class="ti-arrow-circle-left"></i> -->
+                    <i class="ti-close close" onclick="hideModalImage()"></i>
+                    <!-- <i class="ti-arrow-circle-right"></i> -->
+                </div>
+            </div>
+        </div>
+
+    </div>    
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

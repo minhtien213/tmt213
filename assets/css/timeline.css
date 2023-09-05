@@ -1,0 +1,206 @@
+/* reset css */
+:root{
+    --text-color: aliceblue;
+    --pink-color: #f481c2;
+    --red-color: red;
+    --black-color: black;
+    /* var(--text-color); */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* CSS HOME */
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* CSS BODY */
+
+body{
+    position: relative;
+}
+
+.container{
+    margin-top: 60px;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.continue{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; 
+    color: #b8b2b2; 
+    font-size: 18px; 
+    font-style: italic;
+    margin: auto;
+    padding: 5px 10px;
+}
+
+#addTimeine{
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#modalCreate{
+    animation: scale 0.5s ease;
+}
+
+#createForm{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 5% auto 0;
+    justify-items: start;
+    position: relative;
+}
+
+@keyframes scale {
+    from{
+        transform: scale(0.5);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+.labelImg, .labelContent{
+    text-align: left;
+    text-decoration: underline;
+}
+.labelImg, .labelContent, #inputContent, #inputImg, #btnCreate{
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+#inputContent{
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 150px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(239, 230, 236, 0.5);
+}
+
+#btnCreate{
+    cursor: pointer;
+    padding: 5px;
+    margin: 30px auto 0;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    width: 70px;
+    border-radius: 10px;
+}
+
+#btnCreate:hover{
+    background-color: #c38595;
+}
+
+#btnCreate:active{
+    transform: translateY(1px);
+}
+
+.controlCreate {
+    position: absolute;
+    bottom: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.timeline_form{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: rgba(239, 230, 236, 0.3);
+    border-radius: 10px;
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    }
+
+.timeline_img{
+    width: 20%;
+    }
+
+.timeline_form img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--pink-color);
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.timeline_content{
+    width: 80%;
+    height: auto;
+    padding-left: 10px;
+    margin: auto;
+}
+
+.optionIcon{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.option ul{
+    background-color: rgb(58, 55, 55);
+    min-width: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    z-index: 1;
+    display: none;
+}
+
+.option li{
+    list-style: none;
+    font-size: 13px;
+    margin: 3px 0;
+    cursor: pointer;
+}
+
+.ti-heart.like{
+    color: var(--text-color);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.like.clicked{
+    color: var(--pink-color);
+    font-size: larger;
+    filter: drop-shadow(3px 0px 1px rgba(243, 144, 144, 0.7));
+}
+
+.link_section{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 50px;
+    display: block;
+    text-align: center;
+    position: fixed;
+    right: 45px;
+    bottom: 20px;
+}
+
+
+
+

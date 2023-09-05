@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="icon" href="./assets/img/logo_tu.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/note.css">
+    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+    <script src="./assets/js/authentication.js"></script>
+    <script>
+        checkAccess();
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo_menu">
+            <div class="logo">
+                <a href="./index.html"><img src="./assets/img/logo_ut.png" alt="Home"></a>
+            </div>
+            <div class="menu">
+                <ul id="listmenu" class="listmenu">
+                    <li class="listmenu_item"><a href="./timeline.html">Timelines</a></li>
+                    <li class="listmenu_item"><a href="./album.html">Albums</a></li>
+                    <li class="listmenu_item">
+                        <a onclick="togglelistMenu2()">More
+                        <i class="ti-arrow-circle-down"></i></a>
+                        <ul class="listmenu2" id="listmenu2">
+                            <li class="listmenu2_item2"><a href="./lovestory.html">Love Story</a></li>
+                            <li class="listmenu2_item2"><a href="./anniversarys.html">Anniversarys</a></li>
+                            <li class="listmenu2_item2"><a href="#">Notes</a></li>
+                            <li class="listmenu2_item2"><a href="./login.html" onclick="logout()">Log Out</a></li>
+                            <li class="listmenu2_item2">
+                                <div class="checkChangeColor-block">
+                                    <input type="checkbox" id="checkChangeColor"/>
+                                    Display :
+                                    <label class="btnlabel" for="checkChangeColor"></label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="menubtn">
+                    <a id="menuIcon" href="javascript:void(0);" onclick="openMenu()"><i class="ti-menu menuIcon"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="slogan" id="slogan">
+            <div class="slogan_content">
+                <h3> Tình yêu là gì? </h3></br>
+                <p class="slogan_love" style="text-align: left;">
+                    Tình yêu là khả năng chấp nhận và trân trọng người khác một cách tuyệt đối, bao gồm cả nhược điểm và ưu điểm của họ.
+                    Nó không chỉ tìm kiếm sự hoàn hảo, mà còn chứa đựng lòng biết ơn và sẵn lòng tha thứ.
+                </p> </br>
+                <p class="slogan_slg" style="color: rgb(237, 145, 217); font-size: 25px;"> Yêu nhau không phải là nhìn nhau mà là cùng nhìn về một hướng! </p>
+            </div>
+            <p style="text-align: center; color: aliceblue; font-size: 20px; padding: 15px 15px 5px; margin-bottom: 10px;">
+                Note ra đời để giúp người dùng ghi nhớ nhanh hơn và nhắc nhở những việc quan trọng không được quên!
+            </p>
+            <div class="notes">
+                <div class="moneyNotes">
+                    <h3>Money Notes</h3>
+                    <div class="notes_form"> 
+                        <i class="ti-money"></i>
+                        <p class="notes_content">
+                            20/08 - Anh còn nợ Hêuiuuu 20man.
+                        </p>
+                        <input id="m1" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-money"></i>
+                        <p class="notes_content">
+                            20/08 - Tiền tiết kiệm của 2 đứa tổng 50man.
+                        </p>
+                        <input id="m2" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-money"></i>
+                        <p class="notes_content">
+                            .../08 - Tiền tiết kiệm cho "Em Bé" tổng ...
+                        </p>
+                        <input id="m3" class="checkbox" type="checkbox">
+                    </div>
+                </div>
+
+                <div class="birthdayNotes">
+                    <h3>Everyone's Birthday Notes</h3>
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của MINH TIẾN ngày: 21/03 ÂL
+                        </p>
+                        <input id="b10" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của MINH THÀNH ngày: 24/04 ÂL
+                        </p>
+                        <input id="b5" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của THANH NHÀN ngày: 02/06 ÂL
+                        </p>
+                        <input id="b2" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của YẾN NGỌC ngày: 18/06
+                        </p>
+                        <input id="b17" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của ĐÌNH QUANG ngày: 09/10 ÂL
+                        </p>
+                        <input id="b1" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của MINH TIÊN ngày: 06/11 ÂL
+                        </p>
+                        <input id="b7" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của THANH TÂM ngày: 22/11 ÂL
+                        </p>
+                        <input id="b4" class="checkbox" type="checkbox">
+                    </div>
+                    
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của HẢI UYÊN ngày: 06/12
+                        </p>
+                        <input id="b11" class="checkbox" type="checkbox">
+                    </div>
+                    
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của TRỊNH HUẤN ngày: ...
+                        </p>
+                        <input id="b16" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của ĐỨC TIẾN ngày: ...
+                        </p>
+                        <input id="b3" class="checkbox" type="checkbox">
+                    </div>
+                    
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của LÊ HƯỜNG ngày: ...
+                        </p>
+                        <input id="b6" class="checkbox" type="checkbox">
+                    </div>
+                    
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của THANH DUNG ngày: ...
+                        </p>
+                        <input id="b8" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của THANH THIỆN ngày: ...
+                        </p>
+                        <input id="b9" class="checkbox" type="checkbox">
+                    </div>
+                    
+                    
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của TƯỜNG VY ngày: ...
+                        </p>
+                        <input id="b12" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của MINH CHÂU ngày: ...
+                        </p>
+                        <input id="b13" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của MINH TUYẾT ngày: ...
+                        </p>
+                        <input id="b14" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-gift"></i>
+                        <p class="notes_content">
+                            Sinh nhật của MINH LONG ngày: ...
+                        </p>
+                        <input id="b15" class="checkbox" type="checkbox">
+                    </div>
+                </div>
+
+                <div class="otherNotes">
+                    <h3>Other Notes</h3>
+                    <div class="notes_form"> 
+                        <i class="ti-tag"></i>
+                        <p class="notes_content">
+                            Đám giỗ của BỐ VĂN ngày 29/02 ÂL
+                        </p>
+                        <input id="o1" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-tag"></i>
+                        <p class="notes_content">
+                            Tặng quà những ngày lễ: sinh nhật, tết, trung thu, 08/03, 20/10, 14/02...
+                        </p>
+                        <input id="o2" class="checkbox" type="checkbox">
+                    </div>
+                    <div class="notes_form"> 
+                        <i class="ti-tag"></i>
+                        <p class="notes_content">
+                            Mục tiêu...
+                        </p>
+                        <input id="o3" class="checkbox" type="checkbox">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/checkbox.js"></script>
+</body>
+</html>

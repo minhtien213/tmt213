@@ -1,0 +1,426 @@
+
+
+@media only screen and (max-width: 768px) {
+
+    /* Responsive Home */
+    
+    
+    :root{
+        --text-color: aliceblue;
+        --pink-color: #f481c2;
+        --red-color: red;
+        --black-color: black;
+        /* var(--text-color); */
+    }
+    
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    .header{
+        border-bottom: 1px var(--pink-color) solid;
+    }
+    
+    #home{
+        width: 100%;
+        color: var(--text-color);
+        }
+
+    .logo_menu{
+        width: 100%;
+    }
+
+    .logo img{
+        margin-left: 12px;
+        margin-top: 5px;
+    }
+
+    .menu{
+        display: flex;
+    }
+
+    .menubtn{
+        padding : 15px 20px 14px 0px;
+    }
+    .menubtn a{
+        text-decoration: none;
+    }
+
+    .menuIcon{
+        display: block;
+        color: var(--text-color);
+        font-size: 28px;
+    }
+
+    .listmenu{
+        display: none;
+        animation: scaleMenu 0.1s ease-in;
+    }
+
+    @keyframes scaleMenu {
+        from{
+            transform: translateX(25%) scaleX(50%);
+        }
+        to{
+            transform: translateX(0%) scaleX(100%);
+        }
+    }
+
+    .listmenu_item{
+        padding: 0 3px;
+        font-size: 19px;
+    }
+
+    .listmenu_item:last-child {
+        padding-right: 10px;
+    }
+
+    .listmenu_item:hover{
+        background-color:initial;
+        border-radius: initial;
+        line-height: initial;
+        animation: initial;
+    }
+
+   
+    body{
+        margin-bottom: 10px;
+        background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
+        url(../img/bgr_homeMobile.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        }
+
+    .slogan{
+        padding-top: 20px;
+    }
+
+    .slogan_content{
+        width: 95%;
+        padding: 20px 10px;
+    }
+
+    .slogan_slg{
+        line-height: 25px;
+        text-align: center;
+        color: var(--pink-color); 
+        font-size: 23px;
+    }
+
+    .slogan_love{
+        text-align: center !important;
+    }
+
+    .imgProfile{
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .imgMale, .imgFemale{
+        width: 100%;
+        height: 100%;
+        margin: 25px;
+    }
+    .CountDateLove {
+        padding-top: 10px;
+    }
+        
+    .labelCountDateLove{
+        font-size: 35px;
+        font-weight: 300;
+        letter-spacing: 5px;
+        padding-bottom: 12px;
+    }
+
+    .heartCenter{
+        font-size: 50px;
+    }
+
+
+    .ti-facebook{
+        width: 20px;
+        height: 20px;
+        left: 40%;
+        font-size: 15px;
+        display: none;
+    }
+
+    .ti-heart:hover{
+        color: var(--red-color);
+    }
+
+    /* CSS Modal Login */
+
+    .imglogin{
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .loginbtn{
+        margin-right: 21px;
+    }
+
+    .modal_body {
+        margin-top: 22vh;
+        width: 90%;
+        padding: 20px 5px;
+        height: 36vh;
+    }
+    
+    .login_form{
+        margin-top: 5vh;
+    }
+     
+    input{
+        /* ngăn k tự zoom khi click vào ô input */
+        -webkit-text-size-adjust: none; /* Safari, Chrome và các trình duyệt dựa trên WebKit */
+        -moz-text-size-adjust: none; /* Firefox */
+        -ms-text-size-adjust: none; /* Edge */
+        text-size-adjust: none; /* Các trình duyệt khác */
+        touch-action: manipulation;
+    }
+
+    .input{
+        font-size: 16px;
+    } 
+    
+    .checkbox{
+        margin-top: 2px;
+    }
+
+    /* Responsive Timeline */
+    .continue{
+        width: 90% !important;
+    }
+    #createForm {
+        margin: 25% auto 0 !important;
+        width: 90% !important;
+    }
+
+    #inputContent {
+        min-height: 100px !important;
+        max-height: 150px !important;
+        font-size: 18px !important;
+    }
+        
+
+    .timeline_form, .timelineCreate_form {
+        width: 95% !important;
+    }
+
+
+    .timeline_form img{
+        width: 80px !important;
+        height: 80px !important;
+        margin-left: 10px !important;
+    }
+
+    .timeline_content{
+        padding: 10px;
+        line-height: 22px !important;
+    }
+
+    .link_section {
+        right: 30px !important;
+        bottom: 15px !important;
+        font-size: 35px !important;
+    }
+
+
+    /* Responsive Lovestory */
+
+    .container{
+        height: 100vh !important;
+        overflow: auto;
+    }
+
+    .storyEven, .storyOdd{
+        width: 95% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .storyOdd{
+        flex-direction: column-reverse;
+    }
+
+    .storyOdd_content{
+        margin-right: 0 !important;
+    }
+
+    .storyEven_image img,.storyOdd_image img{
+        width: 150px !important;
+        height: 150px !important;
+        border-radius: 5px;
+    }
+
+
+    /* Responsive Album */
+
+    .album{
+        flex-direction: column;
+        height: auto !important;
+        padding-bottom: 5px !important;
+    }
+
+    .listAlbum{
+        width: 95% !important;
+        font-size: 18px !important;
+        line-height: 20px;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+        border-right: none !important;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 5px auto ;
+        justify-content: space-evenly;
+        padding: 5px !important;
+        margin-bottom: 10px;
+        /* position: sticky;
+        position:-webkit-sticky;
+        top: 70px !important;
+        z-index: 998; */
+    }
+
+    .titleAlbum{
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+    }
+
+    .listAlbum_name{
+        margin-top: 5px;
+    }
+    
+    .listAlbum_name_item, .listAlbum_name_item2 {
+        margin-bottom: 4px !important;
+    }
+
+    .listAlbum_name_item:before, .listAlbum_name_item2::after{
+        top: 8px !important;
+        left: -10% !important;
+    }
+
+    .uploadImg{
+        display: block;
+        text-align: center;
+    }
+
+    .uploadImg input{
+        font-size: 15px;
+        display: block;
+        align-items: center;
+        justify-content: center;
+    }
+    .listAlbum_name_item:nth-child(2), .listAlbum_name_item:nth-child(3){
+        border-bottom: none !important;
+    }
+
+    .listImages-Videos{
+        width: 100% !important;
+        padding: 5px !important;
+    }
+
+    .images-videos{
+        /* max-height: 350px !important; */
+        width: 99% !important;
+        margin: 5px auto;
+        border: 1px var(--black-color) solid;
+        border-radius: 10px;
+        padding: 5px 0px !important;
+    }  
+
+    .listImages-Videos img{
+        width: 18% !important;
+        height: 70px !important;
+        border-radius: 5px !important;
+        padding: 0px !important;
+        border: 1px solid var(--black-color) !important;
+        
+    }
+
+    .listVideos_item{
+        width: 48% !important;
+        height: 110px !important;
+        margin: 1px !important;
+    }
+    
+    
+    #modalImage{
+        z-index: 999;
+    }
+    
+    #selected-image{
+        width: auto !important;
+        max-width: 100%;
+        height: auto !important;
+        max-height: 84%;
+        object-fit: cover;
+        margin: auto;
+    }
+
+    .control{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10% !important;
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+
+    .slideshow-container {
+        max-width: 95% !important;
+    }
+
+    .mySlides img {
+        height: 200px !important;
+      }
+
+
+    /* CSS Notes */
+    .notes_form{
+    width: 95% !important;
+    }
+
+    .notes_content{
+        margin: auto 5px !important;
+    }
+    .moneyNotes, .otherNotes, .birthdayNotes{
+        width: 95% !important;
+    }
+
+    /* CSS Anniversarys */
+
+    .anniversaryday_container{
+        width: 95% !important;
+    }
+    
+    .anniversaryday_form {
+        height: 350px !important;
+    }
+    .anniversarydays{
+        width: 100% !important;
+    }
+    .anniversaryday_img{
+        height: 85% !important;
+        }
+
+    #layoutIcon{
+        display: contents !important;
+        font-size: 16px;
+    }
+    .anniversarydays.clicked{
+            width: 48% !important;
+            font-size: small;
+        }
+    .anniversaryday_img.clicked{
+        height: 70% !important;
+        }
+  }
+
+

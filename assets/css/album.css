@@ -1,0 +1,268 @@
+/* reset css */
+
+:root{
+    --text-color: aliceblue;
+    --pink-color: #f481c2;
+    --red-color: red;
+    --black-color: black;
+    /* var(--text-color); */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* CSS BODY */
+
+.container{
+    margin-top: 60px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.album{
+    width: 95%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(239, 230, 236, 0.2);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+.listAlbum{
+    width: 15%;
+    border-right: 3px dashed var(--black-color);
+    text-align: left;
+    padding: 15px;
+    overflow: auto;
+
+}
+
+.titleAlbum{
+    display: flex;
+    color: var(--text-color);
+    line-height: 15px;
+    margin-bottom: 15px;
+}
+
+.ti-image{
+    font-size: 15px;
+    padding-right: 5px;
+}
+
+.listAlbum_name a{
+    text-decoration: none;
+    /* font-size: 19px; */
+}
+
+.listAlbum_name_item{
+    position: relative;
+    margin-bottom: 2px;
+
+}
+
+.listAlbum_name_item:before, .listAlbum_name_item2::after{
+    content: '';
+    width: 3px;
+    height: 3px;
+    box-sizing: border-box;
+    position: absolute;
+    border-top: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-left: 4px solid #000;
+    top: 13px;
+    left: -10%;
+}
+
+.listAlbum_name_item a{
+    color: var(--text-color);
+}
+
+.listAlbum_name_item:nth-child(2), .listAlbum_name_item:nth-child(3){
+    border-bottom: 3px solid var(--black-color);
+}
+
+.listAlbum_name_item:hover, .listAlbum_name_item2:hover {
+    transform: translateY(-1px);
+}
+
+.listAlbum_name > .listAlbum_name_item:hover > a, .listAlbum_name_item2:hover a {
+    color: var(--pink-color);
+}
+
+.listAlbum_name,
+.listAlbum_name2{
+    list-style: none;
+    padding-left: 20px;
+}
+
+
+.listAlbum_name2{
+    padding-left: 20px;
+    display: none;
+}
+
+.listAlbum_name2 a{
+    font-size: 16px;
+}
+
+.uploadImg{
+    text-align: center;
+    color: var(--text-color);
+    /* font-size: 30px; */
+    margin-top: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.ti-angle-down{
+    font-size: 10px;
+}
+
+.images-videos{
+    width: 83%;
+    padding: 5px;
+    text-align: center;
+    overflow: auto;
+}
+
+.listImages-Videos{
+    display: none;
+    padding: 15px 0;
+}
+
+#n2014_2019{
+    display: block;
+}
+
+.listImages-Videos img{
+    width: 18%;
+    height: 120px;
+    border: 1px solid #988f8f;
+    border-radius: 10px;
+    padding: 3px;
+    object-fit: cover;
+    transition: transform linear 0.1s;
+    will-change: transform;
+}
+
+.listVideos_item{
+    width: 23%;
+    height: 150px;
+    border: 1px solid #988f8f;
+    border-radius: 10px;
+    margin: 5px;
+    object-fit: cover;
+    background-color: black;
+}
+
+.listImages_item:hover, .listVideos_item:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 0 5px #525352;
+    border-color: var(--pink-color);
+}
+
+.listImages_item:hover{
+    cursor: zoom-in; 
+}
+
+.listVideos_item:hover{
+    cursor: pointer; 
+}
+
+
+/* SLIDER */
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 7px;
+    margin-top: 20px;
+    border: 1px solid var(--pink-color);
+  }
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}

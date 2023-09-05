@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1 , user-scalable= no" >
+    <title>MT - HU</title>
+    <link rel="icon" href="./assets/img/logo_tu.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+    <script src="./assets/js/authentication.js"></script>
+    <script>
+        checkAccess();
+    </script>
+
+</head>
+<body>
+    <div class="header">
+        <div class="logo_menu">
+            <div class="logo">
+                <a href="./index.html"><img src="./assets/img/logo_ut.png" alt="Home"></a>
+            </div>
+            <div class="menu">
+                <ul id="listmenu" class="listmenu">
+                    <li class="listmenu_item"><a href="./timeline.html">Timelines</a></li>
+                    <li class="listmenu_item"><a href="./album.html">Albums</a></li>
+                    <li class="listmenu_item">
+                        <a onclick="togglelistMenu2()">More
+                        <i class="ti-arrow-circle-down"></i></a>
+                        <ul class="listmenu2" id="listmenu2">
+                            <li class="listmenu2_item2"><a href="./lovestory.html">Love Story</a></li>
+                            <li class="listmenu2_item2"><a href="./anniversarys.html">Anniversarys</a></li>
+                            <li class="listmenu2_item2"><a href="#" onclick="noteMenu_videos()">Notes</a></li>
+                            <li class="listmenu2_item2"><a href="./login.html" onclick="logout()">Log Out</a></li>
+                            <li class="listmenu2_item2">
+                                <div class="checkChangeColor-block">
+                                    <input type="checkbox" id="checkChangeColor"/>
+                                    Display :
+                                    <label class="btnlabel" for="checkChangeColor"></label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="menubtn">
+                    <a id="menuIcon" href="javascript:void(0);" onclick="openMenu()"><i class="ti-menu menuIcon"></i></a>
+                </div>   
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="slogan">
+            <div class="slogan_content">
+                <h3> Tình yêu là gì? </h3></br>
+                    <p class="slogan_love" style="text-align: left;">
+                    Cho đến nay vẫn chưa có câu trả lời thỏa đáng cho câu hỏi này hay chỉ đơn giản yêu… là yêu mà thôi.</br>
+                    Tình yêu có thể được tả lại trong những cuốn truyện dài, hay những tập tiểu thuyết, có lúc lại được gửi gắm vào trong lời ca bài hát.</br>
+                    Cũng có thể tình yêu không phức tạp như chúng ta nghĩ có khi chỉ cần một câu nói, một dòng chữ ngắn ngủi đã đủ để nói lên tất cả.</br>
+                </p> </br>
+                <p class="slogan_slg" style="color: rgb(237, 145, 217); font-size: 25px;"> Yêu nhau không phải là nhìn nhau mà là cùng nhìn về một hướng! </p>
+            </div>
+        </div>
+        <div class="profile">
+            <div class="imgProfile" >
+                <div class="imgMale">
+                    <img class="imgMale_img" src="./assets/img/imgMale.jpg" alt="">
+                </div>
+                <div class="heartCenter"><i class="ti-heart"></i></div>
+                <div class="imgFemale">
+                    <img class="imgFemale_img" src="./assets/img/imgFemale.jpg" alt="">
+                </div>
+            </div>
+            <div class="CountDateLove">
+                <div class="music">
+                    <audio id="myAudio" src="./assets/music/HanhPhucCuoiCung.mp3"></audio>
+                    <i id="volumeIcon" class="ti-music-alt" onclick="music()"></i>
+                </div>
+                <div class="labelCountDateLove"><label id="labelCountDateLove"></label></div>
+                <script src="./assets/js/countdate.js"></script>
+                <p class="name">Minh Tiến <i style="font-size: 25px;" class="ti-github"></i> Hải Uyên</p>
+            </div>
+        </div>
+        <div class="icon_footer">
+            <i class="ti-pulse"></i>
+            <i class="ti-pulse"></i>
+            <i class="ti-pulse"></i>
+            <i class="ti-pulse"></i>
+            <i class="ti-pulse"></i>
+            <i class="ti-pulse"></i>
+            <i class="ti-pulse"></i>
+            <i class="ti-pulse"></i>
+            <i class="ti-pulse"></i>
+        </div>
+        
+        
+        
+    </div>
+    
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

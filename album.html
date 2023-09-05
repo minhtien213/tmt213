@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album</title>
+    <link rel="icon" href="./assets/img/logo_tu.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/album.css">
+    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+    <script src="./assets/js/authentication.js"></script>
+    <script>
+        checkAccess();
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo_menu">
+            <div class="logo">
+                <a href="./index.html"><img src="./assets/img/logo_ut.png" alt="Home"></a>
+            </div>
+            <div class="menu">
+                <ul id="listmenu" class="listmenu">
+                    <li class="listmenu_item"><a href="./timeline.html">Timelines</a></li>
+                    <li class="listmenu_item"><a href="#">Albums</a></li>
+                    <li class="listmenu_item">
+                        <a onclick="togglelistMenu2()">More
+                        <i class="ti-arrow-circle-down"></i></a>
+                        <ul class="listmenu2" id="listmenu2">
+                            <li class="listmenu2_item2"><a href="./lovestory.html">Love Story</a></li>
+                            <li class="listmenu2_item2"><a href="./anniversarys.html">Anniversarys</a></li>
+                            <li class="listmenu2_item2"><a href="#" onclick="noteMenu_videos()">Notes</a></li>
+                            <li class="listmenu2_item2"><a href="./login.html" onclick="logout()">Log Out</a></li>
+                            <li class="listmenu2_item2">
+                                <div class="checkChangeColor-block">
+                                    <input type="checkbox" id="checkChangeColor"/>
+                                    Display :
+                                    <label class="btnlabel" for="checkChangeColor"></label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="menubtn">
+                    <a id="menuIcon" onclick="openMenu()"><i class="ti-menu menuIcon"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+      
+        <div class="slideshow-container">
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+            <img src="./assets/img/kimono/kimonoimg (14).jpg"  style = "width:100%">
+            <div class="text">Kimono Nhật Bản</div>
+            </div>
+        
+            <div class="mySlides fade">
+            <img src="./assets/img/DamHoi/damhoiimg(5).jpg" style = "width:100%">
+            <div class="text">Lễ Ăn Hỏi</div>
+            </div>
+        
+            <div class="mySlides fade">
+            <img src="./assets/img/kimono/kimonoimg (9).jpg"  style = "width:100%">
+            <div class="text">Kimono Nhật Bản</div>
+            </div>
+
+            <div class="mySlides fade">
+            <img src="./assets/img/kimono/kimonoimg (15).jpg"  style = "width:100%">
+            <div class="text">Kimono Nhật Bản</div>
+            </div>
+
+            <div class="mySlides fade">
+            <img src="./assets/img/kimono/kimonoimg (6).jpg"  style = "width:100%">
+            <div class="text">Kimono Nhật Bản</div>
+            </div>
+        
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <script src="./assets/js/slider.js"></script>
+            </div>
+            <br>
+            
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+       
+        <p style="text-align: center; color: aliceblue; font-size: 20px; padding: 15px 10px;">Mỗi bức ảnh là một câu chuyện của hành trình cảm xúc!</p>
+        <div class="album">
+            <div class="listAlbum">
+                <div class="titleAlbum">
+                    <i class="ti-image"></i><h4>List Albums</h4>
+                </div>
+                <ul class="listAlbum_name">
+                    <li class="listAlbum_name_item"><a onclick="toggleAlbum('n2014_2019')">2014 - 2019</a></li>
+                    <li class="listAlbum_name_item"><a onclick="toggleAlbum('n2020_2025')">2020 - 2025</a></li>
+                    <li class="listAlbum_name_item">
+                        <a onclick="togglelistAlbum_name2()">
+                            Albums
+                            <i class="ti-angle-down"></i></a>
+                            <ul id="listAlbum_name2" class="listAlbum_name2">
+                                <li class="listAlbum_name_item2"><a onclick="toggleAlbum('kimono')">Kimono</li>
+                                <li class="listAlbum_name_item2"><a onclick="toggleAlbum('lado')">Lá Đỏ NB</li>
+                                <li class="listAlbum_name_item2"><a onclick="toggleAlbum('damhoi')">Đám Hỏi</a></li>
+                                <li class="listAlbum_name_item2"><a onclick="toggleAlbum('damcuoi')">Đám Cưới</a></li>
+                            </ul>
+                    </li>
+                    <li class="listAlbum_name_item"><a  onclick="toggleVideos('videos')">Videos</a></li>
+                </ul>
+                <div class="uploadImg">
+                    <input type="file" accept="image/*" onchange="previewImage(event)">
+                </div>
+            </div>
+            <div class="images-videos" id="images-videos">
+                <div id="n2014_2019" class="listImages-Videos">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(2).jpg"  onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(3).jpg"  onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(4).jpg"  onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(5).jpg"  onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(6).jpg"  onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(7).jpg"  onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(8).jpg"  onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(9).jpg"  onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(10).jpg" onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(11).jpg" onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(12).jpg" onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(13).jpg" onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(14).jpg" onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(15).jpg" onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(16).jpg" onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(17).jpg" onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(18).jpg" onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(19).jpg" onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(20).jpg" onclick="displayImage(this)">
+                    <img class="n20142019 listImages_item" src="./assets/img/2014_2019img/2014_2019img(1).jpg"  onclick="displayImage(this)">
+                </div>
+
+                <div id="n2020_2025" class="listImages-Videos">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(32).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(33).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(34).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(35).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(36).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(37).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(38).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(39).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(40).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(41).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(42).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(43).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(31).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(1).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(2).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(3).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(4).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(5).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(6).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(7).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(8).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(9).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(10).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(11).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(12).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(13).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(14).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(15).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(16).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(17).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(18).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(19).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(20).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(21).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(22).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(23).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(24).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(25).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(27).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(28).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(29).jpg" onclick="displayImage(this)">
+                    <img class="n20202025 listImages_item" src="./assets/img/2020_2025img/2020_2025img(30).jpg" onclick="displayImage(this)">
+                </div>
+
+                <div id="kimono" class="listImages-Videos">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (1).jpg"  onclick="displayImage(this)">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (2).jpg"  onclick="displayImage(this)">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (3).jpg"  onclick="displayImage(this)">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (4).jpg"  onclick="displayImage(this)">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (5).jpg"  onclick="displayImage(this)">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (6).jpg"  onclick="displayImage(this)">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (7).jpg"  onclick="displayImage(this)">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (8).jpg"  onclick="displayImage(this)">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (9).jpg"  onclick="displayImage(this)">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (10).jpg" onclick="displayImage(this)">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (11).jpg" onclick="displayImage(this)">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (12).jpg" onclick="displayImage(this)">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (13).jpg" onclick="displayImage(this)">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (14).jpg" onclick="displayImage(this)">
+                    <img class="kimono listImages_item" src="./assets/img/kimono/kimonoimg (15).jpg" onclick="displayImage(this)">
+                </div>
+
+                <div id="lado" class="listImages-Videos">
+                    <img class="lado listImages_item" src="./assets/img/LaDoNB/ladonb(1).jpg"  onclick="displayImage(this)">
+                    <img class="lado listImages_item" src="./assets/img/LaDoNB/ladonb(2).jpg"  onclick="displayImage(this)">
+                    <img class="lado listImages_item" src="./assets/img/LaDoNB/ladonb(3).jpg"  onclick="displayImage(this)">
+                    <img class="lado listImages_item" src="./assets/img/LaDoNB/ladonb(4).jpg"  onclick="displayImage(this)">
+                    <img class="lado listImages_item" src="./assets/img/LaDoNB/ladonb(5).jpg"  onclick="displayImage(this)">
+                    <img class="lado listImages_item" src="./assets/img/LaDoNB/ladonb(6).jpg"  onclick="displayImage(this)">
+                    <img class="lado listImages_item" src="./assets/img/LaDoNB/ladonb(7).jpg"  onclick="displayImage(this)">
+                    <img class="lado listImages_item" src="./assets/img/LaDoNB/ladonb(8).jpg"  onclick="displayImage(this)">
+                    <img class="lado listImages_item" src="./assets/img/LaDoNB/ladonb(9).jpg"  onclick="displayImage(this)">
+                    <img class="lado listImages_item" src="./assets/img/LaDoNB/ladonb(10).jpg" onclick="displayImage(this)">
+                </div>
+
+                <div id="damhoi" class="listImages-Videos">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(28).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(2).jpg"   onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(3).jpg"   onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(4).jpg"   onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(5).jpg"   onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(6).jpg"   onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(7).jpg"   onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(8).jpg"   onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(9).jpg"   onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(10).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(11).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(12).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(13).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(14).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(15).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(16).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(17).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(18).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(19).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(20).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(21).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(22).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(23).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(24).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(25).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(26).jpg"  onclick="displayImage(this)">
+                    <img class="damhoi listImages_item" src="./assets/img/DamHoi/damhoiimg(27).jpg"  onclick="displayImage(this)">
+                </div>
+
+                <div id="damcuoi" class="listImages-Videos">
+                    <p style="margin: auto; color: #fff;">Thư mục chưa có ảnh!</p>
+                </div>
+
+                <div id="videos" class="listImages-Videos">
+                    <video class="listVideos_item" controls poster="./assets/img/postervideos/poster3.jpg">
+                        <source src="./assets/videos/video(17).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="./assets/img/postervideos/poster1.jpg">
+                        <source src="./assets/videos/video(11).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="./assets/img/postervideos/poster2.jpg">
+                        <source src="./assets/videos/video(12).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(13).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(14).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(15).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(16).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(1).mov">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(1).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(2).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(3).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(4).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(5).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(6).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(7).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(8).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(9).mp4">
+                    </video>
+                    <video class="listVideos_item" controls poster="">
+                        <source src="./assets/videos/video(10).mp4">
+                    </video>
+                </div>
+            </div>
+
+            <div id="modalImage">
+                <div class="modalImage_overlay"></div> 
+                <div class="modalImage_body" id="modalImage_body">
+                    <img id="selected-image" class="selected-image" src="" alt="Selected Image">
+                    <div class="control">
+                        <i class="ti-arrow-circle-left" onclick="showPreviousImage()"></i>
+                        <i class="ti-close close" onclick="hideModalImage()"></i>
+                        <i class="ti-arrow-circle-right" onclick="showNextImage()"></i>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/album.js"></script>
+</body>
+
+</html>

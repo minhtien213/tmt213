@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <link rel="icon" href="./assets/img/logo_tu.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/timeline.css">
+    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+    <script src="./assets/js/authentication.js"></script>
+    <script>
+        checkAccess();
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo_menu">
+            <div class="logo">
+                <a href="./index.html"><img src="./assets/img/logo_ut.png" alt="Home"></a>
+            </div>
+            <div class="menu">
+                <ul id="listmenu" class="listmenu">
+                    <li class="listmenu_item"><a href="#">Timelines</a></li>
+                    <li class="listmenu_item"><a href="./album.html">Albums</a></li>
+                    <li class="listmenu_item">
+                        <a href="#" onclick="togglelistMenu2()">More
+                        <i class="ti-arrow-circle-down"></i></a>
+                        <ul class="listmenu2" id="listmenu2">
+                            <li class="listmenu2_item2"><a href="./lovestory.html">Love Story</a></li>
+                            <li class="listmenu2_item2"><a href="./anniversarys.html">Anniversarys</a></li>
+                            <li class="listmenu2_item2"><a href="#" onclick="noteMenu_videos()">Notes</a></li>
+                            <li class="listmenu2_item2"><a href="./login.html" onclick="logout()">Log Out</a></li>
+                            <li class="listmenu2_item2">
+                                <div class="checkChangeColor-block">
+                                    <input type="checkbox" id="checkChangeColor"/>
+                                    Display :
+                                    <label class="btnlabel" for="checkChangeColor"></label>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="menubtn">
+                    <a id="menuIcon" href="javascript:void(0);" onclick="openMenu()"><i class="ti-menu menuIcon"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="slogan" class="slogan">
+            <div class="slogan_content">
+                <h3> Tình yêu là gì? </h3></br>
+                <p class="slogan_love" style="text-align: left;">
+                    Tình yêu là một trạng thái tinh thần và cảm xúc liên tục.
+                    Nó có thể biến đổi và phát triển theo thời gian, đòi hỏi sự chăm sóc và quan tâm không ngừng nghỉ của cả hai người.
+                </p> </br>
+                <p class="slogan_slg" style="color: rgb(237, 145, 217); font-size: 25px;"> Yêu nhau không phải là nhìn nhau mà là cùng nhìn về một hướng! </p>
+            </div>
+        </div>
+        <p style="text-align: center; color: aliceblue; font-size: 20px; padding: 15px 10px;">Timelines tình yêu của Minh Tiến - Hải Uyên.</p>
+        
+        <div class="continue">
+            --- to be continued ---
+            <i id="addTimeine" class="ti-plus" onclick="openModal()"></i>
+        </div>
+
+        <div id="modalCreate" class="modalImage">
+            <div class="modalImage_overlay"></div> 
+            <div class="modalImage_body" id="modalImage_body">
+                <form id = "createForm">
+                    <label class="labelImg" for="inputImg">Image :</label>
+                    <input id="inputImg" type="file">
+                    
+                    <label class="labelContent" for="inputContent">Content :</label>
+                    <textarea id="inputContent" placeholder="Input content at here..."></textarea>
+                    <div id="btnCreate">Update</div>
+                </form>
+                <i class="ti-close controlCreate" onclick="closeModal()"></i>
+            </div>
+        </div>
+        
+        <div class="timeline_container">
+            <!-- render(); -->
+        </div>
+
+        <div id="modalImage">
+            <div class="modalImage_overlay"></div> 
+            <div class="modalImage_body" id="modalImage_body">
+                <img id="selected-image" class="selected-image" src="" alt="Selected Image">
+                <div class="control">
+                    <i class="ti-close close" onclick="hideModalImage()"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <a class="link_section" href="#slogan"><i class="ti-angle-double-up"></i></a>
+    <script src="./assets/js/timeline.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

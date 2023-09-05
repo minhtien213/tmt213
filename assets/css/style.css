@@ -1,0 +1,393 @@
+/* reset css */
+:root{
+    --text-color: aliceblue;
+    --pink-color: #f481c2;
+    --red-color: red;
+    --black-color: black;
+    /* var(--text-color); */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family:'Times New Roman', Times, serif;
+}
+
+/* CSS HEADER */
+
+body{
+    background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
+    url(../img/bgr_home.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* CSS HEADER */
+
+.header{
+    width: 100%;
+    background-color: var(--black-color);
+    position:fixed;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--pink-color);
+}
+
+.logo_menu{
+    width: 80%;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--black-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo img{
+    width: 80px;
+    height: 50px;
+    margin-top: 5px;
+}
+
+
+.listmenu{
+    position: relative;
+    line-height: 60px;
+    box-sizing: border-box;
+}
+
+.menuIcon{
+    display: none;
+}
+
+.listmenu_item{
+    font-size: 20px;
+    display: inline-block;
+    padding: 0 20px;
+    list-style: none;
+}
+
+.listmenu_item:hover > a{
+    color: var(--pink-color);
+}
+
+
+.listmenu_item:last-child{
+    padding-right: 25px;
+}
+.listmenu_item a{
+    list-style: none;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.listmenu2{
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: var(--black-color);
+    padding: 0 15px 15px;
+    min-width: 114px;
+    box-shadow: 0 0 10px var(--black-color);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    display: none;
+    z-index: 1;
+    animation: translateY 0.2s ease-in;
+}
+
+.listmenu2_item2{
+    list-style: none;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+.listmenu2_item2:hover{
+    border-bottom: 1px solid var(--pink-color);
+}
+
+.listmenu2_item2:last-child:hover{
+    border-bottom: none;
+}
+
+.checkChangeColor-block{
+    width: max-content;
+    margin-top: 10px;
+    display: flex;
+    color: #c38595;
+    /* font-size: 16px; */
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+#checkChangeColor{
+    display: none;
+}
+
+.btnlabel{
+    /* display: block; */
+    width: 25px;
+    height: 15px;
+    border-radius: 10px;
+    border: 1px solid #c6c1c1;
+    position: relative;
+    margin-left: 25px;
+
+}
+
+.btnlabel::after{
+    content: '';
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    position: absolute;
+    top: 1.3px;
+    left: 2px;
+    background-color: #d4c9c9;
+    transition: left 0.3s ease;
+}
+
+.checkChangeColor-block input:checked + .btnlabel::after{
+    left: 11px;
+    background-color: #c38595;
+    }
+.checkChangeColor-block:has(input:checked) .btnlabel{ 
+    border: 1px solid #c38595;
+    } 
+
+.ti-arrow-circle-down{
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+.loginbtn{
+    color: var(--text-color);
+    line-height: 60px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* CSS SLOGAN */
+
+.slogan{
+    padding-top: 40px;
+    color:var(--text-color);
+    text-align: center;
+    font-style: italic;
+    line-height: 20px;
+}
+
+.slogan_content{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(239, 230, 236, 0.2);
+    border-radius: 10px;
+    padding: 20px 70px;
+}
+
+/* CSS BODY */
+
+
+.container{
+    transition: background-color 1s;
+    margin-top: 60px;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.imgProfile{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+}
+
+.imgMale, .imgFemale{
+    width: 25%;
+    position: relative;
+    margin: 0 55px;
+}
+
+.heartCenter{
+    width: 20%;
+    text-align: center;
+    font-size: 90px;
+    justify-content: center;
+    box-sizing: border-box;
+    /* căn giữa form */
+    justify-items: center;
+    align-self: center;
+    animation: scale linear 1s infinite;
+}
+
+.ti-heart{
+    color: var(--pink-color);
+}
+
+
+.labelCountDateLove label:hover,
+.loginbtn:hover, .name:hover{
+    color: var(--pink-color);
+    }
+
+
+.imgMale_img, .imgFemale_img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 30px var(--pink-color);
+    border: 4px solid var(--black-color);
+    transition: all 0.3s ease-in;
+}
+
+.imgMale_img:hover,
+.imgFemale_img:hover{
+    box-shadow: 0 0 30px #b4e8aa;
+    transform: scale(1.1);
+    filter: drop-shadow(2px 2px 3px var(--pink-color));
+}
+
+.CountDateLove{
+    margin: 0 15px;
+    text-align: center;
+}
+
+.labelCountDateLove{
+    font: 1em sans-serif;
+    color: var(--text-color);
+    font-size: 50px;
+    font-weight: 600;
+    border-radius: 15px;
+    letter-spacing: 10px;
+    filter: drop-shadow(2px 2px 3px var(--pink-color));
+    padding-left: 15px;
+}
+
+.name{
+    color:var(--text-color);
+    font-size: 35px;
+    font-family: "dancing_scriptregular", cursive;
+    padding-top: 5px;
+}
+
+.icon_footer{
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-color);
+}
+
+
+@keyframes scale {
+    from{
+        transform: scale(0.7);
+    }
+    to{
+        transform: rotate(1);
+    }
+}
+
+@keyframes translateY {
+    from{
+        transform: translateY(-20%);
+    }
+    
+}
+
+@keyframes menu {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    } 
+}
+
+/* CSS MODAL IMAGE */
+#selected-image{
+    width: auto;
+    max-height: 84%;
+    object-fit: fill;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin: auto;
+    border: 1px solid var(--text-color) ;
+    animation: scale 0.3s linear;
+}
+
+#modalImage, .modalImage{
+    z-index: 900;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* display flex - căn giữa cho form login khi dùng margin auto cho element con */
+    display: none;
+}
+
+.modalImage_body{
+    margin-top: 60px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 12px 5px 5px;
+    box-shadow: 0px 2px 5px rgba(238, 231, 231, 0.5);
+    animation: zoomin ease-in 0.3s;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalImage_overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.control{
+    height: 15%;
+    color: var(--text-color);
+    cursor: pointer;
+    margin-top: 7px;
+}
+
+.close{
+    margin: 0 20px;
+}
+
+
+
+@keyframes scale {
+    from{
+        transform: scale(0.2);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+
+.music{
+    color: aliceblue;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+
+

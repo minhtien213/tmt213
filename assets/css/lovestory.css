@@ -1,0 +1,97 @@
+/* reset css */
+
+:root{
+    --text-color: aliceblue;
+    --pink-color: #f481c2;
+    --red-color: red;
+    --black-color: black;
+    /* var(--text-color); */
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* CSS BODY */
+
+.container{
+    margin-top: 60px;
+    position: relative;
+    padding-bottom: 15px;
+    color: var(--text-color);
+}
+
+#story1{
+    margin-top: 10px;
+}
+
+.storyEven, .storyOdd,.fiveImg, .threeImg{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(239, 230, 236, 0.2);
+    display: flex;
+    align-items: center;
+    flex: 1;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.storyEven_image,.storyOdd_image{
+    flex: 1;
+    text-align: center;
+}
+
+.storyEven_image img,.storyOdd_image img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid var(--pink-color);
+    cursor: pointer;
+}
+
+.storyEven_content,.storyOdd_content{
+    flex: 2;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    text-align: justify;
+}
+
+.storyOdd_content{
+    margin-right: 20px;
+}
+
+.fiveImg_content, .threeImg_content{
+    flex: 1;
+    padding: 10px;
+    }
+
+.fiveImg_img, .threeImgImg_img{
+    width: 90%;
+    height: auto;
+    border: 2px solid var(--pink-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.ti-angle-double-down, .ti-angle-double-up{
+    width: 60px;
+    height: 60px;
+    font-size: 50px;
+    margin-left: 40%;
+}
+
+.link_section{
+    text-decoration: none;
+    color: black;
+    margin-top: 20px;
+}

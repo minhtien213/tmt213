@@ -1,0 +1,175 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --text-color: aliceblue;
+    --pink-color: #f481c2;
+    --red-color: red;
+    --black-color: black;
+    /* var(--text-color); */
+}
+/* CSS Login */
+
+#modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    /* display flex - căn giữa cho form login khi dùng margin auto cho element con */
+    display: none;
+}
+
+.modal_body{
+    width: 450px;
+    background:url(../img/heart-background.png), linear-gradient(180deg, rgba(217 208 213 / 80%), rgba(55 51 54 / 80%));
+    border: 1px solid var(--black-color);
+    border-radius: 10px;
+    padding: 20px 50px;
+    box-shadow: 2px 2px 5px rgba(238, 231, 231, 0.5);
+    animation: zoomin ease-in 0.3s;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+.modal_body::before{
+    content: '';
+    width: 200px;
+    height: 140px;
+    background-image: url(../img/heart-background.png);
+    background-position: left;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.modal_overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.login_form{
+    border-radius: 5px;
+    border: 1px dotted var(--black-color);
+    padding: 10px;
+    animation: zoomin ease-out 0.6s;
+
+}
+
+.ti-close{
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+}
+
+.imglogin{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid var(--pink-color);
+    margin-bottom: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.login_content{
+    display: flex;
+    flex-direction: column;
+    animation: zoomin ease-out 0.5s;
+}
+
+.input{
+    padding: 15px;
+    outline: none;
+    margin: 10px 0;
+    min-width: 100%;
+    height: 30px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(130deg, rgba(44, 44, 46, 0.3), rgba(64, 62, 62, 0.3));
+    color: #fff
+}
+
+.checkbox{
+    display: flex;
+    justify-content: space-around;
+}
+.pass{
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.labelShowPass, .labelrememberMe{
+    margin-left: 5px;
+}
+
+.button{
+    outline: none;
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+    /* background-color: var(--pink-color); */
+    background-color: #e8f0fe;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    width: 30%;
+    border-radius: 30px;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.button:hover{
+    background-color: var(--pink-color);
+}
+
+.ti-arrow-right{
+    font-size: 25px;
+}
+
+
+@keyframes zoomin {
+    from{
+        transform: scale(0.5);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomout {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0.5);
+    }
+}
+
+@keyframes rolate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes scale {
+    from{
+        transform: scale(0.7);
+    }
+    to{
+        transform: rotate(1);
+    }
+}
