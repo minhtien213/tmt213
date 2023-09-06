@@ -97,8 +97,8 @@ const app = {
                                 <div class="option">
                                     <i class="ti-angle-down optionIcon"></i>
                                     <ul class="optionList" >
-                                        <li id="edit">Edit</li>
-                                        <li id="delete">Delete</li>
+                                        <li class ="editBtn">Edit</li>
+                                        <li class ="deleteBtn">Delete</li>
                                     </ul>
                                 </div>
                                 <i data-id = "${timeline.id}" class="ti-heart like"></i>
@@ -110,6 +110,28 @@ const app = {
         },
 
         handleEvents: function(){
+            _this = this;
+            //Open the modal
+            var addTimeline = document.getElementById('addTimeline');
+            addTimeline.addEventListener('click', function(){
+                var modal = document.getElementById("modalCreate");
+                modal.style.display = "flex";
+                var btnCreate = document.getElementById('btnCreate');
+                btnCreate.style.display = 'block';
+                var btnUpdate = document.getElementById('btnUpdate');
+                btnUpdate.style.display = 'none';
+            });
+
+            //Close the modal
+            var controlCreate = document.querySelector('.controlCreate');
+            controlCreate.addEventListener('click', function(){
+                var modal = document.getElementById("modalCreate");
+                modal.style.display = "none";
+                var textArea = document.querySelector('#inputContent');
+                textArea.value = '';
+            });
+
+            
             //Thả tim icon heart
             const likeIcons = document.querySelectorAll('.like');
             likeIcons.forEach(icon => {
@@ -126,18 +148,52 @@ const app = {
 
             //Click option icon
             var optionIcons = document.querySelectorAll('.optionIcon');
+            var optionLists = document.querySelectorAll('.optionList');
+
             optionIcons.forEach(function(optionIcon, index) {
-                
                 optionIcon.addEventListener('click', function() {
-                var optionLists = document.querySelectorAll('.optionList');
-                // optionLists.forEach(function(optionList) {
-                //     optionList.style.display = 'none';
-                // });
-                var option = optionLists[index]
-                // console.log(option);
-                option.style.display = (option.style.display == 'block')? 'none' : 'block';
+                    var optionList = optionLists[index]
+                    var currentDisplay = optionList.style.display; //lấy trạng thái hiển thị của optionList trước
+                    optionLists.forEach(function(optionList) {
+                        optionList.style.display = 'none'; // tắt hết optionList khác
+                    });
+                    if(currentDisplay !== 'block') { //kiểm tra trạng thái đã lấy ở dòng 134
+                        optionList.style.display = 'block';
+                    }
                 });
-            })
+            });
+
+            //Delete the timeline
+            var deleteBtns = document.querySelectorAll('.deleteBtn');
+            deleteBtns.forEach(function(deleteBtn, index) {
+                deleteBtn.addEventListener('click', function(){
+                    _this.timelines.splice(index, 1);
+                    _this.render(); 
+                }); 
+            });
+
+            //Edit the timeline
+            var editBtns = document.querySelectorAll('.editBtn');
+            editBtns.forEach(function(editBtn, index) {
+                editBtn.addEventListener('click', function(){
+                    var modal = document.getElementById("modalCreate");
+                    modal.style.display = "flex";
+                    var btnCreate = document.getElementById('btnCreate');
+                    btnCreate.style.display = 'none';
+                    var btnUpdate = document.getElementById('btnUpdate');
+                    btnUpdate.style.display = 'block';
+                    var textArea = document.querySelector('#inputContent');
+                    textArea.value = _this.timelines[index].content;
+
+                    var btnCreate = document.querySelector('#btnUpdate')
+                    btnCreate.addEventListener('click', function(){
+                        _this.timelines[index].content = textArea.value;
+                        _this.render();
+                        modal.style.display = "none";
+                        textArea.value = '';
+                    });
+                }); 
+            });
             
         },
 

@@ -43,7 +43,7 @@ body{
     padding: 5px 10px;
 }
 
-#addTimeine{
+#addTimeline{
     color: var(--text-color);
     cursor: pointer;
 }
@@ -74,12 +74,17 @@ body{
     text-align: left;
     text-decoration: underline;
 }
-.labelImg, .labelContent, #inputContent, #inputImg, #btnCreate{
+.labelImg, .labelContent, #inputContent, #inputImg, #btnCreate, #btnUpdate{
     color: var(--text-color);
     margin-top: 10px;
 }
 
+.labelContent{
+    margin-top: 30px;
+}
+
 #inputContent{
+    color: var(--text-color);
     max-width: 100%;
     min-height: 100px;
     max-height: 150px;
@@ -88,7 +93,7 @@ body{
     background-color: rgba(239, 230, 236, 0.5);
 }
 
-#btnCreate{
+#btnCreate, #btnUpdate{
     cursor: pointer;
     padding: 5px;
     margin: 30px auto 0;
@@ -97,7 +102,7 @@ body{
     border-radius: 10px;
 }
 
-#btnCreate:hover{
+#btnCreate:hover, #btnUpdate:hover{
     background-color: #c38595;
 }
 
@@ -159,19 +164,20 @@ body{
 
 .option ul{
     background-color: rgb(58, 55, 55);
-    min-width: 40px;
+    min-width: 60px;
     border-radius: 5px;
-    padding: 5px;
+    padding: 5px 8px 5px;
     position: absolute;
-    right: 10px;
+    right: 15px;
     top: 20px;
     z-index: 1;
     display: none;
 }
 
 .option li{
+    line-height: 18px;
     list-style: none;
-    font-size: 13px;
+    font-size: 10px;
     margin: 3px 0;
     cursor: pointer;
 }

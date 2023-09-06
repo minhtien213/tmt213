@@ -100,17 +100,6 @@
           }
 
 
-        // Đóng mở modal Create Timeline / Aniversary
-        function openModal() {
-            var modal = document.getElementById("modalCreate");
-            modal.style.display = "flex";
-          }
-          
-        function closeModal() {
-          var modal = document.getElementById("modalCreate");
-          modal.style.display = "none";
-        }
-
     
         //Đóng / Mở moda Album ảnh
         function openModalImage(image) {

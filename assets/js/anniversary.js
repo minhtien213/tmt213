@@ -130,6 +130,27 @@ const app = {
         },
 
         handleEvents: function(){
+            _this = this;
+            //Open the modal
+            var addTimeline = document.getElementById('addTimeline');
+            addTimeline.addEventListener('click', function(){
+                var modal = document.getElementById("modalCreate");
+                modal.style.display = "flex";
+                var btnCreate = document.getElementById('btnCreate');
+                btnCreate.style.display = 'block';
+                var btnUpdate = document.getElementById('btnUpdate');
+                btnUpdate.style.display = 'none';
+            });
+
+            //Close the modal
+            var controlCreate = document.querySelector('.controlCreate');
+            controlCreate.addEventListener('click', function(){
+                var modal = document.getElementById("modalCreate");
+                modal.style.display = "none";
+                var textArea = document.querySelector('#inputContent');
+                textArea.value = '';
+            });
+            
             //Thả tim icon heart
             const likeIcons = document.querySelectorAll('.like');
             likeIcons.forEach(icon => {
@@ -149,6 +170,8 @@ const app = {
             layoutIcon.onclick = function(){
             var anniversarydays = document.querySelectorAll('.anniversarydays')
             var anniversaryday_img = document.querySelectorAll('.anniversaryday_img')
+            
+            layoutIcon.classList.toggle('ti-layout-width-default')
             anniversarydays.forEach(function(anni){
             anni.classList.toggle('clicked')
             })

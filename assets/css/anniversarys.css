@@ -49,7 +49,7 @@ body{
     background-color: rgba(65, 62, 64, 0.8);
 }
 
-#addTimeine{
+#addTimeline{
     color: var(--text-color);
     cursor: pointer;
 }
@@ -80,9 +80,13 @@ body{
     text-align: left;
     text-decoration: underline;
 }
-.labelImg, .labelContent, #inputContent, #inputImg, #btnCreate{
+.labelImg, .labelContent, #inputContent, #inputImg, #btnCreate, #btnUpdate{
     color: var(--text-color);
     margin-top: 10px;
+}
+
+.labelContent{
+    margin-top: 30px;
 }
 
 #inputContent{
@@ -94,7 +98,7 @@ body{
     background-color: rgba(239, 230, 236, 0.5);
 }
 
-#btnCreate{
+#btnCreate, #btnUpdate{
     cursor: pointer;
     padding: 5px;
     margin: 30px auto 0;
