@@ -131,28 +131,29 @@ const app = {
 
         handleEvents: function(){
             _this = this;
+            var $ = document.querySelector.bind(document);
+            var $$ = document.querySelectorAll.bind(document);
+            var modal = document.getElementById("modalCreate");
+            var btnCreate = document.getElementById('btnCreate');
+
             //Open the modal
-            var addTimeline = document.getElementById('addTimeline');
-            addTimeline.addEventListener('click', function(){
-                var modal = document.getElementById("modalCreate");
+            var addAnniversary = document.getElementById('addAnniversary');
+            addAnniversary.addEventListener('click', function(){
                 modal.style.display = "flex";
-                var btnCreate = document.getElementById('btnCreate');
                 btnCreate.style.display = 'block';
-                var btnUpdate = document.getElementById('btnUpdate');
                 btnUpdate.style.display = 'none';
             });
 
             //Close the modal
-            var controlCreate = document.querySelector('.controlCreate');
+            var controlCreate = $('.controlCreate');
             controlCreate.addEventListener('click', function(){
-                var modal = document.getElementById("modalCreate");
                 modal.style.display = "none";
-                var textArea = document.querySelector('#inputContent');
+                var textArea = $('#inputContent');
                 textArea.value = '';
             });
             
             //Thả tim icon heart
-            const likeIcons = document.querySelectorAll('.like');
+            const likeIcons = $$('.like');
             likeIcons.forEach(icon => {
             const iconId = icon.getAttribute('data-id');
             const isLiked = localStorage.getItem(`like-${iconId}`);
@@ -168,15 +169,14 @@ const app = {
             //LAYOUT ANIVERSARYS
             var layoutIcon = document.querySelector('#layoutIcon');
             layoutIcon.onclick = function(){
-            var anniversarydays = document.querySelectorAll('.anniversarydays')
-            var anniversaryday_img = document.querySelectorAll('.anniversaryday_img')
+            var anniversarydays = $$('.anniversarydays')
+            var anniversaryday_img = $$('.anniversaryday_img')
             
-            layoutIcon.classList.toggle('ti-layout-width-default')
             anniversarydays.forEach(function(anni){
-            anni.classList.toggle('clicked')
+                anni.classList.toggle('clicked')
             })
             anniversaryday_img.forEach(function(img){
-            img.classList.toggle('clicked')
+                img.classList.toggle('clicked')
             })
             };
         },

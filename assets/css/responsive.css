@@ -104,8 +104,7 @@
 
     .slogan_slg{
         line-height: 25px;
-        text-align: center;
-        color: var(--pink-color); 
+        text-align: center; 
         font-size: 23px;
     }
 
@@ -123,15 +122,12 @@
         height: 100%;
         margin: 25px;
     }
-    .CountDateLove {
-        padding-top: 10px;
-    }
         
     .labelCountDateLove{
         font-size: 35px;
         font-weight: 300;
         letter-spacing: 5px;
-        padding-bottom: 12px;
+        margin-bottom: 10px;
     }
 
     .heartCenter{

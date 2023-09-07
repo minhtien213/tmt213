@@ -111,29 +111,37 @@ const app = {
 
         handleEvents: function(){
             _this = this;
+            var $ = document.querySelector.bind(document);
+            var $$ = document.querySelectorAll.bind(document);
+            var modal = document.getElementById("modalCreate");
+            var btnCreate = document.getElementById('btnCreate');
+            var btnUpdate = document.getElementById('btnUpdate');
+            var deleteBtns = $$('.deleteBtn');
+            var optionIcons = $$('.optionIcon');
+            var editBtns = $$('.editBtn');
+            var optionLists = $$('.optionList');
+            const likeIcons = $$('.like');
+
+            
+
             //Open the modal
             var addTimeline = document.getElementById('addTimeline');
             addTimeline.addEventListener('click', function(){
-                var modal = document.getElementById("modalCreate");
                 modal.style.display = "flex";
-                var btnCreate = document.getElementById('btnCreate');
                 btnCreate.style.display = 'block';
-                var btnUpdate = document.getElementById('btnUpdate');
                 btnUpdate.style.display = 'none';
             });
 
             //Close the modal
-            var controlCreate = document.querySelector('.controlCreate');
+            var controlCreate = $('.controlCreate');
             controlCreate.addEventListener('click', function(){
-                var modal = document.getElementById("modalCreate");
                 modal.style.display = "none";
-                var textArea = document.querySelector('#inputContent');
+                var textArea = $('#inputContent');
                 textArea.value = '';
             });
 
             
-            //Thả tim icon heart
-            const likeIcons = document.querySelectorAll('.like');
+            //Status icon heart
             likeIcons.forEach(icon => {
             const iconId = icon.getAttribute('data-id');
             const isLiked = localStorage.getItem(`like-${iconId}`);
@@ -147,9 +155,6 @@ const app = {
             });
 
             //Click option icon
-            var optionIcons = document.querySelectorAll('.optionIcon');
-            var optionLists = document.querySelectorAll('.optionList');
-
             optionIcons.forEach(function(optionIcon, index) {
                 optionIcon.addEventListener('click', function() {
                     var optionList = optionLists[index]
@@ -164,7 +169,6 @@ const app = {
             });
 
             //Delete the timeline
-            var deleteBtns = document.querySelectorAll('.deleteBtn');
             deleteBtns.forEach(function(deleteBtn, index) {
                 deleteBtn.addEventListener('click', function(){
                     _this.timelines.splice(index, 1);
@@ -173,20 +177,14 @@ const app = {
             });
 
             //Edit the timeline
-            var editBtns = document.querySelectorAll('.editBtn');
             editBtns.forEach(function(editBtn, index) {
                 editBtn.addEventListener('click', function(){
-                    var modal = document.getElementById("modalCreate");
                     modal.style.display = "flex";
-                    var btnCreate = document.getElementById('btnCreate');
                     btnCreate.style.display = 'none';
-                    var btnUpdate = document.getElementById('btnUpdate');
                     btnUpdate.style.display = 'block';
-                    var textArea = document.querySelector('#inputContent');
+                    var textArea = $('#inputContent');
                     textArea.value = _this.timelines[index].content;
-
-                    var btnCreate = document.querySelector('#btnUpdate')
-                    btnCreate.addEventListener('click', function(){
+                    btnUpdate.addEventListener('click', function(){
                         _this.timelines[index].content = textArea.value;
                         _this.render();
                         modal.style.display = "none";

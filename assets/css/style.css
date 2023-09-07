@@ -177,11 +177,15 @@ body{
 /* CSS SLOGAN */
 
 .slogan{
-    padding-top: 40px;
+    padding-top: 25px;
     color:var(--text-color);
     text-align: center;
     font-style: italic;
     line-height: 20px;
+}
+.slogan_slg{
+    color: #f5bcf6; 
+    font-size: 25px;
 }
 
 .slogan_content{
@@ -209,12 +213,11 @@ body{
     margin-right: auto;
     display: flex;
     justify-content: space-between;
-    padding-top: 40px;
+    padding-top: 25px;
 }
 
 .imgMale, .imgFemale{
     width: 25%;
-    position: relative;
     margin: 0 55px;
 }
 
@@ -258,26 +261,23 @@ body{
 }
 
 .CountDateLove{
-    margin: 0 15px;
     text-align: center;
+    margin: auto;
 }
 
 .labelCountDateLove{
-    font: 1em sans-serif;
+    margin: auto;
     color: var(--text-color);
     font-size: 50px;
     font-weight: 600;
-    border-radius: 15px;
-    letter-spacing: 10px;
+    letter-spacing: 2px;
     filter: drop-shadow(2px 2px 3px var(--pink-color));
-    padding-left: 15px;
 }
 
 .name{
     color:var(--text-color);
     font-size: 35px;
     font-family: "dancing_scriptregular", cursive;
-    padding-top: 5px;
 }
 
 .icon_footer{
@@ -383,8 +383,6 @@ body{
 .music{
     color: aliceblue;
     font-size: 25px;
-    display: flex;
-    justify-content: center;
     margin-bottom: 10px;
 }
 
