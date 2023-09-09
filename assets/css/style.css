@@ -282,6 +282,7 @@ body{
     color: var(--text-color);
     font-size: 16px;
     margin: 5px 0;
+    font-style: italic;
 }
 
 .labelCountDateLoveDetail .ti-heart{
@@ -396,9 +397,10 @@ body{
 
 
 .music{
+    text-align: center;
     color: aliceblue;
     font-size: 25px;
-    margin-bottom: 10px;
+    margin-top: 30px;
 }
 
 

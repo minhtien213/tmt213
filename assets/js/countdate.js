@@ -22,5 +22,5 @@
         var monthCount = currentDate.getMonth() + 1 - startMonth;
         var dayCount = currentDate.getDate() - startDay;
 
-         var labelCountDateLove = document.getElementById('labelCountDateLoveDetail');
-        labelCountDateLove.innerText = ` ${yearCount} năm ${monthCount} tháng ${dayCount} ngày `;
+         var labelCountDateLoveDetail = document.getElementById('labelCountDateLoveDetail');
+         labelCountDateLoveDetail.innerText = ` ${yearCount} năm ${monthCount} tháng ${dayCount} ngày `;
