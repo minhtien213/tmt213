@@ -177,7 +177,7 @@ body{
 /* CSS SLOGAN */
 
 .slogan{
-    padding-top: 25px;
+    padding-top: 20px;
     color:var(--text-color);
     text-align: center;
     font-style: italic;
@@ -190,11 +190,14 @@ body{
 
 .slogan_content{
     width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     background-color: rgba(239, 230, 236, 0.2);
     border-radius: 10px;
-    padding: 20px 70px;
+    padding: 10px;
+}
+
+.slogan_love{
+    text-align: center;
 }
 
 /* CSS BODY */
@@ -212,12 +215,12 @@ body{
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    justify-content: space-between;
-    padding-top: 25px;
+    justify-content: space-around;
+    padding-top: 20px;
 }
 
 .imgMale, .imgFemale{
-    width: 25%;
+    width: 20%;
     margin: 0 55px;
 }
 
@@ -272,6 +275,18 @@ body{
     font-weight: 600;
     letter-spacing: 2px;
     filter: drop-shadow(2px 2px 3px var(--pink-color));
+}
+
+.labelCountDateLoveDetail{
+    margin: auto;
+    color: var(--text-color);
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.labelCountDateLoveDetail .ti-heart{
+    font-size: 10px;
+    margin: 0 3px;
 }
 
 .name{

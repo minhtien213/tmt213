@@ -133,3 +133,13 @@ function music(){
       volumeIcon.classList.add('ti-music-alt')
     }
 }
+
+//Click vào windows để ẩn listmenu 2
+window.addEventListener('click', function(e){
+  const morebtn = e.target.closest('.moreBtn');
+  const ul2Node = e.target.closest('.listmenu2');
+  if( !ul2Node && !morebtn ){
+      let listmenu2 = document.querySelector('.listmenu2')
+      listmenu2.style.display = 'none'
+      }
+});

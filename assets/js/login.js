@@ -67,4 +67,14 @@ function checkAccess() {
   }
   // Các trang con khác có thể thực hiện các kiểm tra quyền truy cập khác ở đây
 }
+
+//Click vào windows để ẩn modalLogin
+window.addEventListener('click', function(e){
+  const modal_body = e.target.closest('.modal_body');
+  const loginBtn = e.target.closest('.loginbtn');
+  if( !modal_body && !loginBtn){
+      var modalLogin = document.getElementById("modal");
+      modalLogin.style.display = "none";
+      }
+});
     
