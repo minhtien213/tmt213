@@ -75,6 +75,7 @@
                     
                     <label class="labelContent" for="inputContent">Content :</label>
                     <textarea id="inputContent" placeholder="Input content at here..."></textarea>
+
                     <div id="btnCreate">Create</div>
                     <div id="btnUpdate">Update</div>
                 </form>
@@ -89,9 +90,14 @@
         <div id="modalImage">
             <div class="modalImage_overlay"></div> 
             <div class="modalImage_body" id="modalImage_body">
-                <img id="selected-image" class="selected-image" src="" alt="Selected Image">
-                <div class="control">
-                    <i class="ti-close close" onclick="hideModalImage()"></i>
+                <div class="selectedDiv">
+                    <img id="selected-image" class="selected-image" src="" alt="Selected Image">
+                    <div class="control">
+                        <i class="ti-close close" onclick="hideModalImage()"></i>
+                    </div>
+                </div>
+                <div class="labelContentDiv">
+                    <p id = "labelContent"></p>
                 </div>
             </div>
         </div>

@@ -87,16 +87,34 @@ function togglePasswordVisibility() {
 
 
 //Đóng / Mở moda Album ảnh
-function openModalImage(image) {
-  var showImg = document.getElementById("modalImage")
-  showImg.style.display = "flex"
-  var selectedImage = document.getElementById("selected-image");
-  selectedImage.src = image.src;
-  var link_section = document.querySelector('.link_section')
-  if(link_section){
-    link_section.style.display = "none";
-  }
-}
+// function openModalImage(elementDiv) {
+  var elementsDiv = document.querySelectorAll('.elementsDiv')
+  elementsDiv.forEach(function(elementDiv) {
+    elementDiv.onclick = function(e){
+      // console.log(e.target)
+      const option = e.target.closest('.option');
+      const like = e.target.closest('.like');
+      if( !option && !like ){
+        var showImg = document.getElementById("modalImage")
+        showImg.style.display = "flex"
+
+        var srcImg = elementDiv.querySelector('img').src;
+        var selectedImage = document.getElementById("selected-image");
+        selectedImage.src = srcImg;
+
+        var textContentLabel = elementDiv.querySelector('p').textContent;
+        var pElement = document.querySelector('#labelContent');
+        pElement.textContent = textContentLabel;
+
+        var link_section = document.querySelector('.link_section')
+        if(link_section){
+          link_section.style.display = "none";
+        } 
+      }
+    }
+  })
+  
+// }
 
 function hideModalImage() {
   var hideImage = document.getElementById("modalImage");

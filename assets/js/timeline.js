@@ -88,9 +88,9 @@ const app = {
     ],
         render: function(){
             const htmls = this.timelines.map(function(timeline){
-                return `<div class="timeline">
+                return `<div class="elementsDiv">
                             <div class="timeline_form">
-                                <img class="timeline_img" src="${timeline.image}" onclick="openModalImage(this)">
+                                <img class="timeline_img" src="${timeline.image}">
                                 <p class="timeline_content" >
                                     ${timeline.content}
                                 </p>

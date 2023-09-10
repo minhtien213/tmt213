@@ -132,6 +132,7 @@ body{
     display: flex;
     justify-content: space-around;
     position: relative;
+    cursor: pointer;
     }
 
 .timeline_img{
@@ -145,7 +146,6 @@ body{
     object-fit: cover;
     border: 2px solid var(--pink-color);
     margin-left: 50px;
-    cursor: pointer;
 }
 
 .timeline_content{

@@ -113,10 +113,10 @@ const app = {
     ],
         render: function(){
             const htmls = this.anniversarys.map(function(anniversary){
-                return `<div class="anniversarydays">
+                return `<div class="elementsDiv">
                             <div class="anniversaryday_form">
                                 <div class="anniversaryday_img">
-                                    <img src="${anniversary.image}" onclick="openModalImage(this)">
+                                    <img src="${anniversary.image}">
                                 </div>
                                 <p class="anniversaryday_content">
                                 ${anniversary.content}
@@ -169,15 +169,16 @@ const app = {
             //LAYOUT ANIVERSARYS
             var layoutIcon = document.querySelector('#layoutIcon');
             layoutIcon.onclick = function(){
-            var anniversarydays = $$('.anniversarydays')
-            var anniversaryday_img = $$('.anniversaryday_img')
-            
-            anniversarydays.forEach(function(anni){
-                anni.classList.toggle('clicked')
-            })
-            anniversaryday_img.forEach(function(img){
-                img.classList.toggle('clicked')
-            })
+                layoutIcon.classList.toggle('active')
+                var elementsDiv = $$('.elementsDiv')
+                var anniversaryday_img = $$('.anniversaryday_img')
+                
+                elementsDiv.forEach(function(anni){
+                    anni.classList.toggle('clicked')
+                })
+                anniversaryday_img.forEach(function(img){
+                    img.classList.toggle('clicked')
+                })
             };
         },
 

@@ -141,12 +141,17 @@ body{
     display: none;
 }
 
-.anniversarydays{
+#layoutIcon.active{
+    color: #c38595;
+}
+
+.elementsDiv{
     width: 24%;
     margin: auto;
     position: relative;
+    cursor: pointer;
 }
-.anniversarydays:hover{
+.elementsDiv:hover{
     transform: translateY(-2px);
 }
 
@@ -184,7 +189,6 @@ body{
     object-fit: cover;
     border: 1px solid var(--pink-color);
     margin: auto;
-    cursor: pointer;
 }
 
 .anniversaryday_content{
