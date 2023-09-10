@@ -268,11 +268,18 @@
 }
 
 /* ModalImage */
-.control{
+/* .control{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     height: 10% !important;
     margin-bottom: 50px;
     font-size: 25px;
+} */
+
+.selectedDivAlbum{
+    height: calc(100% - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

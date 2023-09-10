@@ -315,12 +315,14 @@
             <div id="modalImage">
                 <div class="modalImage_overlay"></div> 
                 <div class="modalImage_body" id="modalImage_body">
-                    <img id="selected-image" class="selected-image" src="" alt="Selected Image">
-                    <div class="control">
-                        <i class="ti-arrow-circle-left" onclick="showPreviousImage()"></i>
-                        <i class="ti-close close" onclick="hideModalImage()"></i>
-                        <i class="ti-arrow-circle-right" onclick="showNextImage()"></i>
+                    <div class="selectedDivAlbum">
+                        <img id="selected-image" class="selected-image" src="" onclick="hideModalImage()">
+                        <!-- <div class="control">
+                            <i class="ti-close close" onclick="hideModalImage()"></i>
+                        </div> -->
                     </div>
+                    <i class="ti-arrow-circle-left prevImg" onclick="showPreviousImage()"></i>
+                    <i class="ti-arrow-circle-right nextImg" onclick="showNextImage()"></i>
                 </div>
             </div>
             

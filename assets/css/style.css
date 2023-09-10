@@ -360,7 +360,7 @@ body{
     text-align: center;
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .selectedDiv{
@@ -372,7 +372,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
-
+    margin-right: 3px;
 }
 
 #selected-image{
@@ -387,12 +387,37 @@ body{
     animation: scale 0.3s linear;
 }
 
-.control{
+.prevImg{
+    font-size: 50px;
+    color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    left: 10%;
+}
+
+.nextImg{
+    font-size: 50px;
+    color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    right: 10%;
+}
+
+/* .control{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 5% !important;
+    margin-bottom: 50px;
+    font-size: 25px;
+} */
+
+/* .control{
     height: 15%;
     color: var(--text-color);
     cursor: pointer;
     margin-top: 7px;
-}
+} */
 
 .labelContentDiv{
     width: 20%;
