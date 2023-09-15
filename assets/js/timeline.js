@@ -91,7 +91,7 @@ const app = {
                 return `<div class="elementsDiv">
                             <div class="timeline_form">
                                 <img class="timeline_img" src="${timeline.image}">
-                                <p class="timeline_content" >
+                                <p class="label_content" >
                                     ${timeline.content}
                                 </p>
                                 <div class="option">

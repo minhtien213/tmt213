@@ -323,6 +323,7 @@ body{
     justify-content: space-between;
     padding: 10px;
     margin-right: 3px;
+    position: relative;
 }
 
 #selected-image{
@@ -330,10 +331,8 @@ body{
     max-width: 100%;
     max-height: 95%;
     object-fit: fill;
-    border-radius: 2px;
-    margin-bottom: 5px;
+    border-radius: 1px;
     margin: auto;
-    /* border: 1px solid var(--text-color) ; */
     animation: scale 0.3s linear;
 }
 
@@ -343,6 +342,7 @@ body{
     position: absolute;
     top: 50%;
     left: 10%;
+    padding: 10px;
 }
 
 .nextImg{
@@ -351,6 +351,7 @@ body{
     position: absolute;
     top: 50%;
     right: 10%;
+    padding: 10px;
 }
 
 .labelContentDiv{

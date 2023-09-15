@@ -46,10 +46,18 @@ function openMenu() {
 }
 
 //Đóng / Mở modal ảnh Timeline / Anniversary
+    var currentListImgIndex = 0;
+    var currentListContentIndex = 0;
+  var selectedDiv = document.querySelector('.selectedDiv')
   var elementsDivs = document.querySelectorAll('.elementsDiv')
-  elementsDivs.forEach(function(elementDiv) {
+  var listImgs = document.querySelectorAll('.elementsDiv img');
+  var listContents = document.querySelectorAll('.elementsDiv .label_content');
+  elementsDivs.forEach(function(elementDiv, index) {
+
+    var listImg = listImgs[index];
+    var listContent = listContents[index];
+
     elementDiv.onclick = function(e){
-      // console.log(e.target)
       const option = e.target.closest('.option');
       const like = e.target.closest('.like');
       if( !option && !like ){
@@ -59,10 +67,12 @@ function openMenu() {
         var srcImg = elementDiv.querySelector('img').src;
         var selectedImage = document.getElementById("selected-image");
         selectedImage.src = srcImg;
+        currentListImgIndex = Array.from(listImgs).indexOf(listImg);
 
         var textContentLabel = elementDiv.querySelector('p').textContent;
         var pElement = document.querySelector('#labelContent');
         pElement.textContent = textContentLabel;
+        currentListContentIndex = Array.from(listContents).indexOf(listContent);
 
         var link_section = document.querySelector('.link_section')
         if(link_section){
@@ -72,6 +82,35 @@ function openMenu() {
     }
   })
 
+  function showNext() {
+    if (listImgs.length === 0) return;
+    currentListImgIndex = (currentListImgIndex + 1) % listImgs.length;
+    currentListContentIndex = (currentListContentIndex + 1) % listContents.length;
+    var selectedImage = document.getElementById("selected-image");
+    if (listImgs[currentListImgIndex]) {
+        selectedImage.src = listImgs[currentListImgIndex].src;
+    }
+    var pElement = document.querySelector('#labelContent');
+    if (listContents[currentListContentIndex]) {
+      pElement.textContent = listContents[currentListContentIndex].textContent;
+    }
+  }
+
+  function showPrevious() {
+    if (listImgs.length === 0) return;
+    currentListImgIndex = (currentListImgIndex - 1 + listImgs.length) % listImgs.length;
+    currentListContentIndex = (currentListContentIndex - 1 + listContents.length) % listContents.length;
+    var selectedImage = document.getElementById("selected-image");
+    if (listImgs[currentListImgIndex]) {
+      selectedImage.src = listImgs[currentListImgIndex].src;
+    }
+    var pElement = document.querySelector('#labelContent');
+    if (listContents[currentListContentIndex]) {
+      pElement.textContent = listContents[currentListContentIndex].textContent;
+    }
+}
+
+//Ẩn modalImage
 function hideModalImage() {
   var hideImage = document.getElementById("modalImage");
   hideImage.style.display = "none";
@@ -119,3 +158,32 @@ window.addEventListener('click', function(e){
       }
     }
 });
+
+
+var gitBtn = document.querySelector('.ti-github');
+if(gitBtn){
+  gitBtn.onclick = function(){
+  var imgMale = document.querySelector('.imgMale');
+  var imgFemale = document.querySelector('.imgFemale');
+  var heartCenter = document.querySelector('.heartCenter');
+  var labelCountDateLove = document.querySelector('.labelCountDateLove');
+  imgMale.style.transform = 'translate(160px) scale(1.2)';
+  imgFemale.style.transform = 'translate(-160px) scale(1.2)';
+  heartCenter.style.transform = 'translateY(-110px) scale(1.2)';
+  labelCountDateLove.style.transform = 'scale(1.3)';
+  setTimeout (function () {
+    imgMale.style.transform = 'translate(0) scale(1)';
+    imgFemale.style.transform = 'translate(0) scale(1)';
+    heartCenter.style.transform = 'translate(0) scale(1)';
+    labelCountDateLove.style.transform = 'scale(1)';
+  }, 3000 );
+}}
+
+
+document.onkeyup = function(e){ 
+  switch(e.which){ 
+      case 27: //27 là phím ESC
+        hideModalImage()
+        break;
+  }
+}

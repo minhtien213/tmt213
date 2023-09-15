@@ -42,7 +42,7 @@
     }
 
     //Show / Next / Prev Imagelist
-    var images = '';
+    var images;
     var currentIndex = 0;
     function displayImage(image) {
         console.log(image);

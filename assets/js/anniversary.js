@@ -118,7 +118,7 @@ const app = {
                                 <div class="anniversaryday_img">
                                     <img src="${anniversary.image}">
                                 </div>
-                                <p class="anniversaryday_content">
+                                <p class="label_content">
                                 ${anniversary.content}
                                 </p>
                                 <i data-id = "${anniversary.id}" class="ti-heart like"></i>
