@@ -9,7 +9,8 @@ function closeModalLogin() {
   var modalLogin = document.getElementById("modal");
   modalLogin.style.display = "none";
 }    
-   
+  
+//Login
 function login() {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
@@ -46,6 +47,7 @@ function login() {
   }
 }
 
+//Logout
 function logout() {
   // Xoá trạng thái đăng nhập từ Session Storage
   localStorage.removeItem("isLoggedIn");
@@ -66,6 +68,13 @@ function checkAccess() {
     window.location.href = "login.html";
   }
   // Các trang con khác có thể thực hiện các kiểm tra quyền truy cập khác ở đây
+}
+
+//Show/Hide Password
+function togglePasswordVisibility() {
+  var passwordInput = document.getElementById("password");
+  var showPasswordCheckbox = document.getElementById("showPasswordCheckbox");
+  passwordInput.type = showPasswordCheckbox.checked ? "text" : "password";
 }
 
 //Click vào windows để ẩn modalLogin

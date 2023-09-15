@@ -14,12 +14,7 @@
     box-sizing: border-box;
 }
 
-.container{
-    margin-top: 60px;
-    padding-bottom: 15px;
-    position: relative;
-}
-
+/* CSS BODY */
 
 .moneyNotes, .birthdayNotes, .otherNotes{
     margin: auto;

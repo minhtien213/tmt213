@@ -6,16 +6,19 @@ function togglelistMenu2() {
 }
 
 //Display backgroundColor
-var checkChangeColor = document.querySelector('#checkChangeColor')
 var savedCheckbox = localStorage.getItem("checkbox");
+if (savedCheckbox === 'checked'){
+  if(checkChangeColor){
+    checkChangeColor.checked = "true";
+  }}
 var savedBackgroundColor = localStorage.getItem("backgroundColor");
 if (savedBackgroundColor) {
   document.querySelector(".container").style.backgroundColor = savedBackgroundColor;
 }
-if (savedCheckbox === 'checked') {
-  checkChangeColor.checked = "true";
-  }
-checkChangeColor.addEventListener('change', function(){
+
+var checkChangeColor = document.querySelector('#checkChangeColor')
+if (checkChangeColor){
+  checkChangeColor.addEventListener('change', function(){
     if(this.checked){
       var container = document.querySelector(".container");
       container.style.backgroundColor = "#c38595";
@@ -26,15 +29,13 @@ checkChangeColor.addEventListener('change', function(){
       container.style.backgroundColor = "transparent";
       // container.style.backgroundImage = "url('link img')";
       localStorage.removeItem("checkbox"); 
-      localStorage.removeItem("backgroundColor"); 
+      localStorage.removeItem("backgroundColor");
     }
 })
-
-// Hiển thị danh sách tên album 2
-function togglelistAlbum_name2() {
-  var listAlbum_name2 = document.getElementById("listAlbum_name2");
-  listAlbum_name2.style.display = (listAlbum_name2.style.display == "block") ? "none" : "block";          
 }
+
+
+
 
 //  //Hiển thị danh sách menu responsive
 function openMenu() {
@@ -44,52 +45,9 @@ function openMenu() {
   listMenu2.style.display = "none"        
 }
 
-//Hiển thị danh sách ảnh
-function toggleAlbum(albumId) {
-var Album = document.getElementsByClassName("listImages-Videos");
-for (var i = 0; i < Album.length; i++) {
-    Album[i].style.display = "none";
-}
-var selectedAlbum = document.getElementById(albumId);
-selectedAlbum.style.display = "block";
-}
-
-//Hiển thị danh sách videos
-function toggleVideos(albumId) {
-  while (true) {
-    var promptValue = prompt('Ngày kỷ niệm là: **** ? ')
-    if (promptValue === null) {
-      // Người dùng bấm nút "Huỷ" 
-      break; 
-    } else if (promptValue === '9514') {
-      var Album = document.getElementsByClassName("listImages-Videos");
-      for (var i = 0; i < Album.length; i++) {
-          Album[i].style.display = "none";
-      }
-      var selectedAlbum = document.getElementById(albumId);
-      selectedAlbum.style.display = "block";
-      var hideImage = document.getElementById("showImg");
-      hideImage.style.display = "none";
-        break; // Thoát khỏi vòng lặp nếu mã đúng
-    } else {
-          alert("Oh, no...! Who are you?");
-      }
-  }
-}
-
-
-//Show/Hide Password
-function togglePasswordVisibility() {
-    var passwordInput = document.getElementById("password");
-    var showPasswordCheckbox = document.getElementById("showPasswordCheckbox");
-    passwordInput.type = showPasswordCheckbox.checked ? "text" : "password";
-}
-
-
-//Đóng / Mở moda Album ảnh
-// function openModalImage(elementDiv) {
-  var elementsDiv = document.querySelectorAll('.elementsDiv')
-  elementsDiv.forEach(function(elementDiv) {
+//Đóng / Mở modal ảnh Timeline / Anniversary
+  var elementsDivs = document.querySelectorAll('.elementsDiv')
+  elementsDivs.forEach(function(elementDiv) {
     elementDiv.onclick = function(e){
       // console.log(e.target)
       const option = e.target.closest('.option');
@@ -113,8 +71,6 @@ function togglePasswordVisibility() {
       }
     }
   })
-  
-// }
 
 function hideModalImage() {
   var hideImage = document.getElementById("modalImage");
@@ -158,6 +114,8 @@ window.addEventListener('click', function(e){
   const ul2Node = e.target.closest('.listmenu2');
   if( !ul2Node && !morebtn ){
       let listmenu2 = document.querySelector('.listmenu2')
-      listmenu2.style.display = 'none'
+      if(listmenu2){
+        listmenu2.style.display = 'none'
       }
+    }
 });

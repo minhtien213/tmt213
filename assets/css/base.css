@@ -7,7 +7,7 @@
     /* var(--text-color); */
 }
 
-* {
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -15,9 +15,8 @@
 
 html{
     font-family:'Times New Roman', Times, serif;
+    scroll-behavior: smooth;
 }
-
-/* CSS HEADER */
 
 body{
     background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
@@ -27,7 +26,14 @@ body{
     background-attachment: fixed;
 }
 
-/* CSS HEADER */
+.container{
+    transition: background-color 1s;
+    margin-top: 60px;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+/* Menubar */
 
 .header{
     width: 100%;
@@ -174,7 +180,7 @@ body{
     font-size: 20px;
 }
 
-/* CSS SLOGAN */
+/* SloganBlock */
 
 .slogan{
     padding-top: 20px;
@@ -200,148 +206,92 @@ body{
     text-align: center;
 }
 
-/* CSS BODY */
-
-
-.container{
-    transition: background-color 1s;
-    margin-top: 60px;
-    position: relative;
-    padding-bottom: 30px;
+/* ModalCreate */
+#modalCreate{
+    animation: scale 0.5s ease;
 }
 
-.imgProfile{
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+#createForm{
     display: flex;
-    justify-content: space-around;
-    padding-top: 20px;
+    flex-direction: column;
+    width: 60%;
+    margin: 5% auto 0;
+    justify-items: start;
+    position: relative;
 }
-
-.imgMale, .imgFemale{
-    width: 20%;
-    margin: 0 55px;
-}
-
-.heartCenter{
-    width: 20%;
-    text-align: center;
-    font-size: 90px;
-    justify-content: center;
-    box-sizing: border-box;
-    /* căn giữa form */
-    justify-items: center;
-    align-self: center;
-    animation: scale linear 1s infinite;
-}
-
-.ti-heart{
-    color: var(--pink-color);
-}
-
-
-.labelCountDateLove label:hover,
-.loginbtn:hover, .name:hover{
-    color: var(--pink-color);
-    }
-
-
-.imgMale_img, .imgFemale_img{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    box-shadow: 0 0 30px var(--pink-color);
-    border: 4px solid var(--black-color);
-    transition: all 0.3s ease-in;
-}
-
-.imgMale_img:hover,
-.imgFemale_img:hover{
-    box-shadow: 0 0 30px #b4e8aa;
-    transform: scale(1.1);
-    filter: drop-shadow(2px 2px 3px var(--pink-color));
-}
-
-.CountDateLove{
-    text-align: center;
-    margin: auto;
-}
-
-.labelCountDateLove{
-    margin: auto;
-    color: var(--text-color);
-    font-size: 50px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    filter: drop-shadow(2px 2px 3px var(--pink-color));
-}
-
-.labelCountDateLoveDetail{
-    margin: auto;
-    color: var(--text-color);
-    font-size: 16px;
-    margin: 5px 0;
-    font-style: italic;
-}
-
-.labelCountDateLoveDetail .ti-heart{
-    font-size: 10px;
-    margin: 0 3px;
-}
-
-.name{
-    color:var(--text-color);
-    font-size: 35px;
-    font-family: "dancing_scriptregular", cursive;
-}
-
-.icon_footer{
-    text-align: center;
-    margin-top: 40px;
-    color: var(--text-color);
-}
-
 
 @keyframes scale {
     from{
-        transform: scale(0.7);
+        transform: scale(0.5);
     }
     to{
-        transform: rotate(1);
+        transform: scale(1);
     }
 }
 
-@keyframes translateY {
-    from{
-        transform: translateY(-20%);
-    }
-    
+.labelImg, .labelContent{
+    text-align: left;
+    text-decoration: underline;
+}
+.labelImg, .labelContent, #inputContent, #inputImg, #btnCreate, #btnUpdate{
+    color: var(--text-color);
+    margin-top: 10px;
 }
 
-@keyframes menu {
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    } 
+.labelContent{
+    margin-top: 30px;
+}
+
+#inputContent{
+    color: var(--text-color);
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 150px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(239, 230, 236, 0.5);
+}
+
+#btnCreate, #btnUpdate{
+    cursor: pointer;
+    padding: 5px;
+    margin: 30px auto 0;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    width: 70px;
+    border-radius: 10px;
+}
+
+#btnCreate:hover, #btnUpdate:hover{
+    background-color: #c38595;
+}
+
+#btnCreate:active{
+    transform: translateY(1px);
+}
+
+.controlCreate {
+    position: absolute;
+    bottom: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 20px;
 }
 
 /* CSS MODAL IMAGE */
 
-#modalImage, .modalImage{
+#modalImage, .modalCreate{
     z-index: 900;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    /* display flex - căn giữa cho form login khi dùng margin auto cho element con */
     display: none;
 }
 
-.modalImage_overlay{
+.modalImage_overlay, .modalCreate_overlay{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -349,11 +299,11 @@ body{
     z-index: -1;
 }
 
-.modalImage_body{
+.modalImage_body, .modalCreate_body{
     margin-top: 60px;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 9);
     padding: 10px;
     box-shadow: 0px 2px 5px rgba(238, 231, 231, 0.5);
     animation: zoomin ease-in 0.3s;
@@ -366,7 +316,7 @@ body{
 .selectedDiv{
     width: 79%;
     height: 90%;
-    background-color: rgba(50, 47, 47, 0.5);
+    /* background-color: rgba(50, 47, 47, 0.5); */
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -380,10 +330,10 @@ body{
     max-width: 100%;
     max-height: 95%;
     object-fit: fill;
-    border-radius: 5px;
+    border-radius: 2px;
     margin-bottom: 5px;
     margin: auto;
-    border: 1px solid var(--text-color) ;
+    /* border: 1px solid var(--text-color) ; */
     animation: scale 0.3s linear;
 }
 
@@ -402,22 +352,6 @@ body{
     top: 50%;
     right: 10%;
 }
-
-/* .control{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 5% !important;
-    margin-bottom: 50px;
-    font-size: 25px;
-} */
-
-/* .control{
-    height: 15%;
-    color: var(--text-color);
-    cursor: pointer;
-    margin-top: 7px;
-} */
 
 .labelContentDiv{
     width: 20%;
@@ -440,15 +374,3 @@ body{
         transform: scale(1);
     }
 }
-
-
-.music{
-    text-align: center;
-    color: aliceblue;
-    font-size: 25px;
-    margin-top: 30px;
-}
-
-
-
-

@@ -95,3 +95,8 @@ html{
     color: black;
     margin-top: 20px;
 }
+
+.modalImage_body, .modalCreate_body{
+    height: calc(100% - 60px);
+}
+

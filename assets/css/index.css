@@ -1,0 +1,144 @@
+/* reset css */
+:root{
+    --text-color: aliceblue;
+    --pink-color: #f481c2;
+    --red-color: red;
+    --black-color: black;
+    /* var(--text-color); */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Profile */
+
+.imgProfile{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.imgMale, .imgFemale{
+    width: 20%;
+    margin: 0 55px;
+}
+
+.heartCenter{
+    width: 20%;
+    text-align: center;
+    font-size: 90px;
+    justify-content: center;
+    box-sizing: border-box;
+    justify-items: center;
+    align-self: center;
+    animation: scale linear 1s infinite;
+}
+
+.ti-heart{
+    color: var(--pink-color);
+}
+
+
+.labelCountDateLove label:hover,
+.loginbtn:hover, .name:hover{
+    color: var(--pink-color);
+    }
+
+
+.imgMale_img, .imgFemale_img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 30px var(--pink-color);
+    border: 4px solid var(--black-color);
+    transition: all 0.3s ease-in;
+}
+
+.imgMale_img:hover,
+.imgFemale_img:hover{
+    box-shadow: 0 0 30px #b4e8aa;
+    transform: scale(1.1);
+    filter: drop-shadow(2px 2px 3px var(--pink-color));
+}
+
+.CountDateLove{
+    text-align: center;
+    margin: auto;
+}
+
+.labelCountDateLove{
+    margin: auto;
+    color: var(--text-color);
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    filter: drop-shadow(2px 2px 3px var(--pink-color));
+}
+
+.labelCountDateLoveDetail{
+    margin: auto;
+    color: var(--text-color);
+    font-size: 16px;
+    margin: 5px 0;
+    font-style: italic;
+}
+
+.labelCountDateLoveDetail .ti-heart{
+    font-size: 10px;
+    margin: 0 3px;
+}
+
+.name{
+    color:var(--text-color);
+    font-size: 35px;
+    font-family: "dancing_scriptregular", cursive;
+}
+
+.icon_footer{
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-color);
+}
+
+.music{
+    text-align: center;
+    color: aliceblue;
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+/* Animation */
+@keyframes scale {
+    from{
+        transform: scale(0.7);
+    }
+    to{
+        transform: rotate(1);
+    }
+}
+
+@keyframes translateY {
+    from{
+        transform: translateY(-20%);
+    }
+    
+}
+
+@keyframes menu {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    } 
+}
+
+
+
+

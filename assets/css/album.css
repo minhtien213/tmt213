@@ -16,12 +16,6 @@
 
 /* CSS BODY */
 
-.container{
-    margin-top: 60px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
 .album{
     width: 95%;
     height: 500px;
@@ -83,6 +77,7 @@
 
 .listAlbum_name_item a{
     color: var(--text-color);
+    cursor: pointer;
 }
 
 .listAlbum_name_item:nth-child(2), .listAlbum_name_item:nth-child(3){
@@ -116,7 +111,6 @@
 .uploadImg{
     text-align: center;
     color: var(--text-color);
-    /* font-size: 30px; */
     margin-top: 10px;
     cursor: pointer;
     display: flex;
@@ -130,17 +124,16 @@
 
 .images-videos{
     width: 83%;
-    padding: 5px;
+    padding: 15px;
     text-align: center;
     overflow: auto;
 }
 
 .listImages-Videos{
     display: none;
-    padding: 15px 0;
 }
 
-#n2014_2019{
+#n2020_2025{
     display: block;
 }
 
@@ -179,16 +172,22 @@
     cursor: pointer; 
 }
 
+.selectedDivAlbum{
+    height: calc(100% - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 /* SLIDER */
-/* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
-/* Hide the images by default */
 .mySlides {
   display: none;
 }
@@ -201,7 +200,6 @@
     border: 1px solid var(--pink-color);
   }
 
-/* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -217,18 +215,15 @@
   user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
 .text {
   color: #f2f2f2;
   font-size: 15px;
@@ -239,8 +234,6 @@
   text-align: center;
 }
 
-
-/* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
   height: 15px;
@@ -256,7 +249,6 @@
   background-color: #717171;
 }
 
-/* Fading animation */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -267,19 +259,3 @@
   to {opacity: 1}
 }
 
-/* ModalImage */
-/* .control{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 10% !important;
-    margin-bottom: 50px;
-    font-size: 25px;
-} */
-
-.selectedDivAlbum{
-    height: calc(100% - 60px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}

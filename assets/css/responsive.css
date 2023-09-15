@@ -4,7 +4,6 @@
 
     /* Responsive Home */
     
-    
     :root{
         --text-color: aliceblue;
         --pink-color: #f481c2;
@@ -19,14 +18,6 @@
         box-sizing: border-box;
     }
     
-    .header{
-        border-bottom: 1px var(--pink-color) solid;
-    }
-    
-    #home{
-        width: 100%;
-        color: var(--text-color);
-        }
 
     .logo_menu{
         width: 100%;
@@ -57,15 +48,6 @@
     .listmenu{
         display: none;
         animation: scaleMenu 0.1s ease-in;
-    }
-
-    @keyframes scaleMenu {
-        from{
-            transform: translateX(25%) scaleX(50%);
-        }
-        to{
-            transform: translateX(0%) scaleX(100%);
-        }
     }
 
     .listmenu_item{
@@ -353,7 +335,7 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        padding: 5px;
+        padding: 3px 0;
         height: calc(100% - 60px);
     }
 
@@ -371,7 +353,7 @@
 
     .labelContentDiv{
         width: 100%;
-        height: 20%;
+        height: 15%;
         background-color: transparent;
     }
 
@@ -379,13 +361,14 @@
         font-size: 35px;
         opacity: 0.5;
     }
-    /* .control{
-        position: absolute;
-        height: auto;
-        top: 20px;
-        right: 20px;
-        font-size: 20px;
-    } */
+    
+    .prevImg{
+        left: 5%;
+    }
+
+    .nextImg{
+        right: 5%;
+    }
 
     .slideshow-container {
         max-width: 95% !important;
@@ -436,5 +419,17 @@
         height: 70% !important;
         }
   }
+
+  /* Animation */
+  
+
+  @keyframes scaleMenu {
+    from{
+        transform: translateX(25%) scaleX(50%);
+    }
+    to{
+        transform: translateX(0%) scaleX(100%);
+    }
+}
 
 

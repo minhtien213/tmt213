@@ -13,24 +13,6 @@
     box-sizing: border-box;
 }
 
-/* CSS HOME */
-
-html{
-    scroll-behavior: smooth;
-}
-
-/* CSS BODY */
-
-body{
-    position: relative;
-}
-
-.container{
-    margin-top: 60px;
-    padding-bottom: 15px;
-    position: relative;
-}
-
 .continue{
     width: 70%;
     display: flex;
@@ -48,77 +30,6 @@ body{
     cursor: pointer;
 }
 
-#modalCreate{
-    animation: scale 0.5s ease;
-}
-
-#createForm{
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: 5% auto 0;
-    justify-items: start;
-    position: relative;
-}
-
-@keyframes scale {
-    from{
-        transform: scale(0.5);
-    }
-    to{
-        transform: scale(1);
-    }
-}
-
-.labelImg, .labelContent{
-    text-align: left;
-    text-decoration: underline;
-}
-.labelImg, .labelContent, #inputContent, #inputImg, #btnCreate, #btnUpdate{
-    color: var(--text-color);
-    margin-top: 10px;
-}
-
-.labelContent{
-    margin-top: 30px;
-}
-
-#inputContent{
-    color: var(--text-color);
-    max-width: 100%;
-    min-height: 100px;
-    max-height: 150px;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: rgba(239, 230, 236, 0.5);
-}
-
-#btnCreate, #btnUpdate{
-    cursor: pointer;
-    padding: 5px;
-    margin: 30px auto 0;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    width: 70px;
-    border-radius: 10px;
-}
-
-#btnCreate:hover, #btnUpdate:hover{
-    background-color: #c38595;
-}
-
-#btnCreate:active{
-    transform: translateY(1px);
-}
-
-.controlCreate {
-    position: absolute;
-    bottom: 160px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--text-color);
-    cursor: pointer;
-    font-size: 20px;
-}
 
 .timeline_form{
     width: 70%;

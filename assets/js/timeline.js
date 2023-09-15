@@ -124,7 +124,7 @@ const app = {
 
             
 
-            //Open the modal
+            //Open the modalCreate / Update
             var addTimeline = document.getElementById('addTimeline');
             addTimeline.addEventListener('click', function(){
                 modal.style.display = "flex";
@@ -132,7 +132,7 @@ const app = {
                 btnUpdate.style.display = 'none';
             });
 
-            //Close the modal
+            //Close the modalCreate / Update
             var controlCreate = $('.controlCreate');
             controlCreate.addEventListener('click', function(){
                 modal.style.display = "none";
