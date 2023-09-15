@@ -48,7 +48,6 @@ function openMenu() {
 //Đóng / Mở modal ảnh Timeline / Anniversary
     var currentListImgIndex = 0;
     var currentListContentIndex = 0;
-  var selectedDiv = document.querySelector('.selectedDiv')
   var elementsDivs = document.querySelectorAll('.elementsDiv')
   var listImgs = document.querySelectorAll('.elementsDiv img');
   var listContents = document.querySelectorAll('.elementsDiv .label_content');
@@ -112,8 +111,8 @@ function openMenu() {
 
 //Ẩn modalImage
 function hideModalImage() {
-  var hideImage = document.getElementById("modalImage");
-  hideImage.style.display = "none";
+  var modalImage = document.getElementById("modalImage");
+  modalImage.style.display = "none";
 }
 
 

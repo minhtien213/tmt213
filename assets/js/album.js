@@ -45,7 +45,6 @@
     var images;
     var currentIndex = 0;
     function displayImage(image) {
-        console.log(image);
         var showImg = document.getElementById("modalImage")
         showImg.style.display = "flex"
         var selectedImage = document.getElementById("selected-image");
@@ -58,8 +57,17 @@
         // console.log(firstNameClassAlbum);
         images = document.querySelectorAll('.' + firstNameClassAlbum)
         currentIndex = Array.from(images).indexOf(image);//gắn lại index của image đang click
+        images.forEach(function(img){
+            img.style.border = "1px solid #988f8f"
+        })
     }
-    
+    //Ẩn modalImage
+    function hideModalImage(img) {
+        var modalImage = document.getElementById("modalImage");
+        modalImage.style.display = "none";
+        images[currentIndex].style.border = "1.5px dashed #f481c2"
+    }
+        
     function showPreviousImage() {
         if (images.length === 0) return;
         currentIndex = (currentIndex - 1 + images.length) % images.length;
