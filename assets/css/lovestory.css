@@ -32,7 +32,7 @@ html{
 }
 
 .storyEven, .storyOdd,.fiveImg, .threeImg{
-    width: 90%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(239, 230, 236, 0.2);
@@ -81,19 +81,6 @@ html{
     border: 2px solid var(--pink-color);
     border-radius: 10px;
     cursor: pointer;
-}
-
-.ti-angle-double-down, .ti-angle-double-up{
-    width: 60px;
-    height: 60px;
-    font-size: 50px;
-    margin-left: 40%;
-}
-
-.link_section{
-    text-decoration: none;
-    color: black;
-    margin-top: 20px;
 }
 
 .modalImage_body, .modalCreate_body{

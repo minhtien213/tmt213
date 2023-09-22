@@ -1,6 +1,5 @@
 
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 739px) {
 
     /* Responsive Home */
     
@@ -202,19 +201,9 @@
         line-height: 22px !important;
     }
 
-    .link_section {
-        right: 30px !important;
-        bottom: 15px !important;
-        font-size: 35px !important;
-    }
-
 
     /* Responsive Lovestory */
-
-    .container{
-        height: 100vh !important;
-        overflow: auto;
-    }
+    
 
     .storyEven, .storyOdd{
         width: 95% !important;
@@ -352,7 +341,7 @@
 
     .labelContentDiv{
         width: 100%;
-        height: 15%;
+        height: 10%;
         background-color: transparent;
     }
 
@@ -419,6 +408,34 @@
         }
   }
 
+
+
+
+
+
+  /* >= Tablet */
+  @media only screen and (min-width: 740px) and (max-width: 1023px) {
+    
+    .timeline_form{
+        width: 90% !important;
+    }
+
+    .slideshow-container{
+        width: 95%;
+    }
+
+    .listAlbum {
+        width: 160px !important;
+    }
+    .listImages-Videos img{
+        width: 24% !important;
+    }
+}
+
+
+
+
+
   /* Animation */
   
 
@@ -430,5 +447,9 @@
         transform: translateX(0%) scaleX(100%);
     }
 }
+
+
+
+
 
 

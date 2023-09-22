@@ -48,17 +48,22 @@ function openMenu() {
 //Đóng / Mở modal ảnh Timeline / Anniversary
     var currentListImgIndex = 0;
     var currentListContentIndex = 0;
+    var currentparentElement = 0;
+
   var elementsDivs = document.querySelectorAll('.elementsDiv')
+  var content_forms = document.querySelectorAll('.content_form')
   var listImgs = document.querySelectorAll('.elementsDiv img');
   var listContents = document.querySelectorAll('.elementsDiv .label_content');
   elementsDivs.forEach(function(elementDiv, index) {
-
+    
     var listImg = listImgs[index];
     var listContent = listContents[index];
+    var elementsDiv = elementsDivs[index];
 
     elementDiv.onclick = function(e){
       const option = e.target.closest('.option');
       const like = e.target.closest('.like');
+
       if( !option && !like ){
         var showImg = document.getElementById("modalImage")
         showImg.style.display = "flex"
@@ -73,13 +78,29 @@ function openMenu() {
         pElement.textContent = textContentLabel;
         currentListContentIndex = Array.from(listContents).indexOf(listContent);
 
-        var link_section = document.querySelector('.link_section')
-        if(link_section){
-          link_section.style.display = "none";
-        } 
+        currentparentElement = Array.from(elementsDivs).indexOf(elementsDiv);
+        content_forms.forEach(function(content_form){    
+          content_form.style.border = 'none';
+        })
+        
       }
     }
   })
+
+
+  //Ẩn modalImage
+function hideModalImage(image) {
+  var modalImage = document.getElementById("modalImage");
+  modalImage.style.display = "none";
+  elementsDivs[currentparentElement].querySelector('.content_form').style.border = "2px solid dodgerblue"
+        setTimeout(function(){
+          elementsDivs[currentparentElement].querySelector('.content_form').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        },200)
+}
+
 
   function showNext() {
     if (listImgs.length === 0) return;
@@ -93,6 +114,10 @@ function openMenu() {
     if (listContents[currentListContentIndex]) {
       pElement.textContent = listContents[currentListContentIndex].textContent;
     }
+    
+    currentparentElement = (currentparentElement + 1) % elementsDivs.length;
+
+
   }
 
   function showPrevious() {
@@ -107,13 +132,12 @@ function openMenu() {
     if (listContents[currentListContentIndex]) {
       pElement.textContent = listContents[currentListContentIndex].textContent;
     }
+
+    currentparentElement = (currentparentElement - 1 + elementsDivs.length) % elementsDivs.length;
+
 }
 
-//Ẩn modalImage
-function hideModalImage() {
-  var modalImage = document.getElementById("modalImage");
-  modalImage.style.display = "none";
-}
+
 
 
 //Xác nhận vào Notes/Videos

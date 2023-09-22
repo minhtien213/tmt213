@@ -89,7 +89,7 @@ const app = {
         render: function(){
             const htmls = this.timelines.map(function(timeline){
                 return `<div class="elementsDiv">
-                            <div class="timeline_form">
+                            <div class="content_form">
                                 <img class="timeline_img" src="${timeline.image}">
                                 <p class="label_content" >
                                     ${timeline.content}

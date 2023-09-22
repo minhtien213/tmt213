@@ -41,6 +41,17 @@
       }
     }
 
+    //Kéo view audio đang phát vào tầm nhìn
+    function scrollToActiveSong(){
+        setTimeout(function(){
+            $('.song.active').scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            });
+        },200)
+    }
+
+
     //Show / Next / Prev Imagelist
     var images;
     var currentIndex = 0;
@@ -58,14 +69,20 @@
         images = document.querySelectorAll('.' + firstNameClassAlbum)
         currentIndex = Array.from(images).indexOf(image);//gắn lại index của image đang click
         images.forEach(function(img){
-            img.style.border = "1px solid #988f8f"
+            img.style.border = "1px solid #988f8f";
         })
     }
     //Ẩn modalImage
     function hideModalImage(img) {
         var modalImage = document.getElementById("modalImage");
         modalImage.style.display = "none";
-        images[currentIndex].style.border = "1.5px dashed #f481c2"
+        images[currentIndex].style.border = "2px solid dodgerblue"
+        setTimeout(function(){
+            images[currentIndex].scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        },200)
     }
         
     function showPreviousImage() {

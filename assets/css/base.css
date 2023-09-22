@@ -342,6 +342,7 @@ body{
     position: absolute;
     top: 50%;
     left: 10%;
+    cursor: pointer;
     padding: 10px;
 }
 
@@ -352,6 +353,7 @@ body{
     top: 50%;
     right: 10%;
     padding: 10px;
+    cursor: pointer;
 }
 
 .labelContentDiv{
