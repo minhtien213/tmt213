@@ -114,7 +114,7 @@ const app = {
         render: function(){
             const htmls = this.anniversarys.map(function(anniversary){
                 return `<div class="elementsDiv">
-                            <div class="content_form">
+                            <div class="content_form aniversary_form">
                                 <div class="anniversaryday_img">
                                     <img src="${anniversary.image}">
                                 </div>

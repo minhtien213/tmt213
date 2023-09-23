@@ -120,8 +120,8 @@
 .ti-heart.like{
     color: var(--text-color);
     position: absolute;
-    right: 5px;
-    bottom: 5px;
+    right: 8px;
+    bottom: 8px;
     cursor: pointer;
 }
 
