@@ -1,41 +1,10 @@
 
+
 //Hiển thị danh sách menu 2(more)
 function togglelistMenu2() {
   var listMenu2 = document.getElementById("listmenu2");
   listMenu2.style.display = (listMenu2.style.display == "block") ? "none" : "block";          
 }
-
-//Display backgroundColor
-var savedCheckbox = localStorage.getItem("checkbox");
-if (savedCheckbox === 'checked'){
-  if(checkChangeColor){
-    checkChangeColor.checked = "true";
-  }}
-var savedBackgroundColor = localStorage.getItem("backgroundColor");
-if (savedBackgroundColor) {
-  document.querySelector(".container").style.backgroundColor = savedBackgroundColor;
-}
-
-var checkChangeColor = document.querySelector('#checkChangeColor')
-if (checkChangeColor){
-  checkChangeColor.addEventListener('change', function(){
-    if(this.checked){
-      var container = document.querySelector(".container");
-      container.style.backgroundColor = "#c38595";
-      localStorage.setItem("backgroundColor", "#c38595")
-      localStorage.setItem('checkbox', 'checked')
-    }else{
-      var container = document.querySelector(".container");
-      container.style.backgroundColor = "transparent";
-      // container.style.backgroundImage = "url('link img')";
-      localStorage.removeItem("checkbox"); 
-      localStorage.removeItem("backgroundColor");
-    }
-})
-}
-
-
-
 
 //  //Hiển thị danh sách menu responsive
 function openMenu() {
@@ -181,26 +150,6 @@ window.addEventListener('click', function(e){
       }
     }
 });
-
-
-var gitBtn = document.querySelector('.ti-github');
-if(gitBtn){
-  gitBtn.onclick = function(){
-  var imgMale = document.querySelector('.imgMale');
-  var imgFemale = document.querySelector('.imgFemale');
-  var heartCenter = document.querySelector('.heartCenter');
-  var labelCountDateLove = document.querySelector('.labelCountDateLove');
-  imgMale.style.transform = 'translate(160px) scale(1.2)';
-  imgFemale.style.transform = 'translate(-160px) scale(1.2)';
-  heartCenter.style.transform = 'translateY(-110px) scale(1.2)';
-  labelCountDateLove.style.transform = 'scale(1.3)';
-  setTimeout (function () {
-    imgMale.style.transform = 'translate(0) scale(1)';
-    imgFemale.style.transform = 'translate(0) scale(1)';
-    heartCenter.style.transform = 'translate(0) scale(1)';
-    labelCountDateLove.style.transform = 'scale(1)';
-  }, 3000 );
-}}
 
 
 document.onkeyup = function(e){ 
