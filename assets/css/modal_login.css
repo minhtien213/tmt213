@@ -104,8 +104,8 @@
     border-radius: 30px;
     border: none;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    background: rgba(248, 229, 229, 0.8);
-    color: #fff
+    background: var(--text-color);
+    color: var(--black-color)
 }
 
 .checkbox{
@@ -126,15 +126,14 @@
 
 .button{
     outline: none;
-    margin-top: 15px;
     cursor: pointer;
     border: none;
     background-color: var(--text-color);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    width: 30%;
+    width: 100px;
     border-radius: 30px;
-    margin: auto;
-    margin-top: 45px;
+    margin: 45px auto;
+    padding: 2px;
 }
 
 .button:hover{

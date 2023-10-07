@@ -18,21 +18,8 @@ html{
     scroll-behavior: smooth;
 }
 
-/* body{
-    background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
-    url(../img/bgr_home.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-} */
-
-.container{
-    transition: background-color 1s;
-    margin-top: 60px;
-    position: relative;
-    padding-bottom: 30px;
-    width: 100%;
-    height: 100%;
+body{
+    transition: background-color 1s ease;
     background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
     url(../img/bgr_home.jpg);
     background-size: cover;
@@ -41,12 +28,18 @@ html{
     background-attachment: fixed;
 }
 
+.container{
+    margin-top: 60px;
+    position: relative;
+    padding-bottom: 30px;
+}
+
 /* Menubar */
 
 .header{
     width: 100%;
     background-color: var(--black-color);
-    position:fixed;
+    position: fixed;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid var(--pink-color);
@@ -134,7 +127,7 @@ html{
     width: max-content;
     margin-top: 10px;
     display: flex;
-    color: #c38595;
+    color: #927aa8;
     /* font-size: 16px; */
     align-items: center;
     justify-content: space-between;
@@ -170,10 +163,10 @@ html{
 
 .checkChangeColor-block input:checked + .btnlabel::after{
     left: 11px;
-    background-color: #c38595;
+    background-color: #976cbc;
     }
 .checkChangeColor-block:has(input:checked) .btnlabel{ 
-    border: 1px solid #c38595;
+    border: 1px solid #976cbc;
     } 
 
 .ti-arrow-circle-down{

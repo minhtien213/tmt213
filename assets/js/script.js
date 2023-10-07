@@ -153,9 +153,43 @@ window.addEventListener('click', function(e){
 
 
 document.onkeyup = function(e){ 
+  // console.log(e.which)
   switch(e.which){ 
       case 27: //27 là phím ESC
-        hideModalImage()
-        break;
+          hideModalImage()
+          break;
+      case 37: //37 là phím <
+          showPreviousImage()
+          break;
+      case 39: //39 là phím >
+          showNextImage()
+          break;
   }
 }
+
+    var checkChangeColor = document.getElementById('checkChangeColor')
+    var body = document.querySelector('body')
+    var getSaveChangeColor = localStorage.getItem('saveChangeColor')
+    var getSaveCheckbox = localStorage.getItem('saveCheckbox')
+    if(getSaveChangeColor && getSaveCheckbox){
+      body.style.backgroundImage = 'none'
+      body.style.backgroundColor = getSaveChangeColor
+    }
+    
+    if(getSaveCheckbox === 'checked'){
+      checkChangeColor.checked = true
+    }
+
+
+    checkChangeColor.addEventListener('change', function(){
+        if(this.checked){
+          body.style.backgroundImage = 'none'
+          body.style.backgroundColor = '#927aa8'
+          localStorage.setItem('saveChangeColor', '#927aa8')
+          localStorage.setItem('saveCheckbox', 'checked')
+        }else{
+          body.style.backgroundImage = ''
+          localStorage.removeItem('saveChangeColor', '#927aa8')
+          localStorage.removeItem('saveCheckbox', 'checked')
+        }
+    })

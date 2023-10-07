@@ -76,6 +76,8 @@
     function hideModalImage(img) {
         var modalImage = document.getElementById("modalImage");
         modalImage.style.display = "none";
+        var listAlbum_name2 = document.getElementById("listAlbum_name2");
+        listAlbum_name2.style.display = "none";
         images[currentIndex].style.border = "2px solid dodgerblue"
         setTimeout(function(){
             images[currentIndex].scrollIntoView({
@@ -114,6 +116,8 @@
         }
         reader.readAsDataURL(file);
     }
+
+    
 
 
     // // Đường dẫn đến thư mục chứa ảnh

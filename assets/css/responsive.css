@@ -65,15 +65,13 @@
         animation: initial;
     }
 
-    .container{
-        width: 100% !important;
-        height: 100% !important;
+    body{
         background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
         url(../img/bgr_homeMobile.jpg);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-attachment: fixed !important;
+        background-attachment: fixed;
     }
 
     .slogan{
@@ -239,11 +237,11 @@
     .album{
         flex-direction: column;
         height: auto !important;
-        padding-bottom: 5px !important;
+        padding: 5px auto !important;
     }
 
     .listAlbum{
-        width: 95% !important;
+        width: 99% !important;
         font-size: 18px !important;
         line-height: 20px;
         background-color: rgba(0, 0, 0, 0.6);
@@ -295,11 +293,6 @@
         border-bottom: none !important;
     }
 
-    .listImages-Videos{
-        width: 100% !important;
-        padding: 5px !important;
-    }
-
     .images-videos{
         /* max-height: 350px !important; */
         width: 99% !important;
@@ -310,7 +303,6 @@
     }  
 
     .listImages-Videos img{
-        /* width: 18% !important; */
         height: 70px !important;
         border-radius: 5px !important;
         padding: 0px !important;
