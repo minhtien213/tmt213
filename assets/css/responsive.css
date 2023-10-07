@@ -66,10 +66,13 @@
     }
 
     .container{
+        width: 100% !important;
+        height: 100% !important;
         background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
         url(../img/bgr_homeMobile.jpg);
         background-size: cover;
         background-position: center;
+        background-repeat: no-repeat;
         background-attachment: fixed !important;
     }
 
@@ -140,20 +143,7 @@
         padding: 20px 5px;
         height: 40vh;
         flex-direction: column;
-    }
-    
-    .modal_body::before{
-        content: '';
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        background-position: center;
-        z-index: -1;
-        position: absolute;
-        top: 0;
-        right: 0;
-        backdrop-filter: blur(10px) !important;
-        filter: brightness(150%);
+        background-color: rgba(0, 0, 0, 0.7);
     }
     
     .login_form{
@@ -265,6 +255,10 @@
         justify-content: space-evenly;
         padding: 5px !important;
         margin-bottom: 10px;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 63px;
+        z-index: 2;
     }
 
     .titleAlbum{
