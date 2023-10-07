@@ -169,14 +169,14 @@ document.onkeyup = function(e){
 
     var checkChangeColor = document.getElementById('checkChangeColor')
     var body = document.querySelector('body')
-    var getSaveChangeColor = localStorage.getItem('saveChangeColor')
-    var getSaveCheckbox = localStorage.getItem('saveCheckbox')
-    if(getSaveChangeColor && getSaveCheckbox){
+    var changeColorState = localStorage.getItem('changeColorState')
+    var checkboxState = localStorage.getItem('checkboxState')
+    if(changeColorState){
       body.style.backgroundImage = 'none'
-      body.style.backgroundColor = getSaveChangeColor
+      body.style.backgroundColor = changeColorState
     }
     
-    if(getSaveCheckbox === 'checked'){
+    if(checkboxState === 'checked'){
       checkChangeColor.checked = true
     }
 
@@ -185,11 +185,12 @@ document.onkeyup = function(e){
         if(this.checked){
           body.style.backgroundImage = 'none'
           body.style.backgroundColor = '#927aa8'
-          localStorage.setItem('saveChangeColor', '#927aa8')
-          localStorage.setItem('saveCheckbox', 'checked')
+          localStorage.setItem('changeColorState', '#927aa8')
+          localStorage.setItem('checkboxState', 'checked')
         }else{
           body.style.backgroundImage = ''
-          localStorage.removeItem('saveChangeColor', '#927aa8')
-          localStorage.removeItem('saveCheckbox', 'checked')
+          body.style.backgroundColor = 'transparent'
+          localStorage.removeItem('changeColorState')
+          localStorage.removeItem('checkboxState')
         }
     })
