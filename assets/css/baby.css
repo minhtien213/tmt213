@@ -1,0 +1,33 @@
+/* reset css */
+
+:root{
+    --text-color: aliceblue;
+    --pink-color: #f481c2;
+    --red-color: red;
+    --black-color: black;
+    /* var(--text-color); */
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* CSS BODY */
+
+.container{
+    margin-top: 60px;
+    position: relative;
+    padding-bottom: 15px;
+    color: var(--text-color);
+}
+
+
+.modalImage_body{
+    height: auto;
+}

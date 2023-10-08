@@ -16,6 +16,8 @@
     </script>
 </head>
 <body>
+    <div class="background"></div>
+
     <div class="header">
         <div class="logo_menu">
             <div class="logo">
@@ -23,15 +25,16 @@
             </div>
             <div class="menu">
                 <ul id="listmenu" class="listmenu">
-                    <li class="listmenu_item"><a href="./timeline.html">Timelines</a></li>
                     <li class="listmenu_item"><a href="./album.html">Albums</a></li>
                     <li class="listmenu_item">
                         <a class="moreBtn" onclick="togglelistMenu2()">More
                         <i class="ti-arrow-circle-down"></i></a>
                         <ul class="listmenu2" id="listmenu2">
-                            <li class="listmenu2_item2"><a href="./lovestory.html">Love Story</a></li>
+                            <li class="listmenu2_item2"><a href="./timeline.html">Timelines</a></li>
                             <li class="listmenu2_item2"><a href="./anniversarys.html">Anniversarys</a></li>
-                            <li class="listmenu2_item2"><a href="#">Notes</a></li>
+                            <li class="listmenu2_item2"><a href="./baby.html">Baby</a></li>
+                            <li class="listmenu2_item2"><a href="./lovestory.html">Love Story</a></li>
+                            <li class="listmenu2_item2"><a href="#" onclick="noteMenu_videos()">Notes</a></li>
                             <li class="listmenu2_item2"><a href="./login.html" onclick="logout()">Log Out</a></li>
                             <li class="listmenu2_item2">
                                 <div class="checkChangeColor-block">
@@ -44,8 +47,9 @@
                     </li>
                 </ul>
                 <div class="menubtn">
-                    <a id="menuIcon" href="javascript:void(0);" onclick="openMenu()"><i class="ti-menu menuIcon"></i></a>
-                </div>
+                    <a onclick="openMenu()"><i class="ti-menu displayIcon"></i></a>
+                    <a onclick="openMenu()"><i class="ti-close hideIcon"></i></a>
+                </div>    
             </div>
         </div>
     </div>
@@ -70,42 +74,42 @@
                         <p class="notes_content">
                             07/10 - Anh còn nợ Hêuiuuu 7man.
                         </p>
-                        <input id="m1" class="checkbox" type="checkbox">
+                        <input id="m6" class="checkbox" type="checkbox">
                     </div>
                     <div class="notes_form"> 
                         <i class="ti-money"></i>
                         <p class="notes_content">
                             20/08 - Anh còn nợ Hêuiuuu 20man.
                         </p>
-                        <input id="m1" class="checkbox" type="checkbox">
+                        <input id="m5" class="checkbox" type="checkbox">
                     </div>
                     <div class="notes_form"> 
                         <i class="ti-money"></i>
                         <p class="notes_content">
                             06/09 - Tiền tiết kiệm của 2 đứa tổng 65 man.
                         </p>
-                        <input id="m2" class="checkbox" type="checkbox">
+                        <input id="m4" class="checkbox" type="checkbox">
                     </div>
                     <div class="notes_form"> 
                         <i class="ti-money"></i>
                         <p class="notes_content">
                             20/08 - Tiền tiết kiệm của 2 đứa tổng 50 man.
                         </p>
-                        <input id="m2" class="checkbox" type="checkbox">
+                        <input id="m3" class="checkbox" type="checkbox">
                     </div>
                     <div class="notes_form"> 
                         <i class="ti-money"></i>
                         <p class="notes_content">
                             07/10 - Tiền tiết kiệm cho eBé tổng 4 man.
                         </p>
-                        <input id="m3" class="checkbox" type="checkbox">
+                        <input id="m2" class="checkbox" type="checkbox">
                     </div>
                     <div class="notes_form"> 
                         <i class="ti-money"></i>
                         <p class="notes_content">
                             06/09 - Tiền tiết kiệm cho eBé tổng 1 man.
                         </p>
-                        <input id="m3" class="checkbox" type="checkbox">
+                        <input id="m1" class="checkbox" type="checkbox">
                     </div>
                 </div>
 

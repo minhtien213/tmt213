@@ -8,8 +8,10 @@ function togglelistMenu2() {
 
 //  //Hiển thị danh sách menu responsive
 function openMenu() {
+  var menubtn = document.querySelector('.menubtn')
   var listMenu = document.getElementById("listmenu");
   var listMenu2 = document.getElementById("listmenu2");
+  menubtn.classList.toggle('closeBtn')
   listMenu.style.display = (listMenu.style.display == "block") ? "none" : "block";
   listMenu2.style.display = "none"        
 }
@@ -167,30 +169,29 @@ document.onkeyup = function(e){
   }
 }
 
-    var checkChangeColor = document.getElementById('checkChangeColor')
-    var body = document.querySelector('body')
-    var changeColorState = localStorage.getItem('changeColorState')
-    var checkboxState = localStorage.getItem('checkboxState')
-    if(changeColorState){
-      body.style.backgroundImage = 'none'
-      body.style.backgroundColor = changeColorState
-    }
-    
-    if(checkboxState === 'checked'){
-      checkChangeColor.checked = true
-    }
 
-
-    checkChangeColor.addEventListener('change', function(){
-        if(this.checked){
-          body.style.backgroundImage = 'none'
-          body.style.backgroundColor = '#927aa8'
-          localStorage.setItem('changeColorState', '#927aa8')
-          localStorage.setItem('checkboxState', 'checked')
-        }else{
-          body.style.backgroundImage = ''
-          body.style.backgroundColor = 'transparent'
-          localStorage.removeItem('changeColorState')
-          localStorage.removeItem('checkboxState')
-        }
-    })
+//Change background
+  var checkChangeColor = document.getElementById('checkChangeColor')
+  var background = document.querySelector('.background')
+  var changeColorState = localStorage.getItem('changeColorState')
+  var checkboxState = localStorage.getItem('checkboxState')
+  if(changeColorState){
+      background.style.backgroundImage = 'none'
+      background.style.backgroundColor = changeColorState
+    }
+  if(checkboxState === 'checked'){
+    checkChangeColor.checked = true
+  }
+  checkChangeColor.addEventListener('change', function(){
+      if(this.checked){
+        background.style.backgroundColor = '#927aa8'
+        background.style.backgroundImage = 'none'
+        localStorage.setItem('changeColorState', '#927aa8')
+        localStorage.setItem('checkboxState', 'checked')
+      }else{
+        background.style.backgroundImage = ''
+        background.style.backgroundColor = 'transparent'
+        localStorage.removeItem('changeColorState')
+        localStorage.removeItem('checkboxState')
+      }
+  })

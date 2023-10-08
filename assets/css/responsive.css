@@ -32,16 +32,21 @@
     }
 
     .menubtn{
-        padding : 15px 20px 14px 0px;
+        margin: auto 15px;
     }
     .menubtn a{
         text-decoration: none;
     }
 
-    .menuIcon{
+    .displayIcon{
         display: block;
         color: var(--text-color);
         font-size: 28px;
+    }
+
+    .hideIcon{
+        color: var(--text-color);
+        font-size: 22px;
     }
 
     .listmenu{
@@ -50,8 +55,8 @@
     }
 
     .listmenu_item{
-        padding: 0 3px;
-        font-size: 19px;
+        padding: 0 5px;
+        font-size: 22px;
     }
 
     .listmenu_item:last-child {
@@ -65,7 +70,11 @@
         animation: initial;
     }
 
-    body{
+    /* body{
+        background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
+        url(../img/bgr_homeMobile.jpg);
+    } */
+    .background{
         background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
         url(../img/bgr_homeMobile.jpg);
     }
@@ -111,14 +120,6 @@
         font-size: 50px;
     }
 
-
-    .ti-facebook{
-        width: 20px;
-        height: 20px;
-        left: 40%;
-        font-size: 15px;
-        display: none;
-    }
 
     .ti-heart:hover{
         color: var(--red-color);
@@ -387,7 +388,7 @@
         width: 100% !important;
     }
     .anniversaryday_img{
-        height: 85% !important;
+        height: 80% !important;
         }
 
     #layoutIcon{

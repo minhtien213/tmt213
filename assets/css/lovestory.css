@@ -87,3 +87,6 @@ z
     height: calc(100% - 60px);
 }
 
+.modalImage_body{
+    height: auto;
+}

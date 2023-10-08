@@ -15,6 +15,8 @@
     </script>
 </head>
 <body>
+    <div class="background"></div>
+
     <div class="header">
         <div class="logo_menu">
             <div class="logo">
@@ -22,15 +24,16 @@
             </div>
             <div class="menu">
                 <ul id="listmenu" class="listmenu">
-                    <li class="listmenu_item"><a href="./timeline.html">Timelines</a></li>
                     <li class="listmenu_item"><a href="./album.html">Albums</a></li>
                     <li class="listmenu_item">
-                        <a class="moreBtn" href="#" onclick="togglelistMenu2()">More
+                        <a class="moreBtn" onclick="togglelistMenu2()">More
                         <i class="ti-arrow-circle-down"></i></a>
                         <ul class="listmenu2" id="listmenu2">
-                            <li class="listmenu2_item2"><a href="./lovestory.html">Love Story</a></li>
+                            <li class="listmenu2_item2"><a href="./timeline.html">Timelines</a></li>
                             <li class="listmenu2_item2"><a href="#">Anniversarys</a></li>
-                            <li class="listmenu2_item2"><a href="#" onclick="noteMenu_videos()">Notes</a></li>
+                            <li class="listmenu2_item2"><a href="./baby.html">Baby</a></li>
+                            <li class="listmenu2_item2"><a href="./lovestory.html">Love Story</a></li>
+                            <li class="listmenu2_item2"><a href="./notes.html" onclick="noteMenu_videos()">Notes</a></li>
                             <li class="listmenu2_item2"><a href="./login.html" onclick="logout()">Log Out</a></li>
                             <li class="listmenu2_item2">
                                 <div class="checkChangeColor-block">
@@ -43,8 +46,9 @@
                     </li>
                 </ul>
                 <div class="menubtn">
-                    <a id="menuIcon" href="javascript:void(0);" onclick="openMenu()"><i class="ti-menu menuIcon"></i></a>
-                </div>
+                    <a onclick="openMenu()"><i class="ti-menu displayIcon"></i></a>
+                    <a onclick="openMenu()"><i class="ti-close hideIcon"></i></a>
+                </div>   
             </div>
         </div>
     </div>
