@@ -6,7 +6,7 @@
         listAlbum_name2.style.display = (listAlbum_name2.style.display == "block") ? "none" : "block";          
     }
 
-    //Hiển thị danh sách ảnh
+    //upload image
     var uploadId = "n2014_2019";
     function toggleAlbum(albumId) {
         uploadId = albumId;
