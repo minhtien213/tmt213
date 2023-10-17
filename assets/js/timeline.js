@@ -112,84 +112,117 @@ var app = {
         timeline_container.innerHTML = htmls.join('');
     },
 
+    // Load DL khi tải lại trang
+    loadLocalStorageValue: function(){
+            const likeIcons = document.querySelectorAll('.like');
+            likeIcons.forEach(icon => {
+            const iconId = icon.getAttribute('data-id');
+            const isLiked = localStorage.getItem(`like-${iconId}`);
+            if (isLiked === 'true') { // Kiểm tra xem đã có trạng thái lưu trữ trong localStorage chưa
+                icon.classList.add('clicked');
+                }
+            })
+    },
+
     handleEvents: function () {
         _this = this;
-            var $ = document.querySelector.bind(document);
-            var $$ = document.querySelectorAll.bind(document);
-            var modal = document.getElementById("modalCreate");
-            var btnCreate = document.getElementById('btnCreate');
-            var btnUpdate = document.getElementById('btnUpdate');
-            var deleteBtns = $$('.deleteBtn');
-            var optionIcons = $$('.optionIcon');
-            var editBtns = $$('.editBtn');
-            var optionLists = $$('.optionList');
-            var likeIcons = $$('.like');
+        var $ = document.querySelector.bind(document);
+        var $$ = document.querySelectorAll.bind(document);
+        var modal = document.getElementById("modalCreate");
+        var btnCreate = document.getElementById('btnCreate');
+        var btnUpdate = document.getElementById('btnUpdate');
+        var deleteBtns = $$('.deleteBtn');
+        var optionIcons = $$('.optionIcon');
+        var editBtns = $$('.editBtn');
+        var optionLists = $$('.optionList');
+        var likeIcons = $$('.like');
+        var addTimeline = $('#addTimeline');
+        var controlCreate = $('.controlCreate');
 
 
         var timeline_container = document.querySelector('.timeline_container');
         timeline_container.addEventListener('click', function (event) {
             var target = event.target;
             
+            //Click Delete button
             if (target.classList.contains('deleteBtn')) {
                 var index = target.getAttribute('data-index');
                 app.timelines.splice(index, 1);
                 app.render();
             }
 
+            //OptionList Display
             if (target.classList.contains('optionIcon')) {
                 var optionList = target.nextElementSibling; // Lấy phần tử ul.optionList
                 var currentDisplay = optionList.style.display; //lấy trạng thái hiển thị của optionList trước
-                optionLists.forEach(function(optionList) {
-                    optionList.style.display = 'none'; // tắt hết optionList khác
+                optionLists.forEach(function(option) {
+                    option.style.display = 'none'; // tắt hết option khác
                 });
                 if(currentDisplay !== 'block') { //kiểm tra trạng thái đã lấy ở dòng 134
                     optionList.style.display = 'block';
                 }
             }
 
+            //Click Edit button
             if (target.classList.contains('editBtn')) {
                 var index = target.getAttribute('data-id');
                 var parentDiv = target.closest('.elementsDiv'); // Lấy phần tử cha .elementsDiv
+                // console.log(parentDiv)
                 var labelContent = parentDiv.querySelector('.label_content'); // Lấy phần tử p.label_content
                 var textArea = document.getElementById('inputContent'); // Lấy textarea trong modal
                 textArea.value = ''; // Xóa giá trị của textarea
                 textArea.value = labelContent.textContent; // Đặt giá trị của textarea là nội dung hiện tại
                 modal.style.display = "flex"; // Mở modal
                 btnCreate.style.display = 'none'; // Ẩn nút Create
-                btnUpdate.style.display = 'block'; // Hiện nút Update
+                btnUpdate.style.display = 'block'; // Hiện nút Update                
+            }
 
-                // Xử lý nút Update
-                btnUpdate.addEventListener('click', function () {
-                    // logic
-                    modal.style.display = "none"; // Đóng modal
+            //Click Update button
+            btnUpdate.addEventListener('click', function () {
+
+                // logic code for update
+                
+                optionLists.forEach(function(option) {
+                    option.style.display = 'none'; // tắt hết option khác
                 });
-            }
-
-            if (target.classList.contains('like')) {
-                var iconId = target.getAttribute('data-id');
-                var isLiked = localStorage.getItem(`like-${iconId}`);
-                if (isLiked === 'true') {
-                    target.classList.remove('clicked');
-                    localStorage.setItem(`like-${iconId}`, 'false');
-                } else {
-                    target.classList.add('clicked');
-                    localStorage.setItem(`like-${iconId}`, 'true');
-                }
-            }
-
-            // Close the modalCreate / Update
-            var controlCreate = $('.controlCreate');
-            controlCreate.addEventListener('click', function(){
-                modal.style.display = "none";
-                var textArea = $('#inputContent');
-                textArea.value = '';
+                modal.style.display = "none"; // Đóng modal
             });
+             
+            // Click Like Button
+            if (target.classList.contains('like')) {
+                    const iconId = target.getAttribute('data-id');
+                    const isLiked = localStorage.getItem(`like-${iconId}`);
+
+                    if (isLiked === 'true') {
+                        target.classList.remove('clicked');
+                        localStorage.setItem(`like-${iconId}`, 'false');
+                    } else {
+                        target.classList.add('clicked');
+                        localStorage.setItem(`like-${iconId}`, 'true');
+                    }
+                } 
+        });
+
+        // Close the modalCreate / Update
+        controlCreate.addEventListener('click', function(){
+            modal.style.display = "none";
+            var textArea = $('#inputContent');
+            textArea.value = '';
+        });
+        // Close the modalCreate / Update
+        addTimeline.addEventListener('click', function(){
+            modal.style.display = "flex";
+            var textArea = $('#inputContent');
+            textArea.value = '';
+            btnCreate.style.display = 'block'; // Ẩn nút Create
+            btnUpdate.style.display = 'none'; // Hiện nút Update
         });
     },
 
     start: function () {
         this.render();
         this.handleEvents();
+        this.loadLocalStorageValue()
     },
 };
 
