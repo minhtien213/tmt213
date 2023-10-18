@@ -70,13 +70,11 @@
         animation: initial;
     }
 
-    /* body{
+    body{
         background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
         url(../img/bgr_homeMobile.jpg);
-    } */
-    .background{
-        background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
-        url(../img/bgr_homeMobile.jpg);
+        height: 1000px !important;
+        overflow: auto;
     }
 
     .slogan{

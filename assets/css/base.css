@@ -18,26 +18,13 @@ html{
     scroll-behavior: smooth;
 }
 
-/* body{
+body{
     background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
     url(../img/bgr_home.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
     background-attachment: fixed;
-} */
-
-.background{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
-    url(../img/bgr_home.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
 }
 
 .container{
