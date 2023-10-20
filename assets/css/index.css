@@ -116,31 +116,7 @@
     margin-top: 30px;
 }
 
-/* Animation */
-@keyframes scale {
-    from{
-        transform: scale(0.7);
-    }
-    to{
-        transform: rotate(1);
-    }
-}
 
-@keyframes translateY {
-    from{
-        transform: translateY(-20%);
-    }
-    
-}
-
-@keyframes menu {
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    } 
-}
 
 
 

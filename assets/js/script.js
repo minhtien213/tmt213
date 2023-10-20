@@ -3,17 +3,16 @@
 //Hiển thị danh sách menu 2(more)
 function togglelistMenu2() {
   var listMenu2 = document.getElementById("listmenu2");
-  listMenu2.style.display = (listMenu2.style.display == "block") ? "none" : "block";          
+  listMenu2.style.display = (listMenu2.style.display == "flex") ? "none" : "flex";          
 }
 
 //  //Hiển thị danh sách menu responsive
-function openMenu() {
+function openMenuMobile() {
   var menubtn = document.querySelector('.menubtn')
-  var listMenu = document.getElementById("listmenu");
-  var listMenu2 = document.getElementById("listmenu2");
   menubtn.classList.toggle('closeBtn')
-  listMenu.style.display = (listMenu.style.display == "block") ? "none" : "block";
-  listMenu2.style.display = "none"        
+  var listmenu_mobile = document.getElementById("listmenu_mobile");
+  listmenu_mobile.style.display = (listmenu_mobile.style.display == "flex") ? "none" : "flex";
+  
 }
 
 //Đóng / Mở modal ảnh Timeline / Anniversary
@@ -25,6 +24,8 @@ function openMenu() {
   var content_forms = document.querySelectorAll('.content_form')
   var listImgs = document.querySelectorAll('.elementsDiv img');
   var listContents = document.querySelectorAll('.elementsDiv .label_content');
+  var timeline_container = document.querySelector('.timeline_container');
+
   elementsDivs.forEach(function(elementDiv, index) {
     
     var listImg = listImgs[index];
@@ -172,26 +173,41 @@ document.onkeyup = function(e){
 
 //Change background
   var checkChangeColor = document.getElementById('checkChangeColor')
-  var background = document.querySelector('.background')
+  var checkChangeColor_mobile = document.getElementById('checkChangeColor_mobile')
+  var container = document.querySelector('.container')
   var changeColorState = localStorage.getItem('changeColorState')
   var checkboxState = localStorage.getItem('checkboxState')
   if(changeColorState){
-      background.style.backgroundImage = 'none'
-      background.style.backgroundColor = changeColorState
+    container.style.backgroundImage = 'none'
+    container.style.backgroundColor = changeColorState
     }
   if(checkboxState === 'checked'){
     checkChangeColor.checked = true
   }
   checkChangeColor.addEventListener('change', function(){
-      if(this.checked){
-        background.style.backgroundColor = '#927aa8'
-        background.style.backgroundImage = 'none'
-        localStorage.setItem('changeColorState', '#927aa8')
-        localStorage.setItem('checkboxState', 'checked')
-      }else{
-        background.style.backgroundImage = ''
-        background.style.backgroundColor = 'transparent'
-        localStorage.removeItem('changeColorState')
-        localStorage.removeItem('checkboxState')
-      }
-  })
+    if(this.checked){
+      container.style.backgroundColor = '#927aa8'
+      container.style.backgroundImage = 'none'
+      localStorage.setItem('changeColorState', '#927aa8')
+      localStorage.setItem('checkboxState', 'checked')
+    }else{
+      container.style.backgroundImage = ''
+      container.style.backgroundColor = 'transparent'
+      localStorage.removeItem('changeColorState')
+      localStorage.removeItem('checkboxState')
+    }
+})
+
+checkChangeColor_mobile.addEventListener('change', function(){
+  if(this.checked){
+    container.style.backgroundColor = '#927aa8'
+    container.style.backgroundImage = 'none'
+    localStorage.setItem('changeColorState', '#927aa8')
+    localStorage.setItem('checkboxState', 'checked')
+  }else{
+    container.style.backgroundImage = ''
+    container.style.backgroundColor = 'transparent'
+    localStorage.removeItem('changeColorState')
+    localStorage.removeItem('checkboxState')
+  }
+})

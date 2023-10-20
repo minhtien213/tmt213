@@ -18,19 +18,18 @@ html{
     scroll-behavior: smooth;
 }
 
-body{
+.container{
+    margin-top: 60px;
+    position: relative;
+    padding-bottom: 20px;
+    height: 100vh;
+    overflow: auto;
     background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
     url(../img/bgr_home.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
     background-attachment: fixed;
-}
-
-.container{
-    margin-top: 60px;
-    position: relative;
-    padding-bottom: 20px;
 }
 
 /* Menubar */
@@ -51,7 +50,10 @@ body{
     margin-right: auto;
     background-color: var(--black-color);
     display: flex;
-    justify-content: space-between;
+}
+
+.logo{
+    width: 20%;
 }
 
 .logo img{
@@ -60,21 +62,27 @@ body{
     margin-top: 5px;
 }
 
+.menu{
+    width: 80%;
+    display: flex;
+    justify-content: right;
+}
 
 .listmenu{
-    position: relative;
-    line-height: 60px;
-    box-sizing: border-box;
+    align-items: center;
+    display: flex;
 }
 
 .displayIcon{
     display: none;
 }
+
 .hideIcon{
     display: none;
 }
 
 .menubtn.closeBtn .hideIcon{
+    font-weight: bold;
     display: block;
 }
 
@@ -85,9 +93,9 @@ body{
 
 .listmenu_item{
     font-size: 20px;
-    display: inline-block;
     padding: 0 20px;
     list-style: none;
+    justify-self: end;
 }
 
 .listmenu_item:hover > a{
@@ -98,26 +106,33 @@ body{
 .listmenu_item:last-child{
     padding-right: 25px;
 }
+
 .listmenu_item a{
     list-style: none;
     text-decoration: none;
     color: var(--text-color);
     cursor: pointer;
+    padding: 0 10px;
+}
+
+.listmenu_mobile{
+    display: none;
 }
 
 .listmenu2{
     position: absolute;
-    right: 15px;
-    top: 100%;
+    right: 135px;
+    top: 61px;
     background-color: var(--black-color);
-    padding: 0 15px 10px;
-    min-width: 150px;
-    box-shadow: 0 0 10px var(--black-color);
+    padding: 10px 0;
+    box-shadow: 0 0 10px #8d8383;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     display: none;
     z-index: 1;
     animation: translateY 0.2s ease-in;
+    transition: all 0.5s linear;
+    max-width: 100%;
 }
 
 .listmenu2_item2{
@@ -125,19 +140,17 @@ body{
     text-decoration: none;
     line-height: 30px;
     font-size: 16px;
+    padding: 0 10px;
 }
 
-.listmenu2_item2:hover{
-    border-bottom: 1px solid var(--pink-color);
-}
 
-.listmenu2_item2:last-child:hover{
-    border-bottom: none;
+.listmenu2_item2 a{
+    border-right: 0.2px dashed #454242;
 }
 
 .checkChangeColor-block{
     width: max-content;
-    margin-top: 10px;
+    margin-left: 20px;
     display: flex;
     color: #927aa8;
     align-items: center;
@@ -145,28 +158,28 @@ body{
 
 }
 
-#checkChangeColor{
+#checkChangeColor, #checkChangeColor_mobile{
     display: none;
 }
 
 .btnlabel{
     /* display: block; */
-    width: 25px;
-    height: 15px;
+    width: 30px;
+    height: 20px;
     border-radius: 10px;
     border: 1px solid #c6c1c1;
     position: relative;
-    margin-left: 25px;
+    margin-left: 10px;
     cursor: pointer;
 }
 
 .btnlabel::after{
     content: '';
-    width: 11px;
-    height: 11px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     position: absolute;
-    top: 1.3px;
+    top: 1.4px;
     left: 2px;
     background-color: #d4c9c9;
     transition: left 0.3s ease;
@@ -232,20 +245,11 @@ body{
     position: relative;
 }
 
-@keyframes scale {
-    from{
-        transform: scale(0.5);
-    }
-    to{
-        transform: scale(1);
-    }
-}
-
-.labelImg, .labelContent{
+.labelImg, .labelContent, .labelDate{
     text-align: left;
     text-decoration: underline;
 }
-.labelImg, .labelContent, #inputContent, #inputImg, #btnCreate, #btnUpdate{
+.labelImg, .labelContent, .labelDate, #inputContent, #inputImg, #inputDate, #btnCreate, #btnUpdate{
     color: var(--text-color);
     margin-top: 10px;
 }
@@ -259,6 +263,12 @@ body{
     max-width: 100%;
     min-height: 100px;
     max-height: 150px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(239, 230, 236, 0.5);
+}
+
+#inputDate{
     padding: 5px;
     border-radius: 5px;
     background-color: rgba(239, 230, 236, 0.5);
@@ -328,7 +338,6 @@ body{
 .selectedDiv{
     width: 79%;
     height: 90%;
-    /* background-color: rgba(50, 47, 47, 0.5); */
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -381,11 +390,41 @@ body{
 
 
 
+
+
+/* Animation */
+
+@keyframes translateY {
+    from{
+        /* transform: translateY(-15%); */
+        scale: 80%;
+        opacity: 0;
+    }
+    to{
+        /* transform: translateY(0); */
+        scale: 100%;
+        opacity: 1;
+    }
+    
+}
+
+@keyframes menu {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    } 
+}
+
+
 @keyframes scale {
     from{
-        transform: scale(0.2);
+        transform: scale(0.8);
+        opacity: 0.5;
     }
     to{
         transform: scale(1);
+        opacity: 1;
     }
 }

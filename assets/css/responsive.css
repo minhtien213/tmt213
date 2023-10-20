@@ -46,7 +46,7 @@
 
     .hideIcon{
         color: var(--text-color);
-        font-size: 22px;
+        font-size: 25px;
     }
 
     .listmenu{
@@ -55,12 +55,8 @@
     }
 
     .listmenu_item{
-        padding: 0 5px;
-        font-size: 22px;
-    }
-
-    .listmenu_item:last-child {
-        padding-right: 10px;
+        padding: 0 3px;
+        font-size: 27px;
     }
 
     .listmenu_item:hover{
@@ -70,11 +66,49 @@
         animation: initial;
     }
 
-    body{
+    .listmenu_mobile{
+        position: absolute;
+        top: 61px;
+        right: 0px;
+        width: 100%;
+        height: 100vh;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        animation: translateY 0.5s ease forwards;
+        font-weight: 100;
+        background-color: var(--black-color);
+        max-width: 100%;
+        box-shadow: 0 0 10px #8d8383;
+    }
+
+    .listmenu_mobile_item{
+        font-size: 25px;
+        line-height: 45px;
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .listmenu_mobile_item a {
+        border-right: none;
+        color: var(--text-color);
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .checkChangeColor-block {
+        margin: auto;
+        margin-top: 70px;
+    }
+
+    .container{
         background-image:-webkit-linear-gradient(180deg, rgba(28, 28, 26, 0.5), rgba(19, 19, 19, 0.5)),
         url(../img/bgr_homeMobile.jpg);
-        height: 1000px !important;
-        overflow: auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-attachment: fixed;
     }
 
     .slogan{
@@ -378,28 +412,38 @@
     .anniversaryday_container{
         width: 95% !important;
     }
-    
-    .anniversaryday_form {
+
+    .aniversary_form{
         height: 350px !important;
     }
+    
     .elementsDiv{
         width: 100% !important;
     }
     .anniversaryday_img{
-        height: 80% !important;
+        height: 75% !important;
         }
 
     #layoutIcon{
         display: block !important;
         font-size: 16px;
     }
+    .content_form.clicked{
+        height: 315px !important;
+    }
     .elementsDiv.clicked{
             width: 48% !important;
             font-size: small;
         }
     .anniversaryday_img.clicked{
-        height: 70% !important;
+        height: 75% !important;
         }
+
+    .label_content{
+        height: 15% !important;
+        padding: 0 15px 0 0 !important;
+    }
+    
   }
 
 

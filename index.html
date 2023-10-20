@@ -25,13 +25,13 @@
             </div>
             <div class="menu">
                 <ul id="listmenu" class="listmenu">
+                    <li class="listmenu_item"><a href="./timeline.html">Timelines</a></li>
+                    <li class="listmenu_item"><a href="./anniversarys.html">Anniversarys</a></li>
                     <li class="listmenu_item"><a href="./album.html">Albums</a></li>
                     <li class="listmenu_item">
                         <a class="moreBtn" onclick="togglelistMenu2()">More
                         <i class="ti-arrow-circle-down"></i></a>
                         <ul class="listmenu2" id="listmenu2">
-                            <li class="listmenu2_item2"><a href="./timeline.html">Timelines</a></li>
-                            <li class="listmenu2_item2"><a href="./anniversarys.html">Anniversarys</a></li>
                             <li class="listmenu2_item2"><a href="./baby.html">Baby</a></li>
                             <li class="listmenu2_item2"><a href="./lovestory.html">Love Story</a></li>
                             <li class="listmenu2_item2"><a href="notes.html" onclick="noteMenu_videos()">Notes</a></li>
@@ -46,9 +46,27 @@
                         </ul>
                     </li>
                 </ul>
+
+                <ul class="listmenu_mobile" id="listmenu_mobile">
+                    <li class="listmenu_mobile_item"><a href="./album.html">Albums</a></li>
+                    <li class="listmenu_mobile_item"><a href="./timeline.html">Timelines</a></li>
+                    <li class="listmenu_mobile_item"><a href="./anniversarys.html">Anniversarys</a></li>
+                    <li class="listmenu_mobile_item"><a href="./baby.html">Baby</a></li>
+                    <li class="listmenu_mobile_item"><a href="./lovestory.html">Love Story</a></li>
+                    <li class="listmenu_mobile_item"><a href="notes.html" onclick="noteMenu_videos()">Notes</a></li>
+                    <li class="listmenu_mobile_item"><a href="./login.html" onclick="logout()">Log Out</a></li>
+                    <li class="listmenu_mobile_item">
+                        <div class="checkChangeColor-block">
+                            <input type="checkbox" id="checkChangeColor_mobile"/>
+                            Display :
+                            <label class="btnlabel" for="checkChangeColor_mobile"></label>
+                        </div>
+                    </li>
+                </ul>
+
                 <div class="menubtn">
-                    <a onclick="openMenu()"><i class="ti-menu displayIcon"></i></a>
-                    <a onclick="openMenu()"><i class="ti-close hideIcon"></i></a>
+                    <a onclick="openMenuMobile()"><i class="ti-menu displayIcon"></i></a>
+                    <a onclick="openMenuMobile()"><i class="ti-close hideIcon"></i></a>
                 </div>   
             </div>
         </div>

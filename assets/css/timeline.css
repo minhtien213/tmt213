@@ -59,12 +59,20 @@
     margin-left: 50px;
 }
 
-.label_content{
+
+.content_block{
     width: 70%;
     height: auto;
-    padding: 5px 15px 5px 5px;
-    margin: auto;
+    margin: auto 0;
     line-height: 20px;
+}
+
+.calendar{
+    color: rgb(221, 212, 221);
+}
+
+.label_content{
+    margin-top: 8px;
 }
 
 .optionIcon{
