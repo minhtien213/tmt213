@@ -266,12 +266,16 @@ html{
     padding: 5px;
     border-radius: 5px;
     background-color: rgba(239, 230, 236, 0.5);
+    outline: none;
 }
 
 #inputDate{
+    width: 100%;
     padding: 5px;
     border-radius: 5px;
     background-color: rgba(239, 230, 236, 0.5);
+    outline: none;
+    border: none;
 }
 
 #btnCreate, #btnUpdate{
@@ -292,13 +296,10 @@ html{
 }
 
 .controlCreate {
-    position: absolute;
-    bottom: 160px;
-    left: 50%;
-    transform: translateX(-50%);
     color: var(--text-color);
     cursor: pointer;
     font-size: 20px;
+    margin-top: 30px;
 }
 
 /* CSS MODAL IMAGE */

@@ -71,7 +71,7 @@ var app = {
                     id: 11,
                     image: './assets/img/timelineimg/totnghiep.jpg' ,
                     date: '01/01/2017',
-                    content: 'Cùng nhau tốt nghiệp ra trường và cũng đến lúc yêu xa'
+                    content: 'Cùng nhau tốt nghiệp ra trường và cũng đến lúc yêu xa.'
                 },
                 {
                     id: 12,
@@ -109,10 +109,10 @@ var app = {
         var htmls = this.timelines.map(function (timeline, index) {
             return `
                 <div class="elementsDiv">
-                    <div class="content_form">
+                    <div data-id = "${timeline.id}" class="content_form">
                         <img class="timeline_img" src="${timeline.image}">
                         <div class="content_block">
-                            <i class="ti-calendar calendar"> ${timeline.date}</i>
+                            <i class="ti-calendar calendar"><span>${timeline.date}</span></i>
                             <p class="label_content">${timeline.content}</p>
                         </div>
                         <div class="option">
@@ -130,6 +130,38 @@ var app = {
 
         var timeline_container = document.querySelector('.timeline_container');
         timeline_container.innerHTML = htmls.join('');
+    },
+
+    toastDisplay: function(toastname){
+        var toast_form = document.querySelector('.toast_form')
+        var template = `<label>This is toast</label>`
+            switch(toastname){
+                case 'remove':
+                    template = `<label>Đã xóa thành công!</label>`
+                    break
+                case 'edit':
+                    template = `<label>Đã sửa thành công!</label>`
+                    break
+                case 'create':
+                    template = `<label>Đã thêm thành công!</label>`
+                break
+            }
+            
+        var toastDiv = document.createElement('div')
+        toastDiv.setAttribute('class', toastname)
+        toastDiv.innerHTML = `<i class = "ti-check"></i>
+                            ${template}
+                            <span class="process"></span>`
+        
+        toast_form.appendChild(toastDiv)
+    
+        setTimeout(function() {
+            toastDiv.style.animation = 'toast_hide 1s ease-in-out forwards'
+        }, 3000)
+    
+        setTimeout(function() {
+            toastDiv.remove()
+        }, 5000)
     },
 
     // Load DL khi tải lại trang
@@ -152,11 +184,7 @@ var app = {
         var modal = document.getElementById("modalCreate");
         var btnCreate = document.getElementById('btnCreate');
         var btnUpdate = document.getElementById('btnUpdate');
-        var deleteBtns = $$('.deleteBtn');
-        var optionIcons = $$('.optionIcon');
-        var editBtns = $$('.editBtn');
         var optionLists = $$('.optionList');
-        var likeIcons = $$('.like');
         var addTimeline = $('#addTimeline');
         var controlCreate = $('.controlCreate');
 
@@ -164,18 +192,16 @@ var app = {
         var timeline_container = document.querySelector('.timeline_container');
         timeline_container.addEventListener('click', function (event) {
             var target = event.target;
-            
-            // Click vào elementsDiv
-            if (target.classList.contains('elementsDiv')) {
-                
-            }
 
             //Click Delete button
             if (target.classList.contains('deleteBtn')) {
+                console.log(target)
                 var index = target.getAttribute('data-id');
+                console.log(index);
                 app.timelines.splice(index, 1);
                 app.render();
                 app.loadLocalStorageValue()
+                app.toastDisplay('remove')
             }
 
             //OptionList Display
@@ -197,11 +223,13 @@ var app = {
                 var parentDiv = target.closest('.elementsDiv'); // Lấy phần tử cha .elementsDiv
                 var labelContent = parentDiv.querySelector('.label_content'); // Lấy phần tử p.label_content
                 var calendar = parentDiv.querySelector('.calendar'); // Lấy phần tử p.label_content
-                console.log(calendar.textContent);
                 var textArea = document.getElementById('inputContent'); // Lấy textarea trong modal
-                inputDate.value = ''; // Xóa giá trị của inputDate Value
-                inputDate.value = calendar.textContent;
+                var inputDate = document.querySelector('#inputDate');
+                var parts = calendar.textContent.split('/')
+                var newCalendar = parts[2] + '-' + parts[1] + '-' + parts[0]
 
+                inputDate.value = ''; // Xóa giá trị của inputDate Value
+                inputDate.value = newCalendar;
                 textArea.value = ''; // Đặt giá trị của textarea là nội dung hiện tại
                 textArea.value = labelContent.textContent; // Đặt giá trị của textarea là nội dung hiện tại
                 modal.style.display = "flex"; // Mở modal
@@ -211,6 +239,7 @@ var app = {
 
             //Click Update button
             btnUpdate.addEventListener('click', function () {
+                console.log(target)
                 var index = localStorage.getItem('index');
                 var textArea = document.getElementById('inputContent');
                 var inputDate = document.querySelector('#inputDate');
@@ -226,6 +255,7 @@ var app = {
                 });
                 app.loadLocalStorageValue()
                 modal.style.display = "none"; // Đóng modal
+                app.toastDisplay('edit')
             });
              
             // Click Like Button
@@ -241,6 +271,79 @@ var app = {
                         localStorage.setItem(`like-${iconId}`, 'true');
                     }
                 } 
+
+            // Click vào elementsDiv
+            const content_form = target.closest('.content_form')
+            const option = target.closest('.option');
+            const like = target.closest('.like');
+            var timeline_img = content_form.querySelector('.timeline_img')
+            var selectedImage = document.getElementById("selected-image");
+            var modalImage = document.getElementById("modalImage")
+            
+            var currentIndex = 0;
+            if (content_form) {
+                var index = content_form.getAttribute('data-id');
+                if( !option && !like ){
+                    modalImage.style.display = "flex"
+                    
+                    selectedImage.src = timeline_img.src;
+                    
+                    var label_content = content_form.querySelector('.label_content')
+                    var modalImage_labelContent = document.querySelector('.modalImage_labelContent')
+                    modalImage_labelContent.textContent = label_content.textContent
+                    
+                    currentIndex = index
+                }
+            }
+
+            //Click selectedImage close the modal
+            selectedImage.addEventListener('click', function(){
+                modalImage.style.display = "none";
+                
+                var content_forms = document.querySelectorAll('.content_form')
+                content_forms.forEach(function(content_form_item){   
+                    content_form_item.style.border = 'none';
+                })
+                var content_form_intoview = content_forms[currentIndex]
+                content_form_intoview.style.border = "1px solid dodgerblue"
+                setTimeout(function(){
+                    content_form_intoview.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }, 200)
+            })
+
+            // Click prevImg
+            const prevImg = document.querySelector('.prevImg');
+            const nextImg = document.querySelector('.nextImg');
+            const listImages = document.querySelectorAll('.timeline_img')
+            const listContents = document.querySelectorAll('.label_content')
+
+            prevImg.addEventListener('click', function (){
+                currentIndex = (currentIndex - 1 + listImages.length) % listImages.length;
+                if (listImages[currentIndex]) {
+                    selectedImage.src = listImages[currentIndex].src;
+                }
+               
+                if (listContents[currentIndex]) {
+                    var modalImage_labelContent = document.querySelector('.modalImage_labelContent');
+                    modalImage_labelContent.textContent = listContents[currentIndex].textContent;
+                  }
+            })
+
+            // Click nextImg
+            nextImg.addEventListener('click', function (){
+                currentIndex = (currentIndex + 1) % listImages.length;
+                if (listImages[currentIndex]) {
+                    selectedImage.src = listImages[currentIndex].src;
+                }
+               
+                if (listContents[currentIndex]) {
+                    var modalImage_labelContent = document.querySelector('.modalImage_labelContent');
+                    modalImage_labelContent.textContent = listContents[currentIndex].textContent;
+                  }
+            })
         });
 
         // Open the modalCreate / Update

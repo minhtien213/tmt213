@@ -75,8 +75,9 @@
         display: none;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        animation: translateY 0.5s ease forwards;
+        /* justify-content: center; */
+        padding-top: 123px;
+        animation: translateY 0.3s ease forwards;
         font-weight: 100;
         background-color: var(--black-color);
         max-width: 100%;
@@ -181,7 +182,7 @@
         display: none;
     }
      
-    input{
+    .login_content input{
         /* ngăn k tự zoom khi click vào ô input */
         -webkit-text-size-adjust: none; /* Safari, Chrome và các trình duyệt dựa trên WebKit */
         -moz-text-size-adjust: none; /* Firefox */
@@ -208,8 +209,7 @@
     }
 
     #inputContent {
-        min-height: 200px !important;
-        max-height: 300px !important;
+        height: 200px !important;
         font-size: 18px !important;
     }
         
@@ -282,9 +282,9 @@
         justify-content: space-evenly;
         padding: 5px !important;
         margin-bottom: 10px;
-        position: -webkit-sticky;
+        /* position: -webkit-sticky;
         position: sticky;
-        top: 63px;
+        top: 63px; */
         z-index: 2;
     }
 
