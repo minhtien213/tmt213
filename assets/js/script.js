@@ -154,20 +154,20 @@ window.addEventListener('click', function(e){
 });
 
 
-document.onkeyup = function(e){ 
-  // console.log(e.which)
-  switch(e.which){ 
-      case 27: //27 là phím ESC
-          hideModalImage()
-          break;
-      case 37: //37 là phím <
-          showPreviousImage()
-          break;
-      case 39: //39 là phím >
-          showNextImage()
-          break;
-  }
-}
+// document.onkeyup = function(e){ 
+//   // console.log(e.which)
+//   switch(e.which){ 
+//       case 27: //27 là phím ESC
+//           hideModalImage()
+//           break;
+//       case 37: //37 là phím <
+//           showPreviousImage()
+//           break;
+//       case 39: //39 là phím >
+//           showNextImage()
+//           break;
+//   }
+// }
 
 
 //Change background

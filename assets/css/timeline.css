@@ -130,7 +130,7 @@
 
 .toast_form{
     position: fixed;
-    bottom: 35px;
+    top: 65px;
     width: 100%;
     z-index: 2;
   }
@@ -138,14 +138,14 @@
   .remove, .edit, .create{
     width: 70%;
     margin: auto;
-    padding: 10px 0;
+    padding: 6px 0;
     padding-left: 5px;
     background-color: #c0c7bd;
     border-radius: 5px;
     margin-bottom: 10px;
     border-left: 4px solid #52544f;
     font-size: 14px;
-    animation: toUp 1s ease-in-out forwards;
+    animation: toDown 1s ease-in-out forwards;
     position: relative;
     text-align: center;
   }
@@ -169,15 +169,15 @@
     }
   }
   
-  @keyframes toUp {
+  @keyframes toDown {
     0%{
-      transform: translateY(100%);
+      transform: translateY(-100%);
     }
     25%{
-      transform: translateY(-3px);
+      transform: translateY(3px);
     }
     50%{
-      transform: translateY(3px);
+      transform: translateY(-3px);
     }
     100%{
       transform: translateY(0%);
@@ -189,10 +189,10 @@
       transform: translateY(0%);
     }
     25%{
-      transform: translateY(-3px);
+      transform: translateY(3px);
     }
     100%{
-      transform: translateY(250%);
+      transform: translateY(-1000%);
     }
   }
 

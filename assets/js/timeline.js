@@ -109,20 +109,20 @@ var app = {
         var htmls = this.timelines.map(function (timeline, index) {
             return `
                 <div class="elementsDiv">
-                    <div data-id = "${timeline.id}" class="content_form">
+                    <div data-index = "${index}" class="content_form">
                         <img class="timeline_img" src="${timeline.image}">
                         <div class="content_block">
                             <i class="ti-calendar calendar"><span>${timeline.date}</span></i>
                             <p class="label_content">${timeline.content}</p>
                         </div>
                         <div class="option">
-                            <i data-id = "${timeline.id}" class="ti-angle-down optionIcon"></i>
+                            <i data-index = "${index}" class="ti-angle-down optionIcon"></i>
                             <ul class="optionList">
-                                <li data-id = "${timeline.id}" class="editBtn">Edit</li>
-                                <li data-id = "${timeline.id}" class="deleteBtn">Delete</li>
+                                <li data-index = "${index}" class="editBtn">Edit</li>
+                                <li data-index = "${index}" class="deleteBtn">Delete</li>
                             </ul>
                         </div>
-                        <i data-id="${timeline.id}" class="ti-heart like"></i>
+                        <i data-index="${index}" class="ti-heart like"></i>
                     </div>
                 </div>
             `;
@@ -168,8 +168,8 @@ var app = {
     loadLocalStorageValue: function(){
             const likeIcons = document.querySelectorAll('.like');
             likeIcons.forEach(icon => {
-            const iconId = icon.getAttribute('data-id');
-            const isLiked = localStorage.getItem(`like-${iconId}`);
+            const iconIndex = icon.getAttribute('data-id');
+            const isLiked = localStorage.getItem(`like-${iconIndex}`);
             if (isLiked === 'true') { // Kiểm tra xem đã có trạng thái lưu trữ trong localStorage chưa
                 icon.classList.add('clicked');
                 }
@@ -195,9 +195,7 @@ var app = {
 
             //Click Delete button
             if (target.classList.contains('deleteBtn')) {
-                console.log(target)
-                var index = target.getAttribute('data-id');
-                console.log(index);
+                var index = target.getAttribute('data-index');
                 app.timelines.splice(index, 1);
                 app.render();
                 app.loadLocalStorageValue()
@@ -218,7 +216,7 @@ var app = {
 
             //Click Edit button
             if (target.classList.contains('editBtn')) {
-                var index = target.getAttribute('data-id');
+                var index = target.getAttribute('data-index');
                 localStorage.setItem('index', index);
                 var parentDiv = target.closest('.elementsDiv'); // Lấy phần tử cha .elementsDiv
                 var labelContent = parentDiv.querySelector('.label_content'); // Lấy phần tử p.label_content
@@ -234,41 +232,44 @@ var app = {
                 textArea.value = labelContent.textContent; // Đặt giá trị của textarea là nội dung hiện tại
                 modal.style.display = "flex"; // Mở modal
                 btnCreate.style.display = 'none'; // Ẩn nút Create
-                btnUpdate.style.display = 'block'; // Hiện nút Update                
+                btnUpdate.style.display = 'block'; // Hiện nút Update  
+                
+                
+                //Click Update button
+                btnUpdate.addEventListener('click', function () {
+                    var index = localStorage.getItem('index');
+                    var textArea = document.getElementById('inputContent');
+                    var inputDate = document.querySelector('#inputDate');
+    
+                    var parts = inputDate.value.split('-')
+                    var newCalendar = parts[2] + '/' + parts[1] + '/' + parts[0]
+    
+                    app.timelines[index].content = textArea.value
+                    app.timelines[index].date = newCalendar
+                    
+                    optionLists.forEach(function(option) {
+                        option.style.display = 'none'; // tắt hết option khác
+                    });
+                    app.loadLocalStorageValue()
+                    modal.style.display = "none"; // Đóng modal
+                });
+                
+                app.toastDisplay('edit')
+                app.render()
             }
 
-            //Click Update button
-            btnUpdate.addEventListener('click', function () {
-                console.log(target)
-                var index = localStorage.getItem('index');
-                var textArea = document.getElementById('inputContent');
-                var inputDate = document.querySelector('#inputDate');
-
-                var parts = inputDate.value.split('-')
-                var newCalendar = parts[2] + '/' + parts[1] + '/' + parts[0]
-
-                app.timelines[index].content = textArea.value
-                app.timelines[index].date = newCalendar
-                app.render()
-                optionLists.forEach(function(option) {
-                    option.style.display = 'none'; // tắt hết option khác
-                });
-                app.loadLocalStorageValue()
-                modal.style.display = "none"; // Đóng modal
-                app.toastDisplay('edit')
-            });
              
             // Click Like Button
             if (target.classList.contains('like')) {
-                    const iconId = target.getAttribute('data-id');
-                    const isLiked = localStorage.getItem(`like-${iconId}`);
+                    const iconIndex = target.getAttribute('data-index');
+                    const isLiked = localStorage.getItem(`like-${iconIndex}`);
 
                     if (isLiked === 'true') {
                         target.classList.remove('clicked');
-                        localStorage.setItem(`like-${iconId}`, 'false');
+                        localStorage.setItem(`like-${iconIndex}`, 'false');
                     } else {
                         target.classList.add('clicked');
-                        localStorage.setItem(`like-${iconId}`, 'true');
+                        localStorage.setItem(`like-${iconIndex}`, 'true');
                     }
                 } 
 
@@ -282,7 +283,7 @@ var app = {
             
             var currentIndex = 0;
             if (content_form) {
-                var index = content_form.getAttribute('data-id');
+                var index = content_form.getAttribute('data-index');
                 if( !option && !like ){
                     modalImage.style.display = "flex"
                     
@@ -321,7 +322,9 @@ var app = {
             const listContents = document.querySelectorAll('.label_content')
 
             prevImg.addEventListener('click', function (){
-                currentIndex = (currentIndex - 1 + listImages.length) % listImages.length;
+                currentIndex--
+                currentIndex = currentIndex < 0 ? listImages.length - 1 : currentIndex
+
                 if (listImages[currentIndex]) {
                     selectedImage.src = listImages[currentIndex].src;
                 }
@@ -334,7 +337,8 @@ var app = {
 
             // Click nextImg
             nextImg.addEventListener('click', function (){
-                currentIndex = (currentIndex + 1) % listImages.length;
+                currentIndex++
+                currentIndex = currentIndex > listImages.length - 1 ? 0 : currentIndex
                 if (listImages[currentIndex]) {
                     selectedImage.src = listImages[currentIndex].src;
                 }
