@@ -161,14 +161,14 @@ var app = {
     
         setTimeout(function() {
             toastDiv.remove()
-        }, 5000)
+        }, 3500)
     },
 
     // Load DL khi tải lại trang
     loadLocalStorageValue: function(){
             const likeIcons = document.querySelectorAll('.like');
             likeIcons.forEach(icon => {
-            const iconIndex = icon.getAttribute('data-id');
+            const iconIndex = icon.getAttribute('data-index');
             const isLiked = localStorage.getItem(`like-${iconIndex}`);
             if (isLiked === 'true') { // Kiểm tra xem đã có trạng thái lưu trữ trong localStorage chưa
                 icon.classList.add('clicked');
@@ -246,6 +246,7 @@ var app = {
     
                     app.timelines[index].content = textArea.value
                     app.timelines[index].date = newCalendar
+                    app.render()
                     
                     optionLists.forEach(function(option) {
                         option.style.display = 'none'; // tắt hết option khác
@@ -253,9 +254,7 @@ var app = {
                     app.loadLocalStorageValue()
                     modal.style.display = "none"; // Đóng modal
                 });
-                
                 app.toastDisplay('edit')
-                app.render()
             }
 
              

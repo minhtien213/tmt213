@@ -182,6 +182,7 @@ window.addEventListener('click', function(e){
     }
   if(checkboxState === 'checked'){
     checkChangeColor.checked = true
+    checkChangeColor_mobile.checked = true
   }
   checkChangeColor.addEventListener('change', function(){
     if(this.checked){
