@@ -184,7 +184,8 @@ window.addEventListener('click', function(e){
     checkChangeColor.checked = true
     checkChangeColor_mobile.checked = true
   }
-  checkChangeColor.addEventListener('change', function(){
+  if(checkChangeColor){
+    checkChangeColor.addEventListener('change', function(){
     if(this.checked){
       container.style.backgroundColor = '#927aa8'
       container.style.backgroundImage = 'none'
@@ -196,18 +197,21 @@ window.addEventListener('click', function(e){
       localStorage.removeItem('changeColorState')
       localStorage.removeItem('checkboxState')
     }
-})
-
-checkChangeColor_mobile.addEventListener('change', function(){
-  if(this.checked){
-    container.style.backgroundColor = '#927aa8'
-    container.style.backgroundImage = 'none'
-    localStorage.setItem('changeColorState', '#927aa8')
-    localStorage.setItem('checkboxState', 'checked')
-  }else{
-    container.style.backgroundImage = ''
-    container.style.backgroundColor = 'transparent'
-    localStorage.removeItem('changeColorState')
-    localStorage.removeItem('checkboxState')
-  }
-})
+  })
+}
+  
+if(checkChangeColor_mobile){
+  checkChangeColor_mobile.addEventListener('change', function(){
+    if(this.checked){
+      container.style.backgroundColor = '#927aa8'
+      container.style.backgroundImage = 'none'
+      localStorage.setItem('changeColorState', '#927aa8')
+      localStorage.setItem('checkboxState', 'checked')
+    }else{
+      container.style.backgroundImage = ''
+      container.style.backgroundColor = 'transparent'
+      localStorage.removeItem('changeColorState')
+      localStorage.removeItem('checkboxState')
+    }
+  })
+}

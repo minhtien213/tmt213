@@ -5,103 +5,120 @@ var app = {
                     id: 0,
                     image: './assets/img/timelineimg/embe.jpg',
                     date: '20/08/2023',
-                    content: 'Tèng teng...Cái gì đây Hêuiuuu.'
+                    content: 'Tèng teng...Cái gì đây Hêuiuuu.',
+                    state: 'liked'
                 },
                 {
                     id: 1,
                     image: './assets/img/timelineimg/dkkh.jpg' ,
                     date: '02/08/2023',
-                    content: 'Đăng kí kết hôn tại Nhật bản và chính thức trở thành Vợ Chồng.'
+                    content: 'Đăng kí kết hôn tại Nhật bản và chính thức trở thành Vợ Chồng.',
+                    state: 'liked'
                 },
                 {
                     id: 2,
                     image: './assets/img/timelineimg/cauhon.jpg' ,
                     date: '01/08/2023',
-                    content: 'Cầu hôn Hêuiuuu.'
+                    content: 'Cầu hôn Hêuiuuu.',
+                    state: ''
                 },
                 {
                     id: 3,
                     image: './assets/img/timelineimg/damhoi.jpg' ,
                     date: '10/03/2023',
-                    content: 'Hai gia đình gặp mặt và tổ chức đám hỏi cho 2 đứa.'
+                    content: 'Hai gia đình gặp mặt và tổ chức đám hỏi cho 2 đứa.',
+                    state: 'liked'
                 },
                 {
                     id: 4,
                     image: './assets/img/timelineimg/nhatban4.jpg' ,
                     date: '03/02/2023',
-                    content: 'Cùng nhau trải qua cuộc sống tại Nhật bản dù không được ở cùng nhau.'
+                    content: 'Cùng nhau trải qua cuộc sống tại Nhật bản dù không được ở cùng nhau.',
+                    state: ''
                 },
                 {
                     id: 5,
                     image: './assets/img/timelineimg/dixe.jpg' ,
                     date: '01/01/2023',
-                    content: 'Mỗi tháng vượt gần 100km để gặp Hêuiuuu.'
+                    content: 'Mỗi tháng vượt gần 100km để gặp Hêuiuuu.',
+                    state: ''
                 },
                 {
                     id: 6,
                     image: './assets/img/timelineimg/gaplai.jpg' ,
                     date: '11/06/2022',
-                    content: 'Lần đầu gặp lại nhau tại Nhật Bản sau bao năm yêu xa.'
+                    content: 'Lần đầu gặp lại nhau tại Nhật Bản sau bao năm yêu xa.',
+                    state: ''
                 },
                 {
                     id: 7,
                     image: './assets/img/timelineimg/nhatban3.jpg' ,
                     date: '01/05/2022',
-                    content: 'Anh đã sang Nhật cùng Hêuiuu.'
+                    content: 'Anh đã sang Nhật cùng Hêuiuu.',
+                    state: ''
                 },
                 {
                     id: 8,
                     image: './assets/img/timelineimg/nhatban2.jpg' ,
                     date: '01/01/2021',
-                    content: 'Quyết tâm sang nhật cùng Hêuiuuu.'
+                    content: 'Quyết tâm sang nhật cùng Hêuiuuu.',
+                    state: ''
                 },
                 {
                     id: 9,
                     image: './assets/img/timelineimg/nhatban1.jpg' ,
                     date: '01/01/2020',
-                    content: 'Hêuiuuu ở Nhật bản và chúng ta lại yêu xa.'
+                    content: 'Hêuiuuu ở Nhật bản và chúng ta lại yêu xa.',
+                    state: ''
                 },
                 {
                     id: 10,
                     image: './assets/img/timelineimg/nhatban.jpg' ,
                     date: '26/08/2018',
-                    content: 'Ngày Hêuiuuu sang nhật làm việc.'
+                    content: 'Ngày Hêuiuuu sang nhật làm việc.',
+                    state: ''
                 },
                 {
                     id: 11,
                     image: './assets/img/timelineimg/totnghiep.jpg' ,
                     date: '01/01/2017',
-                    content: 'Cùng nhau tốt nghiệp ra trường và cũng đến lúc yêu xa.'
+                    content: 'Cùng nhau tốt nghiệp ra trường và cũng đến lúc yêu xa.',
+                    state: ''
                 },
                 {
                     id: 12,
                     image: './assets/img/timelineimg/henho.jpg' ,
                     date: '10/05/2014',
-                    content: 'Những lần hẹn hò đầu tiên của 2 đứa.'
+                    content: 'Những lần hẹn hò đầu tiên của 2 đứa.',
+                    state: ''
                 },
                 {
                     id: 13,
                     image: './assets/img/timelineimg/dongy.jpg' ,
                     date: '09/05/2023',
-                    content: 'Ngày đồng ý yêu nhau sau 3 tháng "LÀM GIÁ" của Hêuiuuu.'
+                    content: 'Ngày đồng ý yêu nhau sau 3 tháng "LÀM GIÁ" của Hêuiuuu.',
+                    state: ''
                 },
                 {
                     id: 14,
                     image: './assets/img/timelineimg/timhieu.jpg' ,
                     date: '01/05/2014',
-                    content: 'Sau 3 tháng tìm hiểu nhau và Hêuiuu đã rụng nụ.'
+                    content: 'Sau 3 tháng tìm hiểu nhau và Hêuiuu đã rụng nụ.',
+                    state: ''
                 },
                 {
                     id: 15,
                     image: './assets/img/timelineimg/gapmat.jpg' ,
                     date: '01/04/2014',
-                    content: 'Lần đầu tiên nói chuyện trực tiếp với Hêuiuuu.'
+                    content: 'Lần đầu tiên nói chuyện trực tiếp với Hêuiuuu.',
+                    state: ''
                 },
                 {
                     id: 16,
                     image: './assets/img/timelineimg/nhantin.jpg' ,
                     date: '20/02/2014',
-                    content: 'Ngày đầu tiên nhắn tin làm quen Hêuiuuu.'
+                    content: 'Ngày đầu tiên nhắn tin làm quen Hêuiuuu.',
+                    state: ''
                 },
             ],
 
@@ -116,7 +133,7 @@ var app = {
                             <p class="label_content">${timeline.content}</p>
                         </div>
                         <div class="option">
-                            <i data-index = "${index}" class="ti-angle-down optionIcon"></i>
+                            <i data-index = "${index}" class="ti-more-alt optionIcon"></i>
                             <ul class="optionList">
                                 <li data-index = "${index}" class="editBtn">Edit</li>
                                 <li data-index = "${index}" class="deleteBtn">Delete</li>
@@ -166,19 +183,17 @@ var app = {
 
     // Load DL khi tải lại trang
     loadLocalStorageValue: function(){
-            const likeIcons = document.querySelectorAll('.like');
-            likeIcons.forEach(icon => {
-            const iconIndex = icon.getAttribute('data-index');
-            const isLiked = localStorage.getItem(`like-${iconIndex}`);
-            if (isLiked === 'true') { // Kiểm tra xem đã có trạng thái lưu trữ trong localStorage chưa
-                icon.classList.add('clicked');
-                }
-            })
-            
+        const likeIcons = document.querySelectorAll('.like')
+        app.timelines.forEach((timeline, index) => {
+            if(timeline.state === 'liked'){
+                likeIcons[index].classList.add('liked');
+            }
+        })
     },
 
     handleEvents: function () {
         _this = this;
+        var isLiked = false
         var $ = document.querySelector.bind(document);
         var $$ = document.querySelectorAll.bind(document);
         var modal = document.getElementById("modalCreate");
@@ -193,6 +208,20 @@ var app = {
         timeline_container.addEventListener('click', function (event) {
             var target = event.target;
 
+            // Click Like Button
+            if (target.classList.contains('like')) {
+                const iconIndex = target.getAttribute('data-index')
+                target.classList.toggle('liked')
+                var classNameIcon = target.classList[2]
+                if(classNameIcon){
+                    app.timelines[iconIndex].state = classNameIcon
+                }else{
+                    app.timelines[iconIndex].state = ''
+                }
+                // console.log(app.timelines)
+            } 
+
+
             //Click Delete button
             if (target.classList.contains('deleteBtn')) {
                 var index = target.getAttribute('data-index');
@@ -205,13 +234,14 @@ var app = {
             //OptionList Display
             if (target.classList.contains('optionIcon')) {
                 var optionList = target.nextElementSibling; // Lấy phần tử ul.optionList
-                var currentDisplay = optionList.style.display; //lấy trạng thái hiển thị của optionList trước
-                optionLists.forEach(function(option) {
-                    option.style.display = 'none'; // tắt hết option khác
-                });
-                if(currentDisplay !== 'block') { //kiểm tra trạng thái đã lấy ở dòng 134
-                    optionList.style.display = 'block';
-                }
+                // var currentDisplay = optionList.style.display; //lấy trạng thái hiển thị của optionList trước
+                // optionLists.forEach(function(option) {
+                //     option.style.display = 'none'; // tắt hết option khác
+                // });
+                // if(currentDisplay !== 'block') { //kiểm tra trạng thái đã lấy ở dòng 134
+                //     optionList.style.display = 'block';
+                // }
+                optionList.style.display = optionList.style.display == 'block' ? 'none' : 'block'
             }
 
             //Click Edit button
@@ -219,20 +249,20 @@ var app = {
                 var index = target.getAttribute('data-index');
                 localStorage.setItem('index', index);
                 var parentDiv = target.closest('.elementsDiv'); // Lấy phần tử cha .elementsDiv
-                var labelContent = parentDiv.querySelector('.label_content'); // Lấy phần tử p.label_content
-                var calendar = parentDiv.querySelector('.calendar'); // Lấy phần tử p.label_content
-                var textArea = document.getElementById('inputContent'); // Lấy textarea trong modal
+                var labelContent = parentDiv.querySelector('.label_content');
+                var calendar = parentDiv.querySelector('.calendar'); 
+                var textArea = document.getElementById('inputContent');
                 var inputDate = document.querySelector('#inputDate');
                 var parts = calendar.textContent.split('/')
                 var newCalendar = parts[2] + '-' + parts[1] + '-' + parts[0]
 
-                inputDate.value = ''; // Xóa giá trị của inputDate Value
+                inputDate.value = '';
                 inputDate.value = newCalendar;
-                textArea.value = ''; // Đặt giá trị của textarea là nội dung hiện tại
-                textArea.value = labelContent.textContent; // Đặt giá trị của textarea là nội dung hiện tại
-                modal.style.display = "flex"; // Mở modal
-                btnCreate.style.display = 'none'; // Ẩn nút Create
-                btnUpdate.style.display = 'block'; // Hiện nút Update  
+                textArea.value = ''; 
+                textArea.value = labelContent.textContent; 
+                modal.style.display = "flex"; 
+                btnCreate.style.display = 'none';
+                btnUpdate.style.display = 'block';
                 
                 
                 //Click Update button
@@ -257,20 +287,6 @@ var app = {
                 app.toastDisplay('edit')
             }
 
-             
-            // Click Like Button
-            if (target.classList.contains('like')) {
-                    const iconIndex = target.getAttribute('data-index');
-                    const isLiked = localStorage.getItem(`like-${iconIndex}`);
-
-                    if (isLiked === 'true') {
-                        target.classList.remove('clicked');
-                        localStorage.setItem(`like-${iconIndex}`, 'false');
-                    } else {
-                        target.classList.add('clicked');
-                        localStorage.setItem(`like-${iconIndex}`, 'true');
-                    }
-                } 
 
             // Click vào elementsDiv
             const content_form = target.closest('.content_form')

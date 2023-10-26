@@ -76,7 +76,7 @@
 .login_form{
     border-radius: 5px;
     padding: 5px;
-    animation: zoomin ease-out 0.5s;
+    animation: zoomin ease-out 0.3s;
 
 }
 
@@ -94,7 +94,7 @@
     border-radius: 50%;
     border: 1px solid var(--pink-color);
     margin-bottom: 15px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px pink;
 }
 
 .login_content{
@@ -138,7 +138,7 @@
     border: none;
     background-color: var(--text-color);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    width: 100px;
+    width: 120px;
     border-radius: 30px;
     margin: 45px auto;
     padding: 2px;
@@ -155,7 +155,7 @@
 /* Animation */
 @keyframes zoomin {
     from{
-        transform: scale(0.5);
+        transform: scale(0.8);
     }
     to{
         transform: scale(1);
