@@ -219,11 +219,6 @@
       width: 95% !important;
   }
 
-  .aniversary_form{
-      width: 100% !important;
-  }
-
-
   .timeline_img{
       width: 80px !important;
       height: 80px !important;
@@ -412,18 +407,28 @@
 
   .anniversaryday_container{
       width: 95% !important;
-  }
+    }
 
-  .aniversary_form{
+  #aniversary_form{
       height: 350px !important;
-  }
+    }
   
   .elementsDiv{
       width: 100% !important;
-  }
+    }
   .anniversaryday_img{
       height: 75% !important;
-      }
+    }
+
+      
+  #aniversary_form{
+    width: 100% !important;
+    }
+
+  #aniversary_form .label_content{
+        font-size: 17px;
+        margin-top: 5px;
+    }
 
   #layoutIcon{
       display: block !important;
@@ -437,13 +442,8 @@
           font-size: small;
       }
   .anniversaryday_img.clicked{
-      height: 75% !important;
+      height: 70% !important;
       }
-
-  .label_content{
-      height: 15% !important;
-      padding: 0 15px 0 0 !important;
-  }
   
 }
 
@@ -453,22 +453,25 @@
 
 
 /* >= Tablet */
-@media only screen and (min-width: 740px) and (max-width: 1023px) {
-  
-  .timeline_form{
-      width: 90% !important;
-  }
+@media only screen and (min-width: 568px) and (max-width: 900px) {
 
-  .slideshow-container{
-      width: 95%;
+.listImages-Videos img{
+    width: 24% !important;
   }
+#modal .modal_body {
+    background-color: rgba(0, 0, 0, 0.7);
+    max-height: 70%;
+    margin-top: 10%;
+}
 
-  .listAlbum {
-      width: 160px !important;
-  }
-  .listImages-Videos img{
-      width: 24% !important;
-  }
+#modal .login_content h1{
+    margin-bottom: 0;
+}
+
+#modal .login_form,
+#modal .slgLogin{
+    padding: 0 20px;
+}
 }
 
 

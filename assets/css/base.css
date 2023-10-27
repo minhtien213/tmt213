@@ -102,9 +102,15 @@ html{
     color: var(--pink-color);
 }
 
+.listmenu2_item2:hover > a{
+    color: var(--pink-color);
+}
+
+
 
 .listmenu_item:last-child{
     padding-right: 25px;
+    white-space: nowrap;
 }
 
 .listmenu_item a{

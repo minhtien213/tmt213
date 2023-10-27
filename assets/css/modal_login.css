@@ -32,9 +32,8 @@
 
 .modal_body{
     width: 700px;
-    /* border: 1px solid var(--text-color); */
     border-radius: 5px;
-    padding: 50px 20px;
+    padding: 20px 0;
     box-shadow: 0 0 5px rgba(238, 231, 231, 1);
     animation: zoomin ease-in 0.3s;
     text-align: center;
@@ -62,7 +61,8 @@
 .slgLogin{
     color: var(--text-color);
     text-align: center;
-    padding: 0 30px 0 5px;
+    padding: 20px;
+    border-right: 1px dashed #fff;
 }
 
 .modal_overlay{
@@ -75,7 +75,7 @@
 
 .login_form{
     border-radius: 5px;
-    padding: 5px;
+    padding: 20px;
     animation: zoomin ease-out 0.3s;
 
 }

@@ -142,7 +142,7 @@ var app = {
                         <i data-index="${index}" class="ti-heart like"></i>
                     </div>
                 </div>
-            `;
+            `
         });
 
         var timeline_container = document.querySelector('.timeline_container');
@@ -305,8 +305,11 @@ var app = {
                     selectedImage.src = timeline_img.src;
                     
                     var label_content = content_form.querySelector('.label_content')
+                    var calendarSpan = content_form.querySelector('.calendar span')
                     var modalImage_labelContent = document.querySelector('.modalImage_labelContent')
+                    var modalImage_labelCalendar = document.querySelector('.modalImage_labelCalendar')
                     modalImage_labelContent.textContent = label_content.textContent
+                    modalImage_labelCalendar.textContent = calendarSpan.textContent
                     
                     currentIndex = index
                 }
@@ -321,13 +324,15 @@ var app = {
                     content_form_item.style.border = 'none';
                 })
                 var content_form_intoview = content_forms[currentIndex]
-                content_form_intoview.style.border = "1px solid dodgerblue"
-                setTimeout(function(){
-                    content_form_intoview.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
-                    });
-                }, 200)
+                if(content_form_intoview){
+                    content_form_intoview.style.border = "1px solid dodgerblue"
+                    setTimeout(function(){
+                        content_form_intoview.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }, 200)
+                }
             })
 
             // Click prevImg
@@ -335,6 +340,7 @@ var app = {
             const nextImg = document.querySelector('.nextImg');
             const listImages = document.querySelectorAll('.timeline_img')
             const listContents = document.querySelectorAll('.label_content')
+            const listCalendars = document.querySelectorAll('.calendar span')
 
             prevImg.addEventListener('click', function (){
                 currentIndex--
@@ -347,7 +353,12 @@ var app = {
                 if (listContents[currentIndex]) {
                     var modalImage_labelContent = document.querySelector('.modalImage_labelContent');
                     modalImage_labelContent.textContent = listContents[currentIndex].textContent;
-                  }
+                }
+
+                if (listCalendars[currentIndex]) {
+                    var modalImage_labelCalendar = document.querySelector('.modalImage_labelCalendar')
+                    modalImage_labelCalendar.textContent = listCalendars[currentIndex].textContent;
+                }
             })
 
             // Click nextImg
@@ -361,7 +372,12 @@ var app = {
                 if (listContents[currentIndex]) {
                     var modalImage_labelContent = document.querySelector('.modalImage_labelContent');
                     modalImage_labelContent.textContent = listContents[currentIndex].textContent;
-                  }
+                }
+
+                if (listCalendars[currentIndex]) {
+                    var modalImage_labelCalendar = document.querySelector('.modalImage_labelCalendar')
+                    modalImage_labelCalendar.textContent = listCalendars[currentIndex].textContent;
+                }
             })
         });
 

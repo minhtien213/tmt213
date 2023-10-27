@@ -76,6 +76,11 @@
     color: rgb(221, 212, 221);
 }
 
+.modalImage_labelCalendar{
+  margin-bottom: 20px;
+  color: #b9b2a9;
+}
+
 .label_content{
     margin-top: 8px;
 }
