@@ -32,6 +32,10 @@ html{
     background-attachment: fixed;
 }
 
+.container.backroundColor{
+    background: linear-gradient(15deg, rgb(150 106 153), rgb(135 162 133));
+}
+
 /* Menubar */
 
 .header{
@@ -158,11 +162,12 @@ html{
     width: max-content;
     margin-left: 20px;
     display: flex;
-    color: #927aa8;
+    color: #dccaed;
     align-items: center;
     justify-content: space-between;
-
+    font-size: 22px;
 }
+
 
 #checkChangeColor, #checkChangeColor_mobile{
     display: none;
@@ -193,10 +198,10 @@ html{
 
 .checkChangeColor-block input:checked + .btnlabel::after{
     left: 11px;
-    background-color: #976cbc;
+    background-color: #dccaed;
     }
 .checkChangeColor-block:has(input:checked) .btnlabel{ 
-    border: 1px solid #976cbc;
+    border: 1px solid #9e76c1;
     } 
 
 .ti-arrow-circle-down{

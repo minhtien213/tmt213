@@ -14,103 +14,6 @@ function openMenuMobile() {
   listmenu_mobile.style.display = (listmenu_mobile.style.display == "flex") ? "none" : "flex";
 }
 
-// //Đóng / Mở modal ảnh Timeline / Anniversary
-//     var currentListImgIndex = 0;
-//     var currentListContentIndex = 0;
-//     var currentparentElement = 0;
-
-//   var elementsDivs = document.querySelectorAll('.elementsDiv')
-//   var content_forms = document.querySelectorAll('.content_form')
-//   var listImgs = document.querySelectorAll('.elementsDiv img');
-//   var listContents = document.querySelectorAll('.elementsDiv .label_content');
-//   var timeline_container = document.querySelector('.timeline_container');
-
-//   elementsDivs.forEach(function(elementDiv, index) {
-    
-//     var listImg = listImgs[index];
-//     var listContent = listContents[index];
-//     var elementsDiv = elementsDivs[index];
-
-//     elementDiv.onclick = function(e){
-//       const option = e.target.closest('.option');
-//       const like = e.target.closest('.like');
-
-//       if( !option && !like ){
-//         var showImg = document.getElementById("modalImage")
-//         showImg.style.display = "flex"
-
-//         var srcImg = elementDiv.querySelector('img').src;
-//         var selectedImage = document.getElementById("selected-image");
-//         selectedImage.src = srcImg;
-//         currentListImgIndex = Array.from(listImgs).indexOf(listImg);
-
-//         var textContentLabel = elementDiv.querySelector('p').textContent;
-//         var pElement = document.querySelector('#labelContent');
-//         pElement.textContent = textContentLabel;
-//         currentListContentIndex = Array.from(listContents).indexOf(listContent);
-
-//         currentparentElement = Array.from(elementsDivs).indexOf(elementsDiv);
-//         content_forms.forEach(function(content_form){    
-//           content_form.style.border = 'none';
-//         })
-        
-//       }
-//     }
-//   })
-
-
-  //Ẩn modalImage
-// function hideModalImage(image) {
-//   var modalImage = document.getElementById("modalImage");
-//   modalImage.style.display = "none";
-//   elementsDivs[currentparentElement].querySelector('.content_form').style.border = "1px solid dodgerblue"
-//         setTimeout(function(){
-//           elementsDivs[currentparentElement].querySelector('.content_form').scrollIntoView({
-//                 behavior: 'smooth',
-//                 block: 'center'
-//             });
-//         },200)
-// }
-
-
-//   function showNext() {
-//     if (listImgs.length === 0) return;
-//     currentListImgIndex = (currentListImgIndex + 1) % listImgs.length;
-//     currentListContentIndex = (currentListContentIndex + 1) % listContents.length;
-//     var selectedImage = document.getElementById("selected-image");
-//     if (listImgs[currentListImgIndex]) {
-//         selectedImage.src = listImgs[currentListImgIndex].src;
-//     }
-//     var pElement = document.querySelector('#labelContent');
-//     if (listContents[currentListContentIndex]) {
-//       pElement.textContent = listContents[currentListContentIndex].textContent;
-//     }
-    
-//     currentparentElement = (currentparentElement + 1) % elementsDivs.length;
-
-
-//   }
-
-//   function showPrevious() {
-//     if (listImgs.length === 0) return;
-//     currentListImgIndex = (currentListImgIndex - 1 + listImgs.length) % listImgs.length;
-//     currentListContentIndex = (currentListContentIndex - 1 + listContents.length) % listContents.length;
-//     var selectedImage = document.getElementById("selected-image");
-//     if (listImgs[currentListImgIndex]) {
-//       selectedImage.src = listImgs[currentListImgIndex].src;
-//     }
-//     var pElement = document.querySelector('#labelContent');
-//     if (listContents[currentListContentIndex]) {
-//       pElement.textContent = listContents[currentListContentIndex].textContent;
-//     }
-
-//     currentparentElement = (currentparentElement - 1 + elementsDivs.length) % elementsDivs.length;
-
-// }
-
-
-
-
 //Xác nhận vào Notes/Videos
 function noteMenu_videos() {
   while (true) {
@@ -174,44 +77,47 @@ window.addEventListener('click', function(e){
   var checkChangeColor = document.getElementById('checkChangeColor')
   var checkChangeColor_mobile = document.getElementById('checkChangeColor_mobile')
   var container = document.querySelector('.container')
-  var changeColorState = localStorage.getItem('changeColorState')
+  var changeColorState = localStorage.getItem('backroundColor')
   var checkboxState = localStorage.getItem('checkboxState')
   if(changeColorState){
-    container.style.backgroundImage = 'none'
-    container.style.backgroundColor = changeColorState
+    container.classList.add('backroundColor')
     }
   if(checkboxState === 'checked'){
     checkChangeColor.checked = true
     checkChangeColor_mobile.checked = true
   }
+
   if(checkChangeColor){
     checkChangeColor.addEventListener('change', function(){
-    if(this.checked){
-      container.style.backgroundColor = '#927aa8'
-      container.style.backgroundImage = 'none'
-      localStorage.setItem('changeColorState', '#927aa8')
-      localStorage.setItem('checkboxState', 'checked')
-    }else{
-      container.style.backgroundImage = ''
-      container.style.backgroundColor = 'transparent'
-      localStorage.removeItem('changeColorState')
-      localStorage.removeItem('checkboxState')
-    }
+      if(this.checked){
+        container.classList.add('backroundColor')
+        localStorage.setItem('backroundColor', 'backroundColor')
+        localStorage.setItem('checkboxState', 'checked')
+      }else{
+        container.classList.remove('backroundColor')
+        localStorage.removeItem('backroundColor')
+        localStorage.removeItem('checkboxState')
+      }
   })
 }
   
 if(checkChangeColor_mobile){
   checkChangeColor_mobile.addEventListener('change', function(){
     if(this.checked){
-      container.style.backgroundColor = '#927aa8'
-      container.style.backgroundImage = 'none'
-      localStorage.setItem('changeColorState', '#927aa8')
+      container.classList.add('backroundColor')
+      localStorage.setItem('backroundColor', 'backroundColor')
       localStorage.setItem('checkboxState', 'checked')
     }else{
-      container.style.backgroundImage = ''
-      container.style.backgroundColor = 'transparent'
-      localStorage.removeItem('changeColorState')
+      container.classList.remove('backroundColor')
+      localStorage.removeItem('backroundColor')
       localStorage.removeItem('checkboxState')
     }
   })
 }
+
+window.addEventListener('resize', function(){
+  if(window.innerWidth > 480){
+    var listmenu_mobile = document.getElementById("listmenu_mobile");
+    listmenu_mobile.style.display = 'none';
+  }
+})

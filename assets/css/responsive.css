@@ -1,4 +1,4 @@
-@media only screen and (max-width: 739px) {
+@media only screen and (max-width: 480px) {
 
   /* Responsive Home */
   
@@ -71,35 +71,57 @@
       right: 0px;
       width: 100%;
       height: 100vh;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      /* justify-content: center; */
-      padding-top: 123px;
       animation: translateY 0.3s ease forwards;
-      font-weight: 100;
       background-color: var(--black-color);
-      max-width: 100%;
       box-shadow: 0 0 10px #8d8383;
+      display: flex;
+      flex-direction: column;
+      display: none;
   }
 
-  .listmenu_mobile_item{
-      font-size: 25px;
-      line-height: 45px;
-      min-width: 100%;
-      text-align: center;
-  }
+  
+  .listmenu_mobile_item_block{
+      width: 100%;
+      height: 60%;
+      margin: auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    
+    .listmenu_mobile_item{
+      width: 45%;
+      height: 85px;
+      background: linear-gradient(15deg, rgb(211 171 213), rgb(176 197 175));
+      border-radius: 10px;
+      font-size: 30px;
+    }
+    
+    .listmenu_mobile_item_block li{
+        list-style: none;
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .listmenu_mobile_item a {
-      border-right: none;
-      color: var(--text-color);
-      list-style: none;
-      text-decoration: none;
+    .listmenu_mobile_item:last-child{
+        background: linear-gradient(15deg, rgb(159 134 97), rgb(188 98 153));
+        height: 50px;
+    }
+
+.listmenu_mobile_item_block a {
+    border-right: none;
+    color: var(--text-color);
+    list-style: none;
+    text-decoration: none;
   }
 
   .checkChangeColor-block {
       margin: auto;
-      margin-top: 70px;
+      height: 20%;
   }
 
   .container{
@@ -367,6 +389,7 @@
       width: 100%;
       height: 10%;
       background-color: transparent;
+      margin-top: 5px;
   }
 
   .prevImg, .nextImg{
