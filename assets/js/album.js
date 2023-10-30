@@ -41,7 +41,7 @@
       }
     }
 
-    //Kéo view audio đang phát vào tầm nhìn
+    //Kéo view image đã xem vào tầm nhìn
     function scrollToActiveSong(){
         setTimeout(function(){
             $('.song.active').scrollIntoView({

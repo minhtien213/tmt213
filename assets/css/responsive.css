@@ -91,13 +91,6 @@
       flex-wrap: wrap;
     }
     
-    .listmenu_mobile_item{
-      width: 45%;
-      height: 85px;
-      background: linear-gradient(15deg, rgb(211 171 213), rgb(176 197 175));
-      border-radius: 10px;
-      font-size: 30px;
-    }
     
     .listmenu_mobile_item_block li{
         list-style: none;
@@ -105,11 +98,25 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        border-radius: 10px;
+        font-size: 18px;
+        color: var(--text-color);
+        border: 1px solid var(--text-color);
+        padding: 10px;
     }
 
+    .listmenu_mobile_item_block .nav_icon{
+        font-size: 50px;
+        margin-bottom: 15px;
+        font-weight: 100;
+    }
+
+    .listmenu_mobile_item:first-child{
+        width: 92%;
+    }
     .listmenu_mobile_item:last-child{
-        background: linear-gradient(15deg, rgb(159 134 97), rgb(188 98 153));
         height: 50px;
+        width: 92%;
     }
 
 .listmenu_mobile_item_block a {
@@ -117,6 +124,11 @@
     color: var(--text-color);
     list-style: none;
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 40px;
   }
 
   .checkChangeColor-block {
@@ -433,7 +445,7 @@
     }
 
   #aniversary_form{
-      height: 350px !important;
+      height: 365px !important;
     }
   
   .elementsDiv{
